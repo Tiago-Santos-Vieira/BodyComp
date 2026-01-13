@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light">
+    <title>Avaliação & Prescrição Nutricional</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              medical: {
+                50: '#f8fafc',
+                100: '#f1f5f9',
+                200: '#e2e8f0',
+                300: '#cbd5e1',
+                400: '#94a3b8',
+                500: '#64748b',
+                600: '#475569',
+                700: '#334155',
+                800: '#1e293b',
+                900: '#0f172a',
+              },
+              primary: {
+                50: '#eff6ff',
+                100: '#dbeafe',
+                500: '#3b82f6',
+                600: '#2563eb',
+                700: '#1d4ed8',
+                800: '#1e40af',
+                900: '#1e3a8a',
+              },
+              success: {
+                50: '#f0fdf4',
+                600: '#16a34a',
+                700: '#15803d',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+              serif: ['Merriweather', 'serif'],
+            },
+            screens: {
+              'print': {'raw': 'print'},
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+              'slide-in': 'slideIn 0.3s ease-out forwards',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideIn: {
+                '0%': { opacity: '0', transform: 'translateX(-10px)' },
+                '100%': { opacity: '1', transform: 'translateX(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&display=swap');
+      
+      :root { color-scheme: light; }
+      body { font-family: 'Inter', sans-serif; }
+      .transition-interactive { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+
+      /* Input Styles */
+      .input-modern {
+        @apply w-full px-4 py-3 rounded-lg outline-none transition-interactive shadow-sm;
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        border: 1px solid #cbd5e1;
+      }
+      .input-modern::placeholder { color: #9ca3af; }
+      .input-modern:focus {
+        @apply ring-2 ring-primary-500 border-primary-500 shadow-md transform scale-[1.01];
+        background-color: #ffffff !important;
+      }
+      .input-modern:hover { border-color: #60a5fa; }
+
+      /* Tabs */
+      .tab-btn {
+        @apply px-6 py-3 font-bold text-sm uppercase tracking-wider text-medical-500 border-b-2 border-transparent transition-all duration-300 hover:text-primary-600;
+      }
+      .tab-btn.active {
+        @apply text-primary-700 border-primary-600 bg-primary-50/50;
+      }
+
+      /* Search Results */
+      .search-results {
+        @apply absolute left-0 right-0 bg-white border border-medical-200 rounded-lg shadow-xl max-h-60 overflow-y-auto z-50 mt-1;
+      }
+      .search-item {
+        @apply px-4 py-2 hover:bg-primary-50 cursor-pointer text-sm text-gray-700 border-b border-gray-100 last:border-0;
+      }
+
+      /* Modal Utilities */
+      .modal-backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(2px);
+      }
+
+      /* Print Utilities */
+      @media print {
+        @page { size: A4; margin: 0; }
+        body * { visibility: hidden; }
+        #report-view, #report-view * { visibility: visible; }
+        #report-view {
+          position: absolute; left: 0; top: 0; width: 100%; margin: 0; padding: 20px !important;
+          background: white; box-shadow: none; display: flex !important; flex-direction: column; min-height: 297mm;
+        }
+        .no-print { display: none !important; }
+        /* Hide inactive tabs content explicitly in print */
+        .tab-content.hidden { display: none !important; }
+        /* Ensure table visibility */
+        table { width: 100%; border-collapse: collapse; }
+        tr { break-inside: avoid; }
+      }
+
+      /* Helper Classes */
+      .label-sm { display: block; font-size: 10px; color: #94a3b8; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 2px; }
+      .data-val { display: block; font-weight: 600; color: #1e293b; }
+      .section-title { display: flex; align-items: center; gap: 8px; color: #1e40af; font-weight: 700; text-transform: uppercase; font-size: 11px; letter-spacing: 0.05em; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px; margin-bottom: 12px; }
+      .risk-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+      .bar-animate { transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1); }
+      .chart-circle { transition: stroke-dasharray 1.5s cubic-bezier(0.4, 0, 0.2, 1); }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-medical-50 to-medical-100 text-medical-800 antialiased min-h-screen">
+
+    <!-- FORM VIEW -->
+    <div id="form-view" class="min-h-screen flex flex-col items-center justify-center p-4 md:p-8 font-sans transition-opacity duration-500 ease-in-out">
+        <div class="bg-white/80 backdrop-blur-sm w-full max-w-4xl rounded-2xl shadow-2xl overflow-hidden border border-white/50 animate-fade-in-up">
+            
+            <div class="bg-gradient-to-r from-primary-900 to-primary-800 p-8 md:p-10 text-white relative overflow-hidden group">
+                <div class="absolute top-0 right-0 opacity-10 transform translate-x-10 -translate-y-10 transition-transform duration-1000 group-hover:scale-110 group-hover:rotate-12">
+                    <i data-lucide="activity" width="200" height="200"></i>
+                </div>
+                <div class="relative z-10">
+                    <h1 class="text-3xl font-serif font-bold mb-2 tracking-tight">Avaliação & Prescrição</h1>
+                    <p class="text-primary-200 text-sm max-w-md leading-relaxed">Protocolo Completo: Jackson-Pollock 7, Perimetria Completa & Planejamento Dietético TACO.</p>
+                    <div class="mt-6 animate-fade-in delay-200">
+                        <label class="block text-[10px] uppercase tracking-wider text-primary-300 mb-1 font-bold">Nome do Profissional</label>
+                        <div class="flex items-center gap-2 bg-primary-900/40 backdrop-blur-md rounded-lg p-1 border border-primary-700/50">
+                            <i data-lucide="stethoscope" class="ml-3 text-primary-400" width="18"></i>
+                            <input type="text" id="nutritionistName" class="bg-transparent border-none text-white placeholder-primary-500 text-sm w-full focus:ring-0 p-2 outline-none" placeholder="Ex: Dr. Nome Sobrenome" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form id="calc-form" class="p-8 md:p-10 space-y-8">
+                <!-- Data Entry Sections -->
+                <section class="animate-fade-in-up delay-100">
+                    <div class="flex items-center gap-2 mb-6 border-b border-medical-100 pb-2">
+                        <div class="bg-primary-100 p-1.5 rounded text-primary-700 shadow-sm"><i data-lucide="user" width="18"></i></div>
+                        <h3 class="text-sm font-bold text-medical-800 uppercase tracking-wide">Dados do Paciente</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="md:col-span-2 group">
+                            <label class="block text-xs font-semibold text-medical-500 mb-1.5 uppercase">Nome do Paciente</label>
+                            <input type="text" id="name" required class="input-modern" placeholder="Nome completo" />
+                        </div>
+                        <div class="group">
+                            <label class="block text-xs font-semibold text-medical-500 mb-1.5 uppercase">Gênero Biológico</label>
+                            <div class="relative">
+                                <select id="gender" class="input-modern appearance-none cursor-pointer">
+                                    <option value="male">Masculino</option>
+                                    <option value="female">Feminino</option>
+                                </select>
+                                <div class="absolute right-3 top-3 text-medical-400 pointer-events-none"><i data-lucide="chevron-right" width="16" class="rotate-90"></i></div>
+                            </div>
+                        </div>
+                        <div class="group"><label class="block text-xs font-semibold text-medical-500 mb-1.5 uppercase">Idade</label><input type="number" id="age" value="30" class="input-modern" /></div>
+                        <div class="group"><label class="block text-xs font-semibold text-medical-500 mb-1.5 uppercase">Peso (kg)</label><input type="number" id="weight" value="75" step="0.1" class="input-modern" /></div>
+                        <div class="group"><label class="block text-xs font-semibold text-medical-500 mb-1.5 uppercase">Altura (cm)</label><input type="number" id="height" value="175" class="input-modern" /></div>
+                    </div>
+                </section>
+
+                <section class="animate-fade-in-up delay-200">
+                    <div class="flex items-center gap-2 mb-6 border-b border-medical-100 pb-2">
+                        <div class="bg-primary-100 p-1.5 rounded text-primary-700 shadow-sm"><i data-lucide="clipboard-list" width="18"></i></div>
+                        <h3 class="text-sm font-bold text-medical-800 uppercase tracking-wide">Dobras Cutâneas (mm)</h3>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="skinfolds-container">
+                         <div class="group"><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Peitoral</label><input type="number" id="sf-chest" value="10" step="0.1" class="input-modern text-center" required /></div>
+                        <div class="group"><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Axilar Média</label><input type="number" id="sf-axilla" value="10" step="0.1" class="input-modern text-center" required /></div>
+                        <div class="group"><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Tríceps</label><input type="number" id="sf-tricep" value="10" step="0.1" class="input-modern text-center" required /></div>
+                        <div class="group"><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Subescapular</label><input type="number" id="sf-subscapular" value="10" step="0.1" class="input-modern text-center" required /></div>
+                        <div class="group"><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Abdomen</label><input type="number" id="sf-abdomen" value="20" step="0.1" class="input-modern text-center" required /></div>
+                        <div class="group"><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Supra-ilíaca</label><input type="number" id="sf-suprailiac" value="15" step="0.1" class="input-modern text-center" required /></div>
+                        <div class="col-span-2 md:col-span-1 group"><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Coxa</label><input type="number" id="sf-thigh" value="15" step="0.1" class="input-modern text-center" required /></div>
+                    </div>
+                </section>
+
+                <section class="animate-fade-in-up delay-300">
+                    <div class="flex items-center gap-2 mb-6 border-b border-medical-100 pb-2">
+                        <div class="bg-primary-100 p-1.5 rounded text-primary-700 shadow-sm"><i data-lucide="ruler" width="18"></i></div>
+                        <h3 class="text-sm font-bold text-medical-800 uppercase tracking-wide">Circunferências (cm)</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <!-- Tronco -->
+                        <div class="bg-medical-50/50 p-4 rounded-xl border border-medical-100/50 hover:border-medical-200 transition-colors">
+                            <h4 class="text-xs font-bold text-primary-600 mb-3 border-l-2 border-primary-500 pl-2 uppercase">Tronco & Cabeça</h4>
+                            <div class="grid grid-cols-2 md:grid-cols-6 gap-4">
+                                <div><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Pescoço</label><input type="number" id="cf-neck" class="input-modern p-2" step="0.1"/></div>
+                                <div><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Ombro</label><input type="number" id="cf-shoulder" class="input-modern p-2" step="0.1"/></div>
+                                <div><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Tórax</label><input type="number" id="cf-chest" class="input-modern p-2" step="0.1"/></div>
+                                <div><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Abdomen</label><input type="number" id="cf-abdomen" class="input-modern p-2" step="0.1"/></div>
+                                <div><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Cintura</label><input type="number" id="cf-waist" class="input-modern p-2" step="0.1" value="80"/></div>
+                                <div><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Quadril</label><input type="number" id="cf-hip" class="input-modern p-2" step="0.1" value="100"/></div>
+                            </div>
+                        </div>
+
+                        <!-- Membros Superiores -->
+                        <div class="bg-medical-50/50 p-4 rounded-xl border border-medical-100/50 hover:border-medical-200 transition-colors">
+                            <h4 class="text-xs font-bold text-primary-600 mb-3 border-l-2 border-primary-500 pl-2 uppercase">Membros Superiores</h4>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                <div><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Braço Esq. Relax.</label><input type="number" id="cf-armLeftRelaxed" class="input-modern p-2" step="0.1"/></div>
+                                <div><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Braço Dir. Relax.</label><input type="number" id="cf-armRightRelaxed" class="input-modern p-2" step="0.1" value="30"/></div>
+                                <div><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Braço Esq. Contr.</label><input type="number" id="cf-armLeftContracted" class="input-modern p-2" step="0.1"/></div>
+                                <div><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Braço Dir. Contr.</label><input type="number" id="cf-armRightContracted" class="input-modern p-2" step="0.1"/></div>
+                                <div><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Antebraço Esq.</label><input type="number" id="cf-forearmLeft" class="input-modern p-2" step="0.1"/></div>
+                                <div><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Antebraço Dir.</label><input type="number" id="cf-forearmRight" class="input-modern p-2" step="0.1"/></div>
+                            </div>
+                        </div>
+
+                        <!-- Membros Inferiores -->
+                        <div class="bg-medical-50/50 p-4 rounded-xl border border-medical-100/50 hover:border-medical-200 transition-colors">
+                            <h4 class="text-xs font-bold text-primary-600 mb-3 border-l-2 border-primary-500 pl-2 uppercase">Membros Inferiores</h4>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                <div><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Coxa Esq. Prox.</label><input type="number" id="cf-thighLeftProximal" class="input-modern p-2" step="0.1"/></div>
+                                <div><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Coxa Dir. Prox.</label><input type="number" id="cf-thighRightProximal" class="input-modern p-2" step="0.1"/></div>
+                                <div><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Coxa Esq. Medial</label><input type="number" id="cf-thighLeftMedial" class="input-modern p-2" step="0.1"/></div>
+                                <div><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Coxa Dir. Medial</label><input type="number" id="cf-thighRightMedial" class="input-modern p-2" step="0.1"/></div>
+                                <div><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Coxa Esq. Distal</label><input type="number" id="cf-thighLeftDistal" class="input-modern p-2" step="0.1"/></div>
+                                <div><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Coxa Dir. Distal</label><input type="number" id="cf-thighRightDistal" class="input-modern p-2" step="0.1"/></div>
+                                <div><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Panturrilha Esq.</label><input type="number" id="cf-calfLeft" class="input-modern p-2" step="0.1"/></div>
+                                <div><label class="block text-[10px] font-bold text-medical-400 mb-1 uppercase">Panturrilha Dir.</label><input type="number" id="cf-calfRight" class="input-modern p-2" step="0.1"/></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="pt-4 pb-4 animate-fade-in-up delay-400">
+                    <button type="submit" class="w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-500 hover:to-primary-600 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-primary-500/30 transform transition-all duration-300 hover:-translate-y-1 active:scale-95 flex justify-center items-center gap-2 cursor-pointer group">
+                        <span class="text-lg">Gerar Avaliação & Planejamento</span>
+                        <i data-lucide="chevron-right" width="24" class="transition-transform group-hover:translate-x-1"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+        
+        <!-- App Credits -->
+        <div class="mt-8 text-medical-600 text-xs font-medium animate-fade-in delay-500 text-center">
+            Desenvolvido por <a href="https://instagram.com/tiagovieira.films" target="_blank" class="text-primary-600 hover:text-primary-800 transition-colors font-bold">@tiagovieira.films</a>
+        </div>
+    </div>
+
+    <!-- REPORT VIEW -->
+    <div id="report-view" class="hidden min-h-screen bg-medical-50 justify-center p-0 md:p-8 opacity-0 transition-opacity duration-700 ease-in-out">
+        
+        <div id="printable-content" class="w-full max-w-[210mm] bg-white shadow-2xl print:shadow-none print:w-full overflow-hidden flex flex-col min-h-[297mm] rounded-none md:rounded-lg">
+            
+            <!-- Controls -->
+            <div class="no-print p-4 flex justify-between items-center bg-medical-800 text-white sticky top-0 z-50 shadow-md backdrop-blur-sm bg-opacity-95">
+                <button type="button" id="btn-back" class="flex items-center gap-2 text-sm font-medium hover:text-primary-300 transition-colors cursor-pointer group">
+                    <i data-lucide="arrow-left" width="16" class="transition-transform group-hover:-translate-x-1"></i> Dados
+                </button>
+                <div class="flex gap-4">
+                    <button type="button" id="tab-assess" class="text-sm font-bold text-primary-300 hover:text-white transition-colors border-b-2 border-primary-400 pb-0.5">Avaliação</button>
+                    <button type="button" id="tab-diet" class="text-sm font-bold text-gray-400 hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Dieta TACO</button>
+                </div>
+                <button type="button" id="btn-print" class="flex items-center gap-2 px-4 py-2 bg-primary-600 hover:bg-primary-50 rounded-md font-bold shadow-lg text-sm cursor-pointer">
+                    <i data-lucide="printer" width="16"></i> Imprimir
+                </button>
+            </div>
+
+            <!-- Report Header -->
+            <div class="p-8 md:p-12 print:p-10 pb-0 flex flex-col gap-6 animate-fade-in">
+                <header class="border-b-2 border-primary-800 pb-4 flex justify-between items-end">
+                    <div>
+                        <h1 id="r-nutri-name" class="text-3xl font-serif font-black text-primary-900 tracking-tight leading-none uppercase">Avaliação Física</h1>
+                        <p class="text-medical-500 text-sm mt-1 font-medium tracking-wide uppercase">Nutricionista / Performance</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-xs font-bold text-primary-700 uppercase tracking-widest mb-1">Composição & Nutrição</div>
+                        <div id="r-date" class="text-sm text-medical-600 font-serif italic"></div>
+                    </div>
+                </header>
+
+                <section class="bg-gradient-to-r from-medical-50 to-white rounded-lg p-4 border border-medical-200 shadow-sm">
+                    <div class="grid grid-cols-5 gap-4 text-sm">
+                        <div class="col-span-2"><span class="label-sm">Paciente</span><span id="r-name" class="block text-lg font-bold text-medical-900 truncate"></span></div>
+                        <div><span class="label-sm">Idade/Gênero</span><span id="r-age-gender" class="data-val"></span></div>
+                        <div><span class="label-sm">Peso Atual</span><span id="r-weight" class="data-val"></span></div>
+                        <div><span class="label-sm">TMB Estimada</span><span id="r-bmr-header" class="data-val text-primary-700"></span></div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- TAB 1: ASSESSMENT -->
+            <div id="content-assessment" class="tab-content p-8 md:p-12 print:p-10 flex-grow flex flex-col gap-8 animate-fade-in">
+                <!-- MAIN GRID -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 print:grid-cols-2">
+                    <!-- LEFT COLUMN -->
+                    <div class="flex flex-col gap-6 min-w-0">
+                        <!-- Pie Chart -->
+                        <div class="flex items-center gap-6 bg-white border border-medical-200 rounded-lg p-4 shadow-sm">
+                            <div class="flex-shrink-0" id="pie-chart-container"></div>
+                            <div class="flex-grow space-y-2">
+                                <div class="flex justify-between items-center"><div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-blue-500"></span><span class="text-[10px] font-bold text-gray-600 uppercase">Massa Muscular</span></div><span id="r-val-muscle" class="font-bold text-medical-900 text-[10px]"></span></div>
+                                <div class="flex justify-between items-center"><div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-yellow-800"></span><span class="text-[10px] font-bold text-gray-600 uppercase">Massa Óssea</span></div><span id="r-val-bone" class="font-bold text-medical-900 text-[10px]"></span></div>
+                                <div class="flex justify-between items-center"><div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-gray-400"></span><span class="text-[10px] font-bold text-gray-600 uppercase">Massa Residual</span></div><span id="r-val-residual" class="font-bold text-medical-900 text-[10px]"></span></div>
+                                <div class="flex justify-between items-center"><div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-red-500"></span><span class="text-[10px] font-bold text-gray-600 uppercase">Massa Gorda</span></div><span id="r-val-fat" class="font-bold text-medical-900 text-[10px]"></span></div>
+                            </div>
+                        </div>
+
+                        <!-- Table -->
+                        <div>
+                            <h3 class="section-title"><i data-lucide="activity" width="14"></i> Detalhamento</h3>
+                            <div class="rounded-lg border border-medical-200 overflow-hidden text-sm shadow-sm">
+                                <table class="w-full">
+                                    <thead class="bg-medical-100 text-medical-600 text-[10px] uppercase font-bold">
+                                        <tr><th class="py-2 px-3 text-left">Índice</th><th class="py-2 px-3 text-right">Atual</th><th class="py-2 px-3 text-right text-medical-400">Ideal</th></tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-medical-100">
+                                        <tr><td class="py-2 px-3 font-medium">Gordura (%)</td><td id="t-bf-curr" class="py-2 px-3 text-right font-bold text-red-600"></td><td id="t-bf-ideal" class="py-2 px-3 text-right text-medical-400"></td></tr>
+                                        <tr><td class="py-2 px-3 font-medium">Massa Gorda (kg)</td><td id="t-fm-curr" class="py-2 px-3 text-right font-bold"></td><td id="t-fm-ideal" class="py-2 px-3 text-right text-medical-400"></td></tr>
+                                        <tr><td class="py-2 px-3 font-medium">Massa Muscular (kg)</td><td id="t-mm-curr" class="py-2 px-3 text-right font-bold"></td><td class="py-2 px-3 text-right text-medical-400">-</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- NEW SECTION: Skinfolds Display -->
+                        <div class="mt-2">
+                            <h3 class="section-title"><i data-lucide="layers" width="14"></i> Dobras Cutâneas (mm)</h3>
+                            <div class="grid grid-cols-3 md:grid-cols-2 gap-3" id="r-skinfolds-grid">
+                                <!-- Injected via JS -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT COLUMN -->
+                    <div class="flex flex-col gap-6 min-w-0">
+                         <div>
+                            <h3 class="section-title"><i data-lucide="activity" width="14"></i> Gráficos de Estado</h3>
+                            <div id="range-bars-container" class="bg-white rounded-lg border border-medical-200 p-4 space-y-2 shadow-sm w-full"></div>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-primary-900 to-primary-800 rounded-xl p-5 text-white shadow-lg">
+                            <h3 class="text-primary-200 font-bold uppercase text-xs tracking-wider mb-4 border-b border-primary-700 pb-2">Metas</h3>
+                            <div class="flex justify-between items-end">
+                                <div><div class="text-primary-300 text-[10px] uppercase mb-1">TMB Basal</div><div class="text-3xl font-serif font-bold tracking-tighter"><span id="r-bmr"></span> <span class="text-sm font-sans font-normal text-primary-300">kcal</span></div></div>
+                                <div class="text-right"><div class="text-primary-300 text-[10px] uppercase mb-1">Peso Ideal</div><div id="r-ideal-weight-range" class="text-xl font-bold"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW SECTION: Detailed Perimetry Table -->
+                <div class="mt-2">
+                    <h3 class="section-title"><i data-lucide="ruler" width="14"></i> Perimetria Completa</h3>
+                    <div class="rounded-lg border border-medical-200 overflow-hidden text-xs shadow-sm">
+                        <table class="w-full">
+                            <thead class="bg-medical-100 text-medical-600 font-bold uppercase text-[9px]">
+                                <tr>
+                                    <th class="py-2 px-2 text-left">Medida (cm)</th>
+                                    <th class="py-2 px-2 text-center w-24">Esquerdo</th>
+                                    <th class="py-2 px-2 text-center w-24">Direito</th>
+                                </tr>
+                            </thead>
+                            <tbody id="circumferences-table-body" class="divide-y divide-medical-100 bg-medical-50">
+                                <!-- Injected via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: DIET PLANNER -->
+            <div id="content-diet" class="tab-content hidden p-8 md:p-12 print:p-10 flex-grow flex flex-col gap-6 animate-fade-in">
+                
+                <!-- Diet Summary Header -->
+                <div class="bg-medical-50 border border-medical-200 rounded-lg p-4 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div class="flex gap-6 items-center">
+                        <div class="text-center">
+                            <span class="label-sm">Meta Calórica</span>
+                            <span id="diet-target-cal" class="text-lg font-bold text-primary-700">2000 kcal</span>
+                        </div>
+                        <div class="h-8 w-px bg-medical-300"></div>
+                        <div class="text-center">
+                            <span class="label-sm">Planejado</span>
+                            <span id="diet-total-cal" class="text-lg font-bold text-gray-900">0 kcal</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 text-xs">
+                        <div class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full font-bold">P: <span id="diet-total-prot">0</span>g</div>
+                        <div class="px-3 py-1 bg-green-100 text-green-800 rounded-full font-bold">C: <span id="diet-total-carb">0</span>g</div>
+                        <div class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full font-bold">G: <span id="diet-total-fat">0</span>g</div>
+                    </div>
+                </div>
+
+                <!-- Add Food Tool (No Print) -->
+                <div class="no-print bg-white p-4 rounded-xl border border-primary-200 shadow-md">
+                    <h3 class="text-sm font-bold text-primary-800 uppercase mb-3 flex items-center gap-2">
+                        <i data-lucide="plus-circle" width="16"></i> Adicionar Alimento (Base TACO)
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-3 items-end relative">
+                        <!-- Meal Select -->
+                        <div class="md:col-span-3">
+                            <label class="label-sm">Refeição</label>
+                            <select id="food-meal-select" class="input-modern py-2 text-sm bg-gray-50">
+                                <option value="cafe">Café da Manhã</option>
+                                <option value="almoco">Almoço</option>
+                                <option value="lanche">Lanche</option>
+                                <option value="jantar">Jantar</option>
+                            </select>
+                        </div>
+                        <!-- Search Input -->
+                        <div class="md:col-span-5 relative">
+                            <label class="label-sm">Buscar Alimento</label>
+                            <input type="text" id="food-search" class="input-modern py-2 text-sm" placeholder="Ex: Arroz, Frango, Ovo..." autocomplete="off">
+                            <!-- Results Dropdown -->
+                            <div id="food-search-results" class="search-results hidden"></div>
+                        </div>
+                        <!-- Quantity -->
+                        <div class="md:col-span-2">
+                            <label class="label-sm">Qtd (g/ml)</label>
+                            <input type="number" id="food-qty" class="input-modern py-2 text-sm" value="100">
+                        </div>
+                        <!-- Button -->
+                        <div class="md:col-span-2">
+                            <button type="button" id="btn-add-food" class="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-2 rounded-lg text-sm transition-colors shadow-sm h-[42px]">
+                                Adicionar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Meals Container -->
+                <div id="diet-meals-container" class="space-y-6">
+                    <!-- Meals will be injected here -->
+                </div>
+                
+                <!-- COPY MEAL MODAL -->
+                <div id="copy-meal-modal" class="hidden fixed inset-0 z-[100] modal-backdrop flex items-center justify-center p-4">
+                    <div class="bg-white rounded-xl shadow-2xl p-6 w-full max-w-sm animate-fade-in">
+                        <h3 class="text-lg font-bold text-medical-800 mb-2">Duplicar Refeição</h3>
+                        <p class="text-sm text-medical-500 mb-6">Copiar todos os alimentos de <span id="copy-source-name" class="font-bold text-primary-700"></span> para:</p>
+                        
+                        <div class="space-y-2">
+                            <button onclick="confirmCopyMeal('cafe')" class="w-full p-3 text-left bg-gray-50 hover:bg-primary-50 rounded-lg border border-gray-200 hover:border-primary-200 transition-colors text-sm font-semibold text-gray-700 flex justify-between items-center group">
+                                Café da Manhã <i data-lucide="arrow-right" width="14" class="opacity-0 group-hover:opacity-100 text-primary-500"></i>
+                            </button>
+                            <button onclick="confirmCopyMeal('almoco')" class="w-full p-3 text-left bg-gray-50 hover:bg-primary-50 rounded-lg border border-gray-200 hover:border-primary-200 transition-colors text-sm font-semibold text-gray-700 flex justify-between items-center group">
+                                Almoço <i data-lucide="arrow-right" width="14" class="opacity-0 group-hover:opacity-100 text-primary-500"></i>
+                            </button>
+                            <button onclick="confirmCopyMeal('lanche')" class="w-full p-3 text-left bg-gray-50 hover:bg-primary-50 rounded-lg border border-gray-200 hover:border-primary-200 transition-colors text-sm font-semibold text-gray-700 flex justify-between items-center group">
+                                Lanche <i data-lucide="arrow-right" width="14" class="opacity-0 group-hover:opacity-100 text-primary-500"></i>
+                            </button>
+                            <button onclick="confirmCopyMeal('jantar')" class="w-full p-3 text-left bg-gray-50 hover:bg-primary-50 rounded-lg border border-gray-200 hover:border-primary-200 transition-colors text-sm font-semibold text-gray-700 flex justify-between items-center group">
+                                Jantar <i data-lucide="arrow-right" width="14" class="opacity-0 group-hover:opacity-100 text-primary-500"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="mt-6 pt-4 border-t border-gray-100">
+                            <button onclick="document.getElementById('copy-meal-modal').classList.add('hidden')" class="w-full py-2 text-center text-gray-400 hover:text-gray-600 text-sm font-bold">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer -->
+            <footer class="p-6 border-t border-medical-200 bg-medical-50 text-[9px] text-gray-400 leading-tight mt-auto">
+                <div class="flex flex-col md:flex-row justify-between gap-4">
+                    <div>
+                        <p class="mb-1">Ref. Bibliográficas: Jackson & Pollock (7 Dobras), Siri (1961), TACO (4ª Ed).</p>
+                        <p>Desenvolvido por <a href="https://instagram.com/tiagovieira.films" target="_blank" class="text-primary-700 font-bold hover:underline">@tiagovieira.films</a></p>
+                    </div>
+                    <div id="r-footer-nutri" class="uppercase font-bold text-primary-800 text-right"></div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // --- 0. TACO MINI DATABASE (Subset) ---
+        const TACO_DB = [
+            { id: 1, name: "Arroz, tipo 1, cozido", kcal: 128, prot: 2.5, carb: 28.1, fat: 0.2 },
+            { id: 2, name: "Arroz, integral, cozido", kcal: 112, prot: 2.6, carb: 25.8, fat: 1.0 },
+            { id: 3, name: "Feijão, carioca, cozido", kcal: 76, prot: 4.8, carb: 13.6, fat: 0.5 },
+            { id: 4, name: "Feijão, preto, cozido", kcal: 77, prot: 4.5, carb: 14.0, fat: 0.5 },
+            { id: 5, name: "Frango, peito, filé, grelhado", kcal: 159, prot: 32.0, carb: 0.0, fat: 2.5 },
+            { id: 6, name: "Frango, peito, cozido", kcal: 163, prot: 31.5, carb: 0.0, fat: 3.2 },
+            { id: 7, name: "Carne, patinho, sem gordura, grelhado", kcal: 219, prot: 35.9, carb: 0.0, fat: 7.3 },
+            { id: 8, name: "Ovo, galinha, inteiro, cozido", kcal: 146, prot: 13.3, carb: 0.6, fat: 9.5 },
+            { id: 9, name: "Ovo, galinha, clara, cozida", kcal: 59, prot: 13.4, carb: 0.0, fat: 0.1 },
+            { id: 10, name: "Banana, prata, crua", kcal: 98, prot: 1.3, carb: 26.0, fat: 0.1 },
+            { id: 11, name: "Maçã, Fuji, com casca, crua", kcal: 56, prot: 0.3, carb: 15.2, fat: 0.1 },
+            { id: 12, name: "Mamão, papaia, cru", kcal: 40, prot: 0.5, carb: 10.4, fat: 0.1 },
+            { id: 13, name: "Pão, francês", kcal: 300, prot: 8.0, carb: 58.6, fat: 3.1 },
+            { id: 14, name: "Pão, integral", kcal: 253, prot: 9.4, carb: 49.9, fat: 3.7 },
+            { id: 15, name: "Leite, vaca, integral", kcal: 60, prot: 3.2, carb: 4.7, fat: 3.3 },
+            { id: 16, name: "Leite, vaca, desnatado", kcal: 35, prot: 3.3, carb: 4.9, fat: 0.1 },
+            { id: 17, name: "Queijo, mozarela", kcal: 330, prot: 22.6, carb: 3.0, fat: 25.2 },
+            { id: 18, name: "Queijo, minas, frescal", kcal: 264, prot: 17.4, carb: 3.2, fat: 20.2 },
+            { id: 19, name: "Iogurte, natural", kcal: 51, prot: 4.1, carb: 1.9, fat: 3.0 },
+            { id: 20, name: "Aveia, flocos, crua", kcal: 394, prot: 13.9, carb: 66.6, fat: 8.5 },
+            { id: 21, name: "Batata, doce, cozida", kcal: 77, prot: 0.6, carb: 18.4, fat: 0.1 },
+            { id: 22, name: "Batata, inglesa, cozida", kcal: 52, prot: 1.2, carb: 11.9, fat: 0.0 },
+            { id: 23, name: "Azeite, de oliva, extra virgem", kcal: 884, prot: 0.0, carb: 0.0, fat: 100.0 },
+            { id: 24, name: "Castanha-do-brasil, crua", kcal: 643, prot: 14.5, carb: 15.1, fat: 63.5 },
+            { id: 25, name: "Tapioca, goma", kcal: 242, prot: 0.0, carb: 60.0, fat: 0.0 },
+            { id: 26, name: "Café, infusão (sem açúcar)", kcal: 1, prot: 0, carb: 0, fat: 0 },
+            { id: 27, name: "Whey Protein (Média Padrão)", kcal: 380, prot: 75.0, carb: 10.0, fat: 5.0 },
+            { id: 28, name: "Abacate, cru", kcal: 96, prot: 1.2, carb: 6.0, fat: 8.4 },
+            { id: 29, name: "Tomate, salada", kcal: 15, prot: 1.1, carb: 3.1, fat: 0.2 },
+            { id: 30, name: "Alface, crespa", kcal: 11, prot: 1.3, carb: 1.7, fat: 0.2 }
+        ];
+
+        // --- 1. CONFIG & UTILS ---
+        const $ = (id) => document.getElementById(id);
+        const getValue = (id) => { const v = $(id).value; return isNaN(v) ? v : Number(v); };
+        const setText = (id, text) => { if($(id)) $(id).textContent = text; };
+
+        // State for Diet Planner
+        let dietPlan = {
+            cafe: [], almoco: [], lanche: [], jantar: []
+        };
+        let currentBMR = 0;
+        let currentSourceMealForCopy = null;
+
+        // --- 2. CALCULATIONS (Legacy) ---
+        const calculateComposition = (data, folds, circs) => {
+            const { gender, age, weight, height } = data;
+            const heightM = height / 100;
+            const sumFolds = folds.chest + folds.axilla + folds.tricep + folds.subscapular + folds.abdomen + folds.suprailiac + folds.thigh;
+            
+            let bodyDensity = gender === 'male' 
+                ? 1.112 - (0.00043499 * sumFolds) + (0.00000055 * sumFolds * sumFolds) - (0.00028826 * age)
+                : 1.097 - (0.00046971 * sumFolds) + (0.00000056 * sumFolds * sumFolds) - (0.00012828 * age);
+
+            const bodyFatPercent = Math.max(0, ((4.95 / Math.max(0.9, Math.min(1.2, bodyDensity))) - 4.50) * 100);
+            const fatMass = weight * (bodyFatPercent / 100);
+            const residualMass = gender === 'male' ? weight * 0.241 : weight * 0.209;
+            const boneMass = gender === 'male' ? weight * 0.15 : weight * 0.13;
+            const muscleMass = Math.max(0, weight - fatMass - residualMass - boneMass);
+            const bmi = weight / (heightM * heightM);
+            
+            const minIdealWeight = 18.5 * (heightM * heightM);
+            const maxIdealWeight = 24.9 * (heightM * heightM);
+            
+            let idealBF = gender === 'male' ? (age < 30 ? 14 : 20) : (age < 30 ? 20 : 26); // Simplified
+
+            // BMR (Harris-Benedict simplified fallback or FAO)
+            let bmr = gender === 'male'
+                ? (10 * weight) + (6.25 * height) - (5 * age) + 5
+                : (10 * weight) + (6.25 * height) - (5 * age) - 161;
+
+            return {
+                bmi, bodyFatPercent, fatMass, residualMass, boneMass, muscleMass,
+                idealWeightRange: [minIdealWeight, maxIdealWeight],
+                basalMetabolicRate: bmr, idealBodyFatPercent: idealBF
+            };
+        };
+
+        // --- 3. UI GENERATORS ---
+        function generateRangeBar(label, value, unit, ideal, min=10, max=50) {
+             const percent = Math.min(Math.max(((value - min) / (max - min)) * 100, 0), 100);
+             return `<div class="flex items-center text-xs mb-2 group">
+                <div class="w-24 font-bold text-gray-700 text-right pr-2">${label}</div>
+                <div class="flex-grow h-3 bg-gray-200 rounded-full relative overflow-hidden">
+                    <div class="absolute h-full bg-gray-300 w-1/3 left-1/3"></div>
+                    <div class="bar-animate h-full bg-gray-600 rounded-full" style="width: ${percent}%"></div>
+                </div>
+                <div class="w-12 text-xs font-bold pl-2">${value.toFixed(1)}</div>
+             </div>`;
+        }
+
+        function generatePieChart(fat, muscle, residual, bone) {
+             // Simple SVG Pie Chart
+             const total = fat + muscle + residual + bone;
+             const pFat = (fat/total)*100, pMus = (muscle/total)*100, pRes = (residual/total)*100;
+             const c = 2 * Math.PI * 16;
+             return `<svg viewBox="0 0 50 50" class="w-32 h-32 transform -rotate-90">
+                <circle cx="25" cy="25" r="16" fill="transparent" stroke="#3b82f6" stroke-width="8" stroke-dasharray="100 100" />
+                <circle cx="25" cy="25" r="16" fill="transparent" stroke="#854d0e" stroke-width="8" stroke-dasharray="${(pFat+pRes+((bone/total)*100))/100 * c} 100" />
+                <circle cx="25" cy="25" r="16" fill="transparent" stroke="#9ca3af" stroke-width="8" stroke-dasharray="${(pFat+pRes)/100 * c} 100" />
+                <circle cx="25" cy="25" r="16" fill="transparent" stroke="#ef4444" stroke-width="8" stroke-dasharray="${(pFat/100) * c} 100" />
+             </svg>`;
+        }
+
+        // --- 4. DIET PLANNER LOGIC ---
+        function renderDietPlanner() {
+            const container = $('diet-meals-container');
+            container.innerHTML = '';
+            
+            const meals = [
+                { id: 'cafe', label: 'Café da Manhã' },
+                { id: 'almoco', label: 'Almoço' },
+                { id: 'lanche', label: 'Lanche' },
+                { id: 'jantar', label: 'Jantar' }
+            ];
+
+            let grandTotal = { kcal: 0, prot: 0, carb: 0, fat: 0 };
+
+            meals.forEach(meal => {
+                const foods = dietPlan[meal.id];
+                const mealTotal = foods.reduce((acc, f) => ({
+                    kcal: acc.kcal + f.calc.kcal, prot: acc.prot + f.calc.prot,
+                    carb: acc.carb + f.calc.carb, fat: acc.fat + f.calc.fat
+                }), { kcal: 0, prot: 0, carb: 0, fat: 0 });
+
+                // Update grand total
+                grandTotal.kcal += mealTotal.kcal;
+                grandTotal.prot += mealTotal.prot;
+                grandTotal.carb += mealTotal.carb;
+                grandTotal.fat += mealTotal.fat;
+
+                // Render Meal Section
+                const html = `
+                    <div class="border border-medical-200 rounded-lg overflow-hidden bg-white shadow-sm">
+                        <div class="bg-medical-100 px-4 py-2 flex justify-between items-center border-b border-medical-200">
+                            <h4 class="font-bold text-medical-800 uppercase text-xs tracking-wider flex items-center gap-2">
+                                ${meal.label}
+                                <button onclick="openCopyModal('${meal.id}', '${meal.label}')" class="text-medical-400 hover:text-primary-600 transition-colors p-1 rounded hover:bg-white no-print" title="Duplicar Refeição">
+                                    <i data-lucide="copy" width="12"></i>
+                                </button>
+                            </h4>
+                            <div class="text-[10px] font-bold text-medical-500">
+                                ${Math.round(mealTotal.kcal)} kcal 
+                                <span class="text-gray-300 mx-1">|</span> P: ${Math.round(mealTotal.prot)} C: ${Math.round(mealTotal.carb)} G: ${Math.round(mealTotal.fat)}
+                            </div>
+                        </div>
+                        <div class="p-0">
+                            ${foods.length === 0 
+                                ? '<div class="p-4 text-xs text-center text-gray-400 italic">Nenhum alimento adicionado.</div>' 
+                                : `<table class="w-full text-xs">
+                                    <tbody class="divide-y divide-gray-100">
+                                        ${foods.map((f, idx) => `
+                                            <tr class="group hover:bg-yellow-50 transition-colors">
+                                                <td class="py-2 px-4 font-medium text-gray-700">${f.name}</td>
+                                                <td class="py-2 px-2 text-right w-20">
+                                                    <div class="flex items-center justify-end gap-1 group/edit">
+                                                        <span class="text-gray-500">${f.qty}g</span>
+                                                        <button onclick="editFoodQty('${meal.id}', ${idx})" class="text-primary-300 hover:text-primary-600 opacity-0 group-hover/edit:opacity-100 transition-opacity no-print">
+                                                            <i data-lucide="pencil" width="10"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                                <td class="py-2 px-2 text-right font-bold text-gray-800 w-16">${Math.round(f.calc.kcal)}</td>
+                                                <td class="py-2 px-2 text-right w-8 no-print">
+                                                    <button onclick="removeFood('${meal.id}', ${idx})" class="text-red-400 hover:text-red-600 p-1"><i data-lucide="trash-2" width="14"></i></button>
+                                                </td>
+                                            </tr>
+                                        `).join('')}
+                                    </tbody>
+                                   </table>`
+                            }
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += html;
+            });
+
+            // Update Header Totals
+            setText('diet-total-cal', Math.round(grandTotal.kcal) + ' kcal');
+            setText('diet-total-prot', Math.round(grandTotal.prot));
+            setText('diet-total-carb', Math.round(grandTotal.carb));
+            setText('diet-total-fat', Math.round(grandTotal.fat));
+            
+            lucide.createIcons();
+        }
+
+        function addFoodToDiet(foodId, mealId, qty) {
+            const food = TACO_DB.find(f => f.id === foodId);
+            if (!food) return;
+
+            const ratio = qty / 100;
+            const item = {
+                id: food.id, // Store ID to allow recalculation
+                name: food.name,
+                qty: qty,
+                calc: {
+                    kcal: food.kcal * ratio,
+                    prot: food.prot * ratio,
+                    carb: food.carb * ratio,
+                    fat: food.fat * ratio
+                }
+            };
+            
+            dietPlan[mealId].push(item);
+            renderDietPlanner();
+        }
+
+        window.removeFood = (mealId, idx) => {
+            dietPlan[mealId].splice(idx, 1);
+            renderDietPlanner();
+        };
+
+        window.editFoodQty = (mealId, idx) => {
+            const item = dietPlan[mealId][idx];
+            const newQtyStr = prompt(`Nova quantidade para ${item.name} (g):`, item.qty);
+            const newQty = parseInt(newQtyStr);
+            
+            if (!isNaN(newQty) && newQty > 0) {
+                // Find base food data
+                const baseFood = TACO_DB.find(f => f.id === item.id);
+                if (baseFood) {
+                    const ratio = newQty / 100;
+                    item.qty = newQty;
+                    item.calc = {
+                        kcal: baseFood.kcal * ratio,
+                        prot: baseFood.prot * ratio,
+                        carb: baseFood.carb * ratio,
+                        fat: baseFood.fat * ratio
+                    };
+                    renderDietPlanner();
+                }
+            }
+        };
+
+        window.openCopyModal = (sourceId, sourceLabel) => {
+            currentSourceMealForCopy = sourceId;
+            setText('copy-source-name', sourceLabel);
+            $('copy-meal-modal').classList.remove('hidden');
+        };
+
+        window.confirmCopyMeal = (targetId) => {
+            if (!currentSourceMealForCopy || !dietPlan[currentSourceMealForCopy]) return;
+            
+            if (currentSourceMealForCopy === targetId) {
+                alert("A origem e o destino não podem ser iguais.");
+                return;
+            }
+
+            // Copy items
+            const sourceItems = dietPlan[currentSourceMealForCopy];
+            sourceItems.forEach(item => {
+                addFoodToDiet(item.id, targetId, item.qty);
+            });
+
+            $('copy-meal-modal').classList.add('hidden');
+            renderDietPlanner();
+        };
+
+        // --- 5. MAIN CONTROLLER ---
+        const handleFormSubmit = (e) => {
+            e.preventDefault();
+            const patientData = {
+                name: getValue('name'), age: getValue('age'), gender: getValue('gender'),
+                weight: getValue('weight'), height: getValue('height')
+            };
+            const skinfolds = {
+                chest: getValue('sf-chest'), axilla: getValue('sf-axilla'), tricep: getValue('sf-tricep'),
+                subscapular: getValue('sf-subscapular'), abdomen: getValue('sf-abdomen'),
+                suprailiac: getValue('sf-suprailiac'), thigh: getValue('sf-thigh')
+            };
+            // Detailed circumferences capture
+            const circs = {
+                neck: getValue('cf-neck') || 0, shoulder: getValue('cf-shoulder') || 0, chest: getValue('cf-chest') || 0,
+                abdomen: getValue('cf-abdomen') || 0, waist: getValue('cf-waist') || 0, hip: getValue('cf-hip') || 0,
+                armLeftRelaxed: getValue('cf-armLeftRelaxed') || 0, armRightRelaxed: getValue('cf-armRightRelaxed') || 0,
+                armLeftContracted: getValue('cf-armLeftContracted') || 0, armRightContracted: getValue('cf-armRightContracted') || 0,
+                forearmLeft: getValue('cf-forearmLeft') || 0, forearmRight: getValue('cf-forearmRight') || 0,
+                thighLeftProximal: getValue('cf-thighLeftProximal') || 0, thighRightProximal: getValue('cf-thighRightProximal') || 0,
+                thighLeftMedial: getValue('cf-thighLeftMedial') || 0, thighRightMedial: getValue('cf-thighRightMedial') || 0,
+                thighLeftDistal: getValue('cf-thighLeftDistal') || 0, thighRightDistal: getValue('cf-thighRightDistal') || 0,
+                calfLeft: getValue('cf-calfLeft') || 0, calfRight: getValue('cf-calfRight') || 0
+            };
+
+            // Calc
+            const res = calculateComposition(patientData, skinfolds, circs);
+            currentBMR = Math.round(res.basalMetabolicRate);
+
+            // Populate Report
+            setText('r-nutri-name', getValue('nutritionistName') || 'Avaliação');
+            setText('r-footer-nutri', getValue('nutritionistName') || 'Profissional');
+            setText('r-date', new Date().toLocaleDateString('pt-BR'));
+            setText('r-name', patientData.name);
+            setText('r-age-gender', `${patientData.age} anos | ${patientData.gender === 'male' ? 'M' : 'F'}`);
+            setText('r-weight', `${patientData.weight} kg`);
+            setText('r-bmr', currentBMR);
+            setText('r-bmr-header', currentBMR + ' kcal');
+            setText('diet-target-cal', currentBMR + ' kcal'); // Default target = BMR (can be changed logic)
+            setText('r-ideal-weight-range', `${res.idealWeightRange[0].toFixed(1)} - ${res.idealWeightRange[1].toFixed(1)} kg`);
+
+            // Charts
+            $('pie-chart-container').innerHTML = generatePieChart(res.fatMass, res.muscleMass, res.residualMass, res.boneMass);
+            setText('r-val-muscle', res.muscleMass.toFixed(1) + ' kg');
+            setText('r-val-fat', res.fatMass.toFixed(1) + ' kg');
+            setText('r-val-bone', res.boneMass.toFixed(1) + ' kg');
+            setText('r-val-residual', res.residualMass.toFixed(1) + ' kg');
+
+            setText('t-bf-curr', res.bodyFatPercent.toFixed(1) + '%');
+            setText('t-bf-ideal', '~' + res.idealBodyFatPercent + '%');
+            setText('t-fm-curr', res.fatMass.toFixed(1));
+            setText('t-fm-ideal', (patientData.weight * (res.idealBodyFatPercent/100)).toFixed(1));
+            setText('t-mm-curr', res.muscleMass.toFixed(1));
+
+            $('range-bars-container').innerHTML = 
+                generateRangeBar('IMC', res.bmi, '', 22, 15, 35) +
+                generateRangeBar('Gordura %', res.bodyFatPercent, '', res.idealBodyFatPercent, 5, 40);
+
+            // Populate Skinfolds
+            const sfLabels = { 
+                chest: 'Peitoral', axilla: 'Axilar Média', tricep: 'Tríceps', 
+                subscapular: 'Subescapular', abdomen: 'Abdomen', 
+                suprailiac: 'Supra-ilíaca', thigh: 'Coxa' 
+            };
+            $('r-skinfolds-grid').innerHTML = Object.entries(skinfolds).map(([key, value]) => `
+                <div class="bg-medical-50 rounded p-2 flex justify-between items-center border border-medical-100">
+                    <span class="text-[10px] font-bold text-medical-500 uppercase">${sfLabels[key]}</span>
+                    <span class="text-sm font-bold text-medical-800">${value}</span>
+                </div>
+            `).join('');
+
+            // Populate Circumferences Table
+            $('circumferences-table-body').innerHTML = `
+                <tr class="hover:bg-medical-50"><td class="py-1 px-2 font-medium">Braço Relaxado</td><td class="text-center text-gray-700">${circs.armLeftRelaxed||'-'}</td><td class="text-center text-gray-700">${circs.armRightRelaxed||'-'}</td></tr>
+                <tr class="hover:bg-medical-50"><td class="py-1 px-2 font-medium">Braço Contraído</td><td class="text-center text-gray-700">${circs.armLeftContracted||'-'}</td><td class="text-center text-gray-700">${circs.armRightContracted||'-'}</td></tr>
+                <tr class="hover:bg-medical-50"><td class="py-1 px-2 font-medium">Antebraço</td><td class="text-center text-gray-700">${circs.forearmLeft||'-'}</td><td class="text-center text-gray-700">${circs.forearmRight||'-'}</td></tr>
+                <tr class="bg-white"><td colspan="3" class="h-1"></td></tr>
+                <tr class="hover:bg-medical-50"><td class="py-1 px-2 font-medium">Coxa Proximal</td><td class="text-center text-gray-700">${circs.thighLeftProximal||'-'}</td><td class="text-center text-gray-700">${circs.thighRightProximal||'-'}</td></tr>
+                <tr class="hover:bg-medical-50"><td class="py-1 px-2 font-medium">Coxa Medial</td><td class="text-center text-gray-700">${circs.thighLeftMedial||'-'}</td><td class="text-center text-gray-700">${circs.thighRightMedial||'-'}</td></tr>
+                <tr class="hover:bg-medical-50"><td class="py-1 px-2 font-medium">Coxa Distal</td><td class="text-center text-gray-700">${circs.thighLeftDistal||'-'}</td><td class="text-center text-gray-700">${circs.thighRightDistal||'-'}</td></tr>
+                <tr class="hover:bg-medical-50"><td class="py-1 px-2 font-medium">Panturrilha</td><td class="text-center text-gray-700">${circs.calfLeft||'-'}</td><td class="text-center text-gray-700">${circs.calfRight||'-'}</td></tr>
+                <tr class="bg-white"><td colspan="3" class="h-1"></td></tr>
+                <tr class="bg-primary-50/50"><td class="py-1 px-2 font-bold text-primary-800" colspan="3">Tronco / Central</td></tr>
+                <tr class="hover:bg-medical-50"><td class="py-1 px-2 font-medium">Pescoço</td><td class="text-center text-gray-700" colspan="2">${circs.neck||'-'}</td></tr>
+                <tr class="hover:bg-medical-50"><td class="py-1 px-2 font-medium">Ombro</td><td class="text-center text-gray-700" colspan="2">${circs.shoulder||'-'}</td></tr>
+                <tr class="hover:bg-medical-50"><td class="py-1 px-2 font-medium">Tórax</td><td class="text-center text-gray-700" colspan="2">${circs.chest||'-'}</td></tr>
+                <tr class="hover:bg-medical-50"><td class="py-1 px-2 font-medium">Abdome</td><td class="text-center text-gray-700" colspan="2">${circs.abdomen||'-'}</td></tr>
+                <tr class="hover:bg-medical-50"><td class="py-1 px-2 font-medium">Cintura</td><td class="text-center text-gray-700" colspan="2">${circs.waist||'-'}</td></tr>
+                <tr class="hover:bg-medical-50"><td class="py-1 px-2 font-medium">Quadril</td><td class="text-center text-gray-700" colspan="2">${circs.hip||'-'}</td></tr>
+            `;
+
+            // Transition
+            $('form-view').classList.add('hidden');
+            $('report-view').classList.remove('hidden');
+            setTimeout(() => { 
+                $('report-view').style.opacity = '1';
+                renderDietPlanner(); // Init empty diet
+            }, 100);
+        };
+
+        const handleBack = () => {
+            $('report-view').style.opacity = '0';
+            setTimeout(() => {
+                $('report-view').classList.add('hidden');
+                $('form-view').classList.remove('hidden');
+            }, 500);
+        };
+
+        // --- 6. EVENT LISTENERS ---
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            $('calc-form').addEventListener('submit', handleFormSubmit);
+            $('btn-back').addEventListener('click', handleBack);
+            $('btn-print').addEventListener('click', () => window.print());
+
+            // Tabs
+            const tabAssess = $('tab-assess');
+            const tabDiet = $('tab-diet');
+            const contentAssess = $('content-assessment');
+            const contentDiet = $('content-diet');
+
+            const switchTab = (toDiet) => {
+                if(toDiet) {
+                    tabDiet.classList.replace('border-transparent', 'border-primary-400');
+                    tabDiet.classList.replace('text-gray-400', 'text-primary-300');
+                    tabAssess.classList.replace('border-primary-400', 'border-transparent');
+                    tabAssess.classList.replace('text-primary-300', 'text-gray-400');
+                    contentAssess.classList.add('hidden');
+                    contentDiet.classList.remove('hidden');
+                } else {
+                    tabAssess.classList.replace('border-transparent', 'border-primary-400');
+                    tabAssess.classList.replace('text-gray-400', 'text-primary-300');
+                    tabDiet.classList.replace('border-primary-400', 'border-transparent');
+                    tabDiet.classList.replace('text-primary-300', 'text-gray-400');
+                    contentDiet.classList.add('hidden');
+                    contentAssess.classList.remove('hidden');
+                }
+            };
+            
+            tabAssess.addEventListener('click', () => switchTab(false));
+            tabDiet.addEventListener('click', () => switchTab(true));
+
+            // Food Search Logic
+            const searchInput = $('food-search');
+            const resultsBox = $('food-search-results');
+            let selectedFoodId = null;
+
+            searchInput.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase();
+                if(term.length < 2) {
+                    resultsBox.classList.add('hidden');
+                    return;
+                }
+                const matches = TACO_DB.filter(f => f.name.toLowerCase().includes(term));
+                if(matches.length > 0) {
+                    resultsBox.innerHTML = matches.map(f => 
+                        `<div class="search-item" onclick="selectFood(${f.id}, '${f.name}')">
+                            <span class="font-bold">${f.name}</span> 
+                            <span class="text-xs text-gray-400 ml-2">(${f.kcal}kcal/100g)</span>
+                        </div>`
+                    ).join('');
+                    resultsBox.classList.remove('hidden');
+                } else {
+                    resultsBox.classList.add('hidden');
+                }
+            });
+
+            // Global function for onclick in HTML string
+            window.selectFood = (id, name) => {
+                selectedFoodId = id;
+                searchInput.value = name;
+                resultsBox.classList.add('hidden');
+            };
+
+            // Close search if clicked outside
+            document.addEventListener('click', (e) => {
+                if(!e.target.closest('#food-search-results') && e.target !== searchInput) {
+                    resultsBox.classList.add('hidden');
+                }
+            });
+
+            // Add Food Button
+            $('btn-add-food').addEventListener('click', () => {
+                if(!selectedFoodId) return alert("Selecione um alimento da lista");
+                const qty = getValue('food-qty');
+                const meal = $('food-meal-select').value;
+                if(qty <= 0) return alert("Quantidade inválida");
+
+                addFoodToDiet(selectedFoodId, meal, qty);
+                
+                // Reset fields
+                searchInput.value = '';
+                selectedFoodId = null;
+                $('food-qty').value = '100';
+            });
+        });
+    </script>
+</body>
+</html>
