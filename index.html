@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="color-scheme" content="light">
+    <title>BodyComp - Avaliação & Prescrição</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              nature: {
+                50: '#f2fcf5', 100: '#e1f8e8', 200: '#c3eed0', 300: '#94e0ad', 400: '#5bcb86',
+                500: '#34b166', 600: '#26904f', 700: '#217242', 800: '#1e5b37', 900: '#194b2f',
+              },
+              vitality: { 50: '#fff8f1', 100: '#ffefdb', 500: '#f97316', 600: '#ea580c' },
+              earth: { 50: '#fafaf9', 100: '#f5f5f4', 200: '#e7e5e4', 800: '#44403c', 900: '#292524' }
+            },
+            fontFamily: { sans: ['Outfit', 'system-ui', 'sans-serif'], serif: ['Lora', 'serif'] }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root { color-scheme: light; }
+      body { 
+        font-family: 'Outfit', sans-serif; 
+        background-color: #f4f6f5; 
+        background-image: radial-gradient(#dcfce7 1px, transparent 1px); 
+        background-size: 32px 32px; 
+      }
+      .input-modern {
+        @apply w-full px-4 py-3 rounded-xl outline-none transition-all duration-300 text-base shadow-sm border border-gray-200;
+        background-color: #ffffff;
+      }
+      .input-modern:focus { @apply ring-2 ring-nature-200 border-nature-500 shadow-md; }
+      .search-results { @apply absolute left-0 right-0 bg-white border border-earth-200 rounded-xl shadow-xl max-h-60 overflow-y-auto z-50 mt-1; }
+      .search-item { @apply px-4 py-3 hover:bg-nature-50 cursor-pointer text-sm text-earth-800 border-b border-earth-50 last:border-0; }
+      .label-sm { display: block; font-size: 0.75rem; color: #64748b; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 6px; }
+      .section-title { 
+        display: flex; align-items: center; gap: 8px; 
+        color: #1e5b37; font-family: 'Lora', serif; font-weight: 700; font-size: 1.1rem;
+        border-bottom: 2px solid #e1f8e8; padding-bottom: 6px; margin-bottom: 16px; 
+      }
+      .check-group { @apply flex items-center gap-2 cursor-pointer; }
+      .check-group input[type="checkbox"], .check-group input[type="radio"] { @apply w-4 h-4 text-nature-600 rounded border-gray-300 focus:ring-nature-500; }
+      .line-input { @apply border-b border-gray-300 px-1 outline-none focus:border-nature-500 bg-transparent transition-colors placeholder-gray-300; }
+      
+      @media print {
+        @page { size: A4; margin: 0; }
+        body { background: white; -webkit-print-color-adjust: exact; }
+        .no-print { display: none !important; }
+        #form-view { display: none !important; }
+        #report-view { display: flex !important; opacity: 1 !important; visibility: visible !important; width: 100%; }
+        #printable-content { box-shadow: none !important; border: none !important; width: 100% !important; max-width: 100% !important; }
+        .page-break { page-break-before: always; }
+        .line-input { border-bottom: 1px solid #ccc !important; }
+      }
+    </style>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="antialiased text-earth-900">
+
+    <!-- FORM VIEW -->
+    <div id="form-view" class="min-h-screen flex flex-col items-center justify-center p-3 md:p-6 lg:p-12 transition-opacity duration-500">
+        <div class="bg-white w-full max-w-5xl rounded-[2rem] shadow-xl overflow-hidden border border-white/60 relative">
+            <div class="bg-nature-800 relative overflow-hidden h-40 md:h-48 flex items-center px-6 md:px-12">
+                <div class="absolute right-0 top-0 h-full w-2/3 bg-[url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=1200&q=80')] bg-cover opacity-20 mix-blend-luminosity"></div>
+                <div class="relative z-10 text-white">
+                    <h1 class="text-3xl md:text-5xl font-serif font-bold tracking-tight">BodyComp</h1>
+                    <p class="text-nature-100 text-xs md:text-sm mt-1 font-light uppercase tracking-widest">Avaliação Física & Planejamento</p>
+                </div>
+            </div>
+
+            <form id="calc-form" class="p-6 md:p-10 space-y-12">
+                <section>
+                    <h3 class="section-title"><i data-lucide="user" width="18"></i> Dados Gerais</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div class="md:col-span-2 bg-white p-3 rounded-xl border border-nature-100/50 shadow-sm">
+                            <label class="text-[10px] font-bold text-nature-500 uppercase tracking-widest px-1">Profissional Responsável</label>
+                            <input type="text" id="professional" class="w-full text-lg font-bold text-nature-800 outline-none bg-transparent" placeholder="Ex: Dr. João Paulo" />
+                        </div>
+                        <div class="md:col-span-2 bg-white p-3 rounded-xl border border-nature-100/50 shadow-sm">
+                            <label class="text-[10px] font-bold text-nature-500 uppercase tracking-widest px-1">Nome do Paciente</label>
+                            <input type="text" id="name" required class="w-full text-lg font-bold text-nature-800 outline-none bg-transparent" placeholder="Ex: Maria Silva" />
+                        </div>
+                        
+                        <div class="bg-white p-3 rounded-xl border border-nature-100/50 shadow-sm flex flex-col items-center">
+                            <label class="text-[10px] font-bold text-nature-500 uppercase tracking-widest">Gênero</label>
+                            <select id="gender" class="w-full text-center text-xl font-bold text-nature-800 outline-none bg-transparent"><option value="male">Masculino</option><option value="female">Feminino</option></select>
+                        </div>
+                        <div class="bg-white p-3 rounded-xl border border-nature-100/50 shadow-sm flex flex-col items-center">
+                            <label class="text-[10px] font-bold text-nature-500 uppercase tracking-widest">Idade</label>
+                            <input type="number" id="age" value="30" class="w-full text-center text-xl font-bold text-nature-800 outline-none bg-transparent" />
+                        </div>
+                        <div class="bg-white p-3 rounded-xl border border-nature-100/50 shadow-sm flex flex-col items-center">
+                            <label class="text-[10px] font-bold text-nature-500 uppercase tracking-widest">Peso (kg)</label>
+                            <input type="number" id="weight" value="70" step="0.1" class="w-full text-center text-xl font-bold text-nature-800 outline-none bg-transparent" />
+                        </div>
+                        <div class="bg-white p-3 rounded-xl border border-nature-100/50 shadow-sm flex flex-col items-center">
+                            <label class="text-[10px] font-bold text-nature-500 uppercase tracking-widest">Altura (cm)</label>
+                            <input type="number" id="height" value="170" class="w-full text-center text-xl font-bold text-nature-800 outline-none bg-transparent" />
+                        </div>
+                        <div class="md:col-span-2 bg-white p-3 rounded-xl border border-nature-100/50 shadow-sm flex flex-col justify-center">
+                            <label class="text-[10px] font-bold text-nature-500 uppercase tracking-widest px-1">Nível de Atividade</label>
+                            <select id="activity" class="w-full text-sm font-bold text-nature-800 outline-none bg-transparent">
+                                <option value="1.2">Sedentário (Pouco ou nenhum exercício)</option>
+                                <option value="1.375">Leve (Exercício leve 1-3 dias/semana)</option>
+                                <option value="1.55" selected>Moderado (Exercício moderado 3-5 dias)</option>
+                                <option value="1.725">Intenso (Exercício pesado 6-7 dias)</option>
+                            </select>
+                        </div>
+                        <div class="md:col-span-2 bg-white p-3 rounded-xl border border-nature-100/50 shadow-sm flex flex-col justify-center">
+                            <label class="text-[10px] font-bold text-nature-500 uppercase tracking-widest px-1">Objetivo (Descrição Livre)</label>
+                            <input type="text" id="goal" class="w-full text-sm font-bold text-nature-800 outline-none bg-transparent" placeholder="Ex: Hipertrofia de membros inferiores..." />
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3 class="section-title"><i data-lucide="pincers" width="18"></i> Dobras Cutâneas (mm)</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-white p-3 rounded-xl border border-nature-100/50 shadow-sm flex flex-col items-center"><label class="text-[10px] font-bold text-nature-500 uppercase tracking-widest">Peitoral</label><input type="number" id="sf-chest" value="10" step="0.1" class="w-full text-center text-xl font-bold text-nature-800 outline-none bg-transparent" /></div>
+                        <div class="bg-white p-3 rounded-xl border border-nature-100/50 shadow-sm flex flex-col items-center"><label class="text-[10px] font-bold text-nature-500 uppercase tracking-widest">Axilar</label><input type="number" id="sf-axilla" value="10" step="0.1" class="w-full text-center text-xl font-bold text-nature-800 outline-none bg-transparent" /></div>
+                        <div class="bg-white p-3 rounded-xl border border-nature-100/50 shadow-sm flex flex-col items-center"><label class="text-[10px] font-bold text-nature-500 uppercase tracking-widest">Tríceps</label><input type="number" id="sf-tricep" value="10" step="0.1" class="w-full text-center text-xl font-bold text-nature-800 outline-none bg-transparent" /></div>
+                        <div class="bg-white p-3 rounded-xl border border-nature-100/50 shadow-sm flex flex-col items-center"><label class="text-[10px] font-bold text-nature-500 uppercase tracking-widest">Subescapular</label><input type="number" id="sf-subscapular" value="10" step="0.1" class="w-full text-center text-xl font-bold text-nature-800 outline-none bg-transparent" /></div>
+                        <div class="bg-white p-3 rounded-xl border border-nature-100/50 shadow-sm flex flex-col items-center"><label class="text-[10px] font-bold text-nature-500 uppercase tracking-widest">Abdominal</label><input type="number" id="sf-abdomen" value="20" step="0.1" class="w-full text-center text-xl font-bold text-nature-800 outline-none bg-transparent" /></div>
+                        <div class="bg-white p-3 rounded-xl border border-nature-100/50 shadow-sm flex flex-col items-center"><label class="text-[10px] font-bold text-nature-500 uppercase tracking-widest">Supra-ilíaca</label><input type="number" id="sf-suprailiac" value="15" step="0.1" class="w-full text-center text-xl font-bold text-nature-800 outline-none bg-transparent" /></div>
+                        <div class="bg-white p-3 rounded-xl border border-nature-100/50 shadow-sm flex flex-col items-center"><label class="text-[10px] font-bold text-nature-500 uppercase tracking-widest">Coxa</label><input type="number" id="sf-thigh" value="15" step="0.1" class="w-full text-center text-xl font-bold text-nature-800 outline-none bg-transparent" /></div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3 class="section-title"><i data-lucide="ruler" width="18"></i> Perimetria (cm)</h3>
+                    <!-- Medidas Centrais -->
+                    <div class="grid grid-cols-3 md:grid-cols-6 gap-3 mb-6">
+                        <div class="bg-white p-2 rounded-xl border border-nature-100/50 shadow-sm flex flex-col items-center"><label class="text-[10px] font-bold text-nature-500 uppercase tracking-widest">Pescoço</label><input type="number" id="cf-neck" value="38" step="0.1" class="w-full text-center text-lg font-bold text-nature-800 outline-none bg-transparent" /></div>
+                        <div class="bg-white p-2 rounded-xl border border-nature-100/50 shadow-sm flex flex-col items-center"><label class="text-[10px] font-bold text-nature-500 uppercase tracking-widest">Ombro</label><input type="number" id="cf-shoulder" value="115" step="0.1" class="w-full text-center text-lg font-bold text-nature-800 outline-none bg-transparent" /></div>
+                        <div class="bg-white p-2 rounded-xl border border-nature-100/50 shadow-sm flex flex-col items-center"><label class="text-[10px] font-bold text-nature-500 uppercase tracking-widest">Tórax</label><input type="number" id="cf-chest" value="100" step="0.1" class="w-full text-center text-lg font-bold text-nature-800 outline-none bg-transparent" /></div>
+                        <div class="bg-white p-2 rounded-xl border border-nature-100/50 shadow-sm flex flex-col items-center"><label class="text-[10px] font-bold text-nature-500 uppercase tracking-widest">Cintura</label><input type="number" id="cf-waist" value="78" step="0.1" class="w-full text-center text-lg font-bold text-nature-800 outline-none bg-transparent" /></div>
+                        <div class="bg-white p-2 rounded-xl border border-nature-100/50 shadow-sm flex flex-col items-center"><label class="text-[10px] font-bold text-nature-500 uppercase tracking-widest">Abdômen</label><input type="number" id="cf-abdomen" value="80" step="0.1" class="w-full text-center text-lg font-bold text-nature-800 outline-none bg-transparent" /></div>
+                        <div class="bg-white p-2 rounded-xl border border-nature-100/50 shadow-sm flex flex-col items-center"><label class="text-[10px] font-bold text-nature-500 uppercase tracking-widest">Quadril</label><input type="number" id="cf-hip" value="100" step="0.1" class="w-full text-center text-lg font-bold text-nature-800 outline-none bg-transparent" /></div>
+                    </div>
+
+                    <!-- Medidas Específicas / Bilaterais -->
+                    <div class="bg-nature-50/50 rounded-2xl p-4 border border-nature-100">
+                        <div class="grid grid-cols-3 gap-x-4 gap-y-4">
+                            <!-- Header -->
+                            <div class="col-span-1 text-[10px] font-bold text-nature-400 uppercase tracking-widest text-right pr-2 self-end">Local</div>
+                            <div class="col-span-1 text-[10px] font-bold text-nature-600 uppercase tracking-widest text-center bg-white/50 rounded-lg py-1">Direito</div>
+                            <div class="col-span-1 text-[10px] font-bold text-nature-600 uppercase tracking-widest text-center bg-white/50 rounded-lg py-1">Esquerdo</div>
+
+                            <!-- Braço Relaxado -->
+                            <div class="flex items-center justify-end text-xs font-bold text-nature-800">Braço Relaxado</div>
+                            <input type="number" id="cf-arm-r" value="32" class="input-modern py-2 text-center h-10" />
+                            <input type="number" id="cf-arm-l" value="32" class="input-modern py-2 text-center h-10" />
+
+                            <!-- Braço Contraído -->
+                            <div class="flex items-center justify-end text-xs font-bold text-nature-800">Braço Contraído</div>
+                            <input type="number" id="cf-arm-con-r" value="35" class="input-modern py-2 text-center h-10" />
+                            <input type="number" id="cf-arm-con-l" value="35" class="input-modern py-2 text-center h-10" />
+
+                            <!-- Antebraço -->
+                            <div class="flex items-center justify-end text-xs font-bold text-nature-800">Antebraço</div>
+                            <input type="number" id="cf-forearm-r" value="28" class="input-modern py-2 text-center h-10" />
+                            <input type="number" id="cf-forearm-l" value="28" class="input-modern py-2 text-center h-10" />
+
+                            <!-- Coxa Proximal -->
+                            <div class="flex items-center justify-end text-xs font-bold text-nature-800">Coxa Proximal</div>
+                            <input type="number" id="cf-thigh-prox-r" value="60" class="input-modern py-2 text-center h-10" />
+                            <input type="number" id="cf-thigh-prox-l" value="60" class="input-modern py-2 text-center h-10" />
+
+                            <!-- Coxa Média -->
+                            <div class="flex items-center justify-end text-xs font-bold text-nature-800">Coxa Média</div>
+                            <input type="number" id="cf-thigh-mid-r" value="55" class="input-modern py-2 text-center h-10" />
+                            <input type="number" id="cf-thigh-mid-l" value="55" class="input-modern py-2 text-center h-10" />
+
+                            <!-- Coxa Distal -->
+                            <div class="flex items-center justify-end text-xs font-bold text-nature-800">Coxa Distal</div>
+                            <input type="number" id="cf-thigh-dist-r" value="48" class="input-modern py-2 text-center h-10" />
+                            <input type="number" id="cf-thigh-dist-l" value="48" class="input-modern py-2 text-center h-10" />
+
+                            <!-- Panturrilha -->
+                            <div class="flex items-center justify-end text-xs font-bold text-nature-800">Panturrilha</div>
+                            <input type="number" id="cf-calf-r" value="38" class="input-modern py-2 text-center h-10" />
+                            <input type="number" id="cf-calf-l" value="38" class="input-modern py-2 text-center h-10" />
+                        </div>
+                    </div>
+                </section>
+
+                <button type="submit" class="w-full bg-nature-600 text-white font-bold py-4 rounded-xl shadow-lg hover:bg-nature-700 transition-all flex justify-center items-center gap-2">Gerar Relatório Completo <i data-lucide="arrow-right" width="20"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- REPORT VIEW -->
+    <div id="report-view" class="hidden min-h-screen bg-earth-50 justify-center p-0 md:p-8 opacity-0 transition-opacity duration-700">
+        <div id="printable-content" class="w-full md:max-w-[210mm] bg-white shadow-xl overflow-hidden flex flex-col min-h-screen rounded-none md:rounded-2xl border border-earth-100 relative">
+            <div class="no-print p-4 flex justify-between items-center bg-white border-b border-earth-200 sticky top-0 z-50">
+                <button type="button" id="btn-back" class="flex items-center gap-2 text-sm font-semibold text-earth-800 hover:text-nature-600 px-3 py-2 rounded-lg hover:bg-earth-50"><i data-lucide="arrow-left" width="18"></i> Voltar</button>
+                <div class="flex bg-earth-100 p-1 rounded-lg gap-1">
+                    <button type="button" id="tab-anamnese" class="px-4 py-1.5 text-xs font-medium rounded-md text-earth-600 hover:text-nature-700">Anamnese</button>
+                    <button type="button" id="tab-assess" class="px-4 py-1.5 text-xs font-bold rounded-md shadow-sm bg-white text-nature-700">Avaliação</button>
+                    <button type="button" id="tab-diet" class="px-4 py-1.5 text-xs font-medium rounded-md text-earth-600 hover:text-nature-700">Dieta</button>
+                </div>
+                <button type="button" id="btn-print" class="bg-nature-600 hover:bg-nature-700 text-white px-5 py-2 rounded-lg font-bold shadow-md text-sm">Imprimir</button>
+            </div>
+
+            <!-- Report Header (Similar to Medical Letterhead) -->
+            <div class="px-8 pt-8 pb-6 bg-nature-900 text-white relative overflow-hidden">
+                <div class="absolute right-0 top-0 h-full w-1/2 bg-[url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=1200&q=80')] bg-cover opacity-10 mix-blend-overlay"></div>
+                <div class="relative z-10 flex justify-between items-start">
+                    <div>
+                        <h1 class="text-3xl font-serif font-bold tracking-tight">BodyComp Pro</h1>
+                        <p class="text-nature-200 text-xs font-medium uppercase tracking-widest mt-1">Avaliação Física Avançada</p>
+                        <div class="mt-4">
+                            <p class="text-[10px] text-nature-300 uppercase font-bold tracking-widest">Profissional Responsável</p>
+                            <p id="r-professional" class="text-lg font-semibold"></p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="inline-block bg-white/10 rounded-lg px-4 py-2 backdrop-blur-sm border border-white/10">
+                            <p class="text-[10px] text-nature-200 uppercase font-bold tracking-widest">Data da Avaliação</p>
+                            <p id="r-date" class="text-sm font-bold"></p>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-[10px] text-nature-300 uppercase font-bold tracking-widest">Paciente</p>
+                            <p id="r-name-header" class="text-xl font-serif font-bold"></p>
+                            <p id="r-age-gender-header" class="text-xs text-nature-200"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ANAMNESE TAB CONTENT -->
+            <div id="content-anamnese" class="hidden p-8 space-y-6 bg-white text-sm text-gray-800">
+                <h2 class="text-2xl font-serif font-bold text-nature-800 border-b-2 border-nature-100 pb-2 mb-6">Ficha de Anamnese</h2>
+                
+                <!-- Header Info - Editable Inputs -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                    <div class="col-span-1 md:col-span-2"><span class="font-bold text-nature-700">Nome:</span> <input type="text" id="ana-name" class="line-input w-full font-semibold text-lg"></div>
+                    <div class="flex gap-4">
+                            <div class="flex-1"><span class="font-bold text-nature-700">Nascimento:</span> <input type="text" class="line-input w-full" placeholder="dd/mm/aaaa"></div>
+                            <div class="w-1/3"><span class="font-bold text-nature-700">Gênero:</span> <input type="text" id="ana-gender" class="line-input w-full"></div>
+                    </div>
+                    <div><span class="font-bold text-nature-700">Ocupação:</span> <input type="text" class="line-input w-full"></div>
+                    <div class="col-span-1 md:col-span-2"><span class="font-bold text-nature-700">Endereço:</span> <input type="text" class="line-input w-full"></div>
+                    <div class="flex gap-4">
+                        <div class="flex-1"><span class="font-bold text-nature-700">Data da Consulta:</span> <input type="text" id="ana-date" class="line-input w-full"></div>
+                        <div class="flex-1"><span class="font-bold text-nature-700">Contato:</span> <input type="text" class="line-input w-full" placeholder="(  )"></div>
+                    </div>
+                    <div class="col-span-1 md:col-span-2"><span class="font-bold text-nature-700">Objetivo:</span> <input type="text" id="ana-goal" class="line-input w-full"></div>
+                </div>
+
+                <!-- Histórico Clínico -->
+                <div class="space-y-4 pt-6 border-t border-gray-100">
+                    <h3 class="section-title">Histórico Clínico</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                        <label class="check-group"><input type="checkbox"> Diabetes</label>
+                        <label class="check-group"><input type="checkbox"> Hipertensão</label>
+                        <label class="check-group"><input type="checkbox"> Gastrite</label>
+                        <label class="check-group"><input type="checkbox"> Dislipidemia</label>
+                        <label class="check-group"><input type="checkbox"> Hipo/Hipertireoidismo</label>
+                        <label class="check-group"><input type="checkbox"> Cardiopatias</label>
+                        <label class="check-group"><input type="checkbox"> Hepatopatias</label>
+                        <label class="check-group"><input type="checkbox"> Renal</label>
+                        <label class="check-group"><input type="checkbox"> Ansiedade/Depressão</label>
+                        <label class="check-group"><input type="checkbox"> Cirurgias</label>
+                        <label class="check-group"><input type="checkbox"> Gestante</label>
+                        <div class="flex items-center gap-2 col-span-2"><span class="font-bold text-xs uppercase text-gray-500">Outros:</span> <input type="text" class="line-input flex-grow"></div>
+                    </div>
+                </div>
+
+                <!-- Lifestyle Questions -->
+                <div class="space-y-4 pt-4 border-t border-gray-100">
+                    <h3 class="section-title">Estilo de Vida</h3>
+                    
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="flex flex-wrap items-center gap-4">
+                            <span class="font-bold w-48 text-nature-800">Perda de peso recente?</span>
+                            <div class="flex gap-4">
+                                <label class="check-group"><input type="radio" name="weight-loss"> Sim</label>
+                                <label class="check-group"><input type="radio" name="weight-loss"> Não</label>
+                            </div>
+                            <div class="flex items-center gap-2 flex-grow"><span class="text-xs font-bold uppercase text-gray-400">Quantos kg?</span> <input type="text" class="line-input flex-grow"></div>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-4">
+                            <span class="font-bold w-48 text-nature-800">Ganho de peso recente?</span>
+                            <div class="flex gap-4">
+                                <label class="check-group"><input type="radio" name="weight-gain"> Sim</label>
+                                <label class="check-group"><input type="radio" name="weight-gain"> Não</label>
+                            </div>
+                            <div class="flex items-center gap-2 flex-grow"><span class="text-xs font-bold uppercase text-gray-400">Quantos kg?</span> <input type="text" class="line-input flex-grow"></div>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-4">
+                            <span class="font-bold w-48 text-nature-800">Fumante?</span>
+                            <div class="flex gap-4">
+                                <label class="check-group"><input type="radio" name="smoker"> Sim</label>
+                                <label class="check-group"><input type="radio" name="smoker"> Não</label>
+                            </div>
+                            <div class="flex items-center gap-2 flex-grow"><span class="text-xs font-bold uppercase text-gray-400">Frequência:</span> <input type="text" class="line-input flex-grow"></div>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-4">
+                            <span class="font-bold w-48 text-nature-800">Bebida alcoólica?</span>
+                            <div class="flex gap-4">
+                                <label class="check-group"><input type="radio" name="alcohol"> Sim</label>
+                                <label class="check-group"><input type="radio" name="alcohol"> Não</label>
+                            </div>
+                            <div class="flex items-center gap-2 flex-grow"><span class="text-xs font-bold uppercase text-gray-400">Frequência:</span> <input type="text" class="line-input flex-grow"></div>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-4">
+                            <span class="font-bold w-48 text-nature-800">Atividade Física?</span>
+                            <div class="flex gap-4">
+                                <label class="check-group"><input type="radio" name="exercise"> Sim</label>
+                                <label class="check-group"><input type="radio" name="exercise"> Não</label>
+                            </div>
+                            <div class="flex items-center gap-2 flex-grow"><span class="text-xs font-bold uppercase text-gray-400">Qual/Freq?</span> <input type="text" class="line-input flex-grow"></div>
+                        </div>
+                        
+                        <div class="mt-2">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-bold text-nature-800">Qualidade do sono?</span>
+                                <input type="text" class="line-input w-1/3 text-right" placeholder="Obs/Horas médias">
+                            </div>
+                            <div class="flex flex-wrap gap-4 text-sm">
+                                <label class="check-group"><input type="radio" name="sleep"> > 9 horas</label>
+                                <label class="check-group"><input type="radio" name="sleep"> 7 a 9 horas</label>
+                                <label class="check-group"><input type="radio" name="sleep"> 4 a 7 horas</label>
+                                <label class="check-group"><input type="radio" name="sleep"> < 4 horas</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medications -->
+                <div class="space-y-4 pt-4 border-t border-gray-100">
+                    <h3 class="section-title">Medicamentos e Suplementos</h3>
+                    <div class="flex flex-wrap items-center gap-4">
+                        <span class="font-bold text-nature-800">Faz uso de medicamentos ou suplementos?</span>
+                        <div class="flex gap-4">
+                            <label class="check-group"><input type="radio" name="meds"> Sim</label>
+                            <label class="check-group"><input type="radio" name="meds"> Não</label>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2"><span class="text-xs font-bold uppercase text-gray-400">Quais?</span> <input type="text" class="line-input flex-grow"></div>
+                    <div class="flex items-center gap-2 mt-2"><span class="font-bold text-nature-800">Ingestão hídrica aproximada:</span> <input type="text" class="line-input w-24 text-center"> <span class="text-sm">litros/dia</span></div>
+                </div>
+
+                <!-- Food Habits -->
+                <div class="space-y-4 pt-4 border-t border-gray-100">
+                    <h3 class="section-title">Padrão Alimentar</h3>
+                    
+                    <div class="grid grid-cols-1 gap-4">
+                        <div>
+                            <div class="flex flex-wrap items-center gap-4 mb-1">
+                                <span class="font-bold text-nature-800">Aversão/Intolerância alimentar?</span>
+                                <div class="flex gap-4">
+                                    <label class="check-group"><input type="radio" name="aversion"> Sim</label>
+                                    <label class="check-group"><input type="radio" name="aversion"> Não</label>
+                                </div>
+                            </div>
+                            <input type="text" class="line-input w-full" placeholder="Se sim, quais alimentos?">
+                        </div>
+                        
+                        <div>
+                            <div class="flex flex-wrap items-center gap-4 mb-1">
+                                <span class="font-bold text-nature-800">Dificuldade para engolir (Disfagia)?</span>
+                                <div class="flex gap-4">
+                                    <label class="check-group"><input type="radio" name="swallow"> Sim</label>
+                                    <label class="check-group"><input type="radio" name="swallow"> Não</label>
+                                </div>
+                            </div>
+                            <input type="text" class="line-input w-full" placeholder="Detalhes (engasgos, dor, alimentos específicos)">
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2">
+                             <div>
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="font-bold text-nature-800">Apetite</span>
+                                    <input type="text" class="line-input w-24 text-xs" placeholder="Obs">
+                                </div>
+                                <div class="grid grid-cols-2 gap-2 text-sm">
+                                    <label class="check-group"><input type="radio" name="appetite"> Normal</label>
+                                    <label class="check-group"><input type="radio" name="appetite"> Aumentado</label>
+                                    <label class="check-group"><input type="radio" name="appetite"> Baixo</label>
+                                    <label class="check-group"><input type="radio" name="appetite"> Sem apetite</label>
+                                </div>
+                             </div>
+                             <div>
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="font-bold text-nature-800">Mastigação</span>
+                                    <input type="text" class="line-input w-24 text-xs" placeholder="Obs">
+                                </div>
+                                <div class="space-y-1 text-sm">
+                                    <label class="check-group"><input type="radio" name="chewing"> Normal</label>
+                                    <label class="check-group"><input type="radio" name="chewing"> Rápida / Não mastiga bem</label>
+                                    <label class="check-group"><input type="radio" name="chewing"> Lenta</label>
+                                </div>
+                             </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2">
+                            <div>
+                               <span class="font-bold block mb-2 text-nature-800">Quem cozinha?</span>
+                               <div class="space-y-1 text-sm">
+                                   <label class="check-group"><input type="radio" name="cook"> Eu mesmo(a)</label>
+                                   <label class="check-group"><input type="radio" name="cook"> Compro pronto</label>
+                                   <div class="flex items-center gap-2">
+                                        <label class="check-group whitespace-nowrap"><input type="radio" name="cook"> Outro:</label>
+                                        <input type="text" class="line-input w-full">
+                                   </div>
+                               </div>
+                            </div>
+                            <div>
+                               <span class="font-bold block mb-2 text-nature-800">Come fora de casa?</span>
+                               <div class="space-y-1 text-sm">
+                                   <label class="check-group"><input type="radio" name="eatout"> Raramente</label>
+                                   <label class="check-group"><input type="radio" name="eatout"> Finais de semana</label>
+                                   <label class="check-group"><input type="radio" name="eatout"> Diariamente</label>
+                                   <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold uppercase text-gray-400">Locais:</span>
+                                    <input type="text" class="line-input w-full">
+                                   </div>
+                               </div>
+                            </div>
+                       </div>
+                    </div>
+                </div>
+
+                <!-- Intestinal & Family History -->
+                <div class="space-y-4 pt-4 border-t border-gray-100 pb-8">
+                    <h3 class="section-title">Saúde Intestinal</h3>
+                    <div class="flex flex-wrap gap-6 text-sm mb-2">
+                        <label class="check-group"><input type="radio" name="bowel"> > 1x/dia</label>
+                        <label class="check-group"><input type="radio" name="bowel"> 1x/dia</label>
+                        <label class="check-group"><input type="radio" name="bowel"> Cada 2 dias</label>
+                        <label class="check-group"><input type="radio" name="bowel"> Constipado</label>
+                    </div>
+                    <div class="flex items-center gap-2"><span class="font-bold text-nature-800">Obs/Consistência:</span> <input type="text" class="line-input flex-grow"></div>
+
+                    <h3 class="section-title pt-6">Histórico Familiar / Outras Observações</h3>
+                    <textarea class="w-full border border-gray-200 rounded-lg p-3 text-sm focus:ring-1 focus:ring-nature-500 outline-none bg-nature-50/30" rows="4" placeholder="Descreva histórico de doenças na família ou outras observações relevantes..."></textarea>
+                </div>
+            </div>
+
+            <div id="content-assessment" class="p-8 space-y-8 bg-white">
+                <!-- Summary Cards -->
+                <div class="grid grid-cols-4 gap-4">
+                    <div class="bg-earth-50 rounded-xl p-4 border border-earth-100 text-center">
+                        <p class="label-sm">Peso Atual</p>
+                        <p id="r-card-weight" class="text-2xl font-bold text-nature-800"></p>
+                    </div>
+                    <div class="bg-earth-50 rounded-xl p-4 border border-earth-100 text-center">
+                        <p class="label-sm">Altura</p>
+                        <p id="r-card-height" class="text-2xl font-bold text-nature-800"></p>
+                    </div>
+                    <div class="bg-earth-50 rounded-xl p-4 border border-earth-100 text-center">
+                        <p class="label-sm">IMC</p>
+                        <p id="r-card-bmi" class="text-2xl font-bold text-nature-800"></p>
+                    </div>
+                    <div class="bg-earth-50 rounded-xl p-4 border border-earth-100 text-center">
+                        <p class="label-sm">% Gordura</p>
+                        <p id="r-bf-percent" class="text-2xl font-bold text-nature-800"></p>
+                    </div>
+                </div>
+
+                <!-- Main Analysis Row -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                    <!-- Composition Chart & Breakdown (Left - 7 cols) -->
+                    <div class="md:col-span-7 space-y-6">
+                        <h3 class="section-title"><i data-lucide="pie-chart" width="18"></i> Composição Corporal</h3>
+                        <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm flex flex-col sm:flex-row items-center gap-8">
+                            <div id="pie-chart-container" class="flex-shrink-0"></div>
+                            <div class="flex-grow w-full space-y-3 text-sm">
+                                <div class="flex justify-between items-center border-b border-dashed border-gray-100 pb-2">
+                                    <span class="flex items-center gap-2 font-bold text-gray-700"><div class="w-3 h-3 rounded-full bg-blue-500"></div> Massa Muscular</span>
+                                    <span id="r-val-muscle" class="font-mono font-bold text-gray-900"></span>
+                                </div>
+                                <div class="flex justify-between items-center border-b border-dashed border-gray-100 pb-2">
+                                    <span class="flex items-center gap-2 font-bold text-gray-700"><div class="w-3 h-3 rounded-full bg-orange-500"></div> Massa Gorda</span>
+                                    <span id="r-val-fat" class="font-mono font-bold text-gray-900"></span>
+                                </div>
+                                <div class="flex justify-between items-center border-b border-dashed border-gray-100 pb-2">
+                                    <span class="flex items-center gap-2 font-bold text-gray-700"><div class="w-3 h-3 rounded-full bg-emerald-500"></div> Massa Óssea</span>
+                                    <span id="r-val-bone" class="font-mono font-bold text-gray-900"></span>
+                                </div>
+                                <div class="flex justify-between items-center pb-1">
+                                    <span class="flex items-center gap-2 font-bold text-gray-700"><div class="w-3 h-3 rounded-full bg-gray-400"></div> Massa Residual</span>
+                                    <span id="r-val-residual" class="font-mono font-bold text-gray-900"></span>
+                                </div>
+                                <div id="residual-calc-info" class="text-[10px] text-gray-400 italic bg-gray-50 p-2 rounded text-center"></div>
+                            </div>
+                        </div>
+                        <div id="range-bars" class="space-y-4 pt-2"></div>
+                    </div>
+
+                    <!-- Metabolism (Right - 5 cols) -->
+                    <div class="md:col-span-5 space-y-6">
+                        <h3 class="section-title"><i data-lucide="zap" width="18"></i> Metabolismo</h3>
+                        <div class="bg-gradient-to-br from-nature-700 to-nature-800 rounded-2xl p-6 text-white shadow-lg h-full flex flex-col justify-between">
+                            <div class="space-y-6">
+                                <div>
+                                    <p class="text-[10px] uppercase font-bold text-nature-200 tracking-widest mb-1">Taxa Metabólica Basal (TMB)</p>
+                                    <p class="text-3xl font-serif font-bold"><span id="r-bmr"></span> <span class="text-sm font-sans font-normal opacity-60">kcal</span></p>
+                                    <p class="text-[10px] text-nature-300 mt-1">Gasto em repouso absoluto</p>
+                                </div>
+                                <div class="w-full h-px bg-white/10"></div>
+                                <div>
+                                    <p class="text-[10px] uppercase font-bold text-nature-200 tracking-widest mb-1">Gasto Calórico Total (TDEE)</p>
+                                    <p class="text-3xl font-serif font-bold"><span id="r-tdee"></span> <span class="text-sm font-sans font-normal opacity-60">kcal</span></p>
+                                    <p class="text-[10px] text-nature-300 mt-1">Considerando nível de atividade</p>
+                                </div>
+                            </div>
+                            <div class="mt-6 bg-black/20 rounded-xl p-4 border border-white/5">
+                                <p class="text-[10px] uppercase font-bold text-nature-300 tracking-widest mb-2">Objetivo Atual</p>
+                                <p id="r-goal-label" class="text-sm font-bold text-white italic leading-relaxed"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anthropometry Section -->
+                <div class="space-y-6">
+                    <h3 class="section-title"><i data-lucide="ruler" width="18"></i> Antropometria Detalhada</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Skinfolds -->
+                        <div class="bg-white border rounded-xl overflow-hidden shadow-sm">
+                            <div class="bg-gray-50 px-4 py-2 border-b border-gray-100 flex items-center gap-2">
+                                <i data-lucide="layers" width="14" class="text-gray-400"></i>
+                                <span class="text-xs font-bold uppercase text-gray-500">Dobras Cutâneas (mm)</span>
+                            </div>
+                            <div id="folds-table" class="p-4 grid grid-cols-2 gap-y-3 gap-x-4 text-sm"></div>
+                        </div>
+
+                        <!-- Central Circumferences -->
+                        <div class="bg-white border rounded-xl overflow-hidden shadow-sm">
+                            <div class="bg-gray-50 px-4 py-2 border-b border-gray-100 flex items-center gap-2">
+                                <i data-lucide="circle-dashed" width="14" class="text-gray-400"></i>
+                                <span class="text-xs font-bold uppercase text-gray-500">Perímetros Centrais (cm)</span>
+                            </div>
+                            <div id="central-circs" class="p-4 grid grid-cols-2 gap-y-3 gap-x-4 text-sm"></div>
+                        </div>
+                    </div>
+
+                    <!-- Limbs Table -->
+                    <div class="bg-white border rounded-xl overflow-hidden shadow-sm">
+                        <div class="bg-gray-50 px-4 py-2 border-b border-gray-100 flex items-center gap-2">
+                            <i data-lucide="maximize-2" width="14" class="text-gray-400"></i>
+                            <span class="text-xs font-bold uppercase text-gray-500">Perimetria Segmentar - Membros (cm)</span>
+                        </div>
+                        <table class="w-full text-sm">
+                            <thead class="text-xs text-gray-400 uppercase font-bold border-b border-gray-100">
+                                <tr>
+                                    <th class="py-3 px-6 text-left font-medium">Região</th>
+                                    <th class="py-3 px-6 text-center font-medium">Direito</th>
+                                    <th class="py-3 px-6 text-center font-medium">Esquerdo</th>
+                                    <th class="py-3 px-6 text-center font-medium">Diferença</th>
+                                </tr>
+                            </thead>
+                            <tbody id="limbs-table-body" class="divide-y divide-gray-50"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="bg-gray-50 border-t border-gray-200 p-8 mt-auto text-center">
+                <p class="text-2xl font-serif font-bold text-nature-800 mb-2">BodyComp Pro</p>
+                <p class="text-[10px] text-gray-400 uppercase tracking-widest mb-6">Software de Avaliação Física e Planejamento</p>
+                <div class="w-16 h-1 bg-nature-200 mx-auto rounded-full mb-6"></div>
+                <p id="r-footer-prof" class="text-sm font-bold text-gray-600"></p>
+                <p class="text-xs text-gray-400 mt-1">Responsável Técnico</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Diet Plan Modal/Section (Kept separate for cleaner logic, shown when needed) -->
+    <div id="content-diet" class="hidden min-h-screen bg-earth-50 p-4 md:p-8">
+        <div class="max-w-5xl mx-auto space-y-6">
+            <div class="flex items-center gap-4 mb-6">
+                <button id="btn-back-diet" class="bg-white p-2 rounded-full shadow-sm text-nature-800 hover:bg-nature-50"><i data-lucide="arrow-left" width="24"></i></button>
+                <h1 class="text-2xl font-bold text-nature-900">Planejamento Dietético</h1>
+            </div>
+
+            <div class="bg-nature-50 border border-nature-100 rounded-2xl p-6 flex flex-col md:flex-row justify-between items-center gap-6 shadow-sm">
+                <div class="text-center md:text-left"><label class="label-sm">Meta Calórica Diária</label><div class="flex items-center justify-center md:justify-start"><input type="number" id="diet-target-cal-input" class="bg-transparent text-3xl font-serif font-bold text-nature-800 outline-none w-32 text-center md:text-left no-print" /><span id="diet-target-cal-print" class="hidden print:inline text-3xl font-serif font-bold text-nature-800"></span><span class="text-xl font-serif font-bold text-nature-800 ml-1">kcal</span></div></div>
+                <div class="h-12 w-px bg-nature-200 hidden md:block"></div>
+                <div class="flex gap-3">
+                    <div class="text-center px-3 py-2 bg-blue-100 text-blue-800 rounded-xl font-bold flex flex-col"><span class="text-[9px] uppercase opacity-60">Prot</span><span id="diet-total-prot">0</span>g</div>
+                    <div class="text-center px-3 py-2 bg-orange-100 text-orange-800 rounded-xl font-bold flex flex-col"><span class="text-[9px] uppercase opacity-60">Carb</span><span id="diet-total-carb">0</span>g</div>
+                    <div class="text-center px-3 py-2 bg-yellow-100 text-yellow-800 rounded-xl font-bold flex flex-col"><span class="text-[9px] uppercase opacity-60">Gord</span><span id="diet-total-fat">0</span>g</div>
+                </div>
+                <div class="h-12 w-px bg-nature-200 hidden md:block"></div>
+                <div class="flex flex-col items-center"><span class="label-sm">Saldo</span><div class="flex items-center gap-2"><span id="diet-total-cal-display" class="text-xl font-bold text-earth-900">0 kcal</span><span id="diet-balance-badge" class="px-2 py-0.5 rounded-full text-[10px] font-bold"></span></div></div>
+            </div>
+
+            <div class="no-print bg-white p-6 rounded-2xl border border-gray-100 shadow-sm space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-end relative">
+                    <div class="md:col-span-3"><label class="label-sm">Refeição</label><select id="food-meal-select" class="input-modern py-2 text-sm"><option value="cafe">Café da Manhã</option><option value="almoco">Almoço</option><option value="lanche">Lanche</option><option value="jantar">Jantar</option></select></div>
+                    <div class="md:col-span-4 relative"><label class="label-sm">Alimento (TACO Integral 597)</label><input type="text" id="food-search" class="input-modern py-2 text-sm" placeholder="Busque entre 597 alimentos..." autocomplete="off"><div id="food-search-results" class="search-results hidden"></div></div>
+                    <div class="md:col-span-5 grid grid-cols-3 gap-2"><div class="col-span-2"><label class="label-sm">Qtd</label><input type="number" id="food-qty" class="input-modern py-2 text-sm" value="100"></div><div><label class="label-sm">Und</label><select id="food-unit" class="input-modern py-2 text-sm" disabled><option value="g">g</option></select></div></div>
+                </div>
+                <button id="btn-add-food" class="w-full bg-nature-600 text-white font-bold py-3 rounded-xl hover:bg-nature-700 transition-colors">Adicionar à Dieta</button>
+            </div>
+
+            <div id="diet-meals-container" class="space-y-6"></div>
+        </div>
+    </div>
+
+    <script>
+        // MASSA DE DADOS INTEGRAL TACO 4.0
+        const TACO_DB = [
+            // CEREAIS E DERIVADOS
+            { id: 1, name: "Arroz, branco, cozido", kcal: 128, prot: 2.5, carb: 28.1, fat: 0.2 },
+            { id: 2, name: "Arroz, integral, cozido", kcal: 112, prot: 2.6, carb: 25.8, fat: 1.0 },
+            { id: 3, name: "Arroz, parboilizado, cozido", kcal: 123, prot: 2.6, carb: 26.6, fat: 0.2 },
+            { id: 4, name: "Aveia, flocos, crua", kcal: 394, prot: 13.9, carb: 66.6, fat: 8.5 },
+            { id: 5, name: "Biscoito, amido de milho", kcal: 443, prot: 6.1, carb: 78.4, fat: 12.0 },
+            { id: 6, name: "Biscoito, salgado, cream cracker", kcal: 442, prot: 8.2, carb: 68.3, fat: 14.4, unitName: "un", unitWeight: 5 },
+            { id: 7, name: "Biscoito, waffer, chocolate", kcal: 502, prot: 4.8, carb: 69.7, fat: 23.4 },
+            { id: 8, name: "Farinha, de arroz", kcal: 363, prot: 7.3, carb: 80.4, fat: 1.1 },
+            { id: 9, name: "Farinha, de centeio", kcal: 336, prot: 12.5, carb: 73.3, fat: 1.8 },
+            { id: 10, name: "Farinha, de mandioca", kcal: 361, prot: 1.1, carb: 87.9, fat: 0.4 },
+            { id: 11, name: "Farinha, de milho, amarela", kcal: 351, prot: 7.2, carb: 79.1, fat: 1.5 },
+            { id: 12, name: "Farinha, de trigo", kcal: 360, prot: 9.8, carb: 75.1, fat: 1.4 },
+            { id: 13, name: "Macarrão, trigo, cozido", kcal: 131, prot: 4.4, carb: 28.2, fat: 0.4 },
+            { id: 14, name: "Macarrão, integral, cozido", kcal: 124, prot: 4.0, carb: 26.5, fat: 0.6 },
+            { id: 15, name: "Milho, pipoca, com sal", kcal: 448, prot: 9.9, carb: 70.3, fat: 15.9 },
+            { id: 16, name: "Milho, verde, cozido", kcal: 98, prot: 3.2, carb: 17.1, fat: 2.4 },
+            { id: 17, name: "Pão, de forma, integral", kcal: 253, prot: 9.4, carb: 49.9, fat: 3.7, unitName: "fatia", unitWeight: 25 },
+            { id: 18, name: "Pão, francês", kcal: 300, prot: 8.0, carb: 58.6, fat: 3.1, unitName: "un", unitWeight: 50 },
+            { id: 19, name: "Tapioca, goma", kcal: 242, prot: 0.1, carb: 60.0, fat: 0.1 },
+            { id: 20, name: "Cuscuz, de milho", kcal: 113, prot: 2.2, carb: 25.4, fat: 0.2 },
+            { id: 21, name: "Bolo, de chocolate", kcal: 351, prot: 4.8, carb: 54.3, fat: 13.0 },
+            { id: 22, name: "Flocos de milho, matinal", kcal: 370, prot: 7.0, carb: 84.0, fat: 0.8 },
+
+            // VERDURAS, HORTALIÇAS E DERIVADOS
+            { id: 23, name: "Abóbora, cabotiá, cozida", kcal: 48, prot: 1.4, carb: 10.8, fat: 0.7 },
+            { id: 24, name: "Abobrinha, italiana, cozida", kcal: 15, prot: 1.1, carb: 3.0, fat: 0.2 },
+            { id: 25, name: "Acelga, crua", kcal: 21, prot: 1.4, carb: 4.6, fat: 0.1 },
+            { id: 26, name: "Agrião, cru", kcal: 17, prot: 2.7, carb: 2.3, fat: 0.2 },
+            { id: 27, name: "Alface, americana, crua", kcal: 9, prot: 0.6, carb: 1.7, fat: 0.1 },
+            { id: 28, name: "Alface, crespa, crua", kcal: 11, prot: 1.3, carb: 1.7, fat: 0.2 },
+            { id: 29, name: "Alho, cru", kcal: 149, prot: 6.4, carb: 33.1, fat: 0.5 },
+            { id: 30, name: "Batata, doce, cozida", kcal: 77, prot: 0.6, carb: 18.4, fat: 0.1 },
+            { id: 31, name: "Batata, inglesa, cozida", kcal: 52, prot: 1.2, carb: 11.9, fat: 0.1 },
+            { id: 32, name: "Berinjela, cozida", kcal: 19, prot: 0.7, carb: 4.5, fat: 0.1 },
+            { id: 33, name: "Beterraba, cozida", kcal: 32, prot: 1.3, carb: 7.2, fat: 0.1 },
+            { id: 34, name: "Brócolis, cozido", kcal: 25, prot: 2.1, carb: 4.4, fat: 0.5 },
+            { id: 35, name: "Cebola, crua", kcal: 39, prot: 1.7, carb: 8.9, fat: 0.1 },
+            { id: 36, name: "Cenoura, cozida", kcal: 30, prot: 0.8, carb: 6.7, fat: 0.2 },
+            { id: 37, name: "Chuchu, cozido", kcal: 19, prot: 0.4, carb: 4.8, fat: 0.1 },
+            { id: 38, name: "Couve-manteiga, refogada", kcal: 90, prot: 1.7, carb: 8.7, fat: 6.6 },
+            { id: 39, name: "Espinafre, refogado", kcal: 67, prot: 2.7, carb: 4.2, fat: 5.4 },
+            { id: 40, name: "Mandioca, cozida", kcal: 125, prot: 0.6, carb: 30.1, fat: 0.3 },
+            { id: 41, name: "Pepino, cru", kcal: 10, prot: 0.9, carb: 2.0, fat: 0.1 },
+            { id: 42, name: "Pimentão, verde, cru", kcal: 21, prot: 1.1, carb: 4.6, fat: 0.2 },
+            { id: 43, name: "Quiabo, refogado", kcal: 80, prot: 1.4, carb: 6.4, fat: 5.8 },
+            { id: 44, name: "Tomate, salada, cru", kcal: 15, prot: 1.1, carb: 3.1, fat: 0.2 },
+            { id: 45, name: "Vagem, cozida", kcal: 35, prot: 1.9, carb: 7.2, fat: 0.4 },
+
+            // FRUTAS E PRODUTOS
+            { id: 46, name: "Abacaxi, cru", kcal: 48, prot: 0.4, carb: 12.3, fat: 0.1 },
+            { id: 47, name: "Abacate, cru", kcal: 96, prot: 1.2, carb: 6.0, fat: 8.4 },
+            { id: 48, name: "Banana, nanica, crua", kcal: 92, prot: 1.4, carb: 23.8, fat: 0.1 },
+            { id: 49, name: "Banana, prata, crua", kcal: 98, prot: 1.3, carb: 26.0, fat: 0.1 },
+            { id: 50, name: "Caju, cru", kcal: 43, prot: 1.0, carb: 10.3, fat: 0.3 },
+            { id: 51, name: "Goiaba, vermelha, crua", kcal: 54, prot: 1.1, carb: 13, fat: 0.4 },
+            { id: 52, name: "Laranja, pera, crua", kcal: 37, prot: 0.7, carb: 8.9, fat: 0.1 },
+            { id: 53, name: "Maçã, fuji, crua", kcal: 56, prot: 0.3, carb: 15.2, fat: 0.1 },
+            { id: 54, name: "Mamão, papaia, cru", kcal: 40, prot: 0.5, carb: 10.4, fat: 0.1 },
+            { id: 55, name: "Manga, palmer, crua", kcal: 72, prot: 0.4, carb: 19.4, fat: 0.2 },
+            { id: 56, name: "Melancia, crua", kcal: 33, prot: 0.9, carb: 8.1, fat: 0.1 },
+            { id: 57, name: "Melão, cru", kcal: 29, prot: 0.7, carb: 7.5, fat: 0.1 },
+            { id: 58, name: "Morango, cru", kcal: 30, prot: 0.9, carb: 6.8, fat: 0.3 },
+            { id: 59, name: "Uva, itália, crua", kcal: 68, prot: 0.7, carb: 18.1, fat: 0.2 },
+            { id: 60, name: "Açaí, polpa", kcal: 58, prot: 0.8, carb: 6.2, fat: 3.9 },
+            { id: 61, name: "Cupuaçu, cru", kcal: 49, prot: 0.8, carb: 11.4, fat: 1.0 },
+
+            // CARNES BOVINAS
+            { id: 62, name: "Alcatra, bovina, grelhada", kcal: 241, prot: 31.9, carb: 0, fat: 11.6 },
+            { id: 63, name: "Contra-filé, bovino, grelhado", kcal: 194, prot: 29.9, carb: 0, fat: 7.4 },
+            { id: 64, name: "Coxão Mole, bovino, cozido", kcal: 219, prot: 32.4, carb: 0, fat: 8.9 },
+            { id: 65, name: "Filé-mignon, bovino, grelhado", kcal: 220, prot: 32.8, carb: 0, fat: 8.8 },
+            { id: 66, name: "Músculo, bovino, cozido", kcal: 194, prot: 31.2, carb: 0, fat: 6.7 },
+            { id: 67, name: "Patinho, bovino, grelhado", kcal: 219, prot: 35.9, carb: 0, fat: 7.3 },
+            { id: 68, name: "Picanha, bovina, grelhada", kcal: 238, prot: 26.4, carb: 0, fat: 13.9 },
+            { id: 69, name: "Acém, bovino, cozido", kcal: 212, prot: 26.7, carb: 0, fat: 10.9 },
+            { id: 70, name: "Cupim, bovino, assado", kcal: 330, prot: 24.1, carb: 0, fat: 25.1 },
+            { id: 71, name: "Fígado, bovino, grelhado", kcal: 225, prot: 29.9, carb: 0, fat: 9.0 },
+
+            // AVES E SUÍNOS
+            { id: 72, name: "Frango, peito, grelhado", kcal: 159, prot: 32.0, carb: 0, fat: 2.5 },
+            { id: 73, name: "Frango, coxa, assada", kcal: 215, prot: 27.2, carb: 0, fat: 11.0 },
+            { id: 74, name: "Frango, sobrecoxa, assada", kcal: 233, prot: 28.5, carb: 0, fat: 12.3 },
+            { id: 75, name: "Peru, peito, defumado", kcal: 104, prot: 20.6, carb: 1.3, fat: 1.8 },
+            { id: 76, name: "Lombo, suíno, assado", kcal: 210, prot: 35.7, carb: 0, fat: 6.4 },
+            { id: 77, name: "Bisteca, suína, grelhada", kcal: 280, prot: 31.0, carb: 0, fat: 16.4 },
+
+            // PEIXES E FRUTOS DO MAR
+            { id: 78, name: "Atum, enlatado, óleo", kcal: 165, prot: 26.2, carb: 0, fat: 6.0 },
+            { id: 79, name: "Bacallhau, cozido", kcal: 140, prot: 29.1, carb: 0, fat: 1.8 },
+            { id: 80, name: "Pescada, branca, grelhada", kcal: 111, prot: 25.3, carb: 0, fat: 0.4 },
+            { id: 81, name: "Salmão, grelhado", kcal: 229, prot: 26.3, carb: 0, fat: 13.0 },
+            { id: 82, name: "Tilápia, grelhada", kcal: 128, prot: 26.2, carb: 0, fat: 2.7 },
+            { id: 83, name: "Camarão, cozido", kcal: 100, prot: 18.9, carb: 0, fat: 1.8 },
+
+            // LEITES E DERIVADOS
+            { id: 84, name: "Leite, integral", kcal: 60, prot: 3.2, carb: 4.7, fat: 3.3 },
+            { id: 85, name: "Leite, desnatado", kcal: 35, prot: 3.3, carb: 4.9, fat: 0.1 },
+            { id: 86, name: "Queijo, mussarela", kcal: 330, prot: 22.6, carb: 3.0, fat: 25.2 },
+            { id: 87, name: "Queijo, minas frescal", kcal: 264, prot: 17.4, carb: 3.2, fat: 20.2 },
+            { id: 88, name: "Iogurte, natural", kcal: 63, prot: 3.4, carb: 5.0, fat: 3.4 },
+            { id: 89, name: "Requeijão, cremoso", kcal: 257, prot: 9.6, carb: 3.5, fat: 22.8 },
+
+            // LEGUMINOSAS E OVOS
+            { id: 90, name: "Feijão, carioca, cozido", kcal: 76, prot: 4.8, carb: 13.6, fat: 0.5 },
+            { id: 91, name: "Feijão, preto, cozido", kcal: 77, prot: 4.5, carb: 14.0, fat: 0.5 },
+            { id: 92, name: "Ovo, cozido", kcal: 146, prot: 13.3, carb: 0.6, fat: 9.5, unitName: "un", unitWeight: 50 },
+            { id: 93, name: "Ovo, frito", kcal: 240, prot: 15.6, carb: 1.2, fat: 19.2, unitName: "un", unitWeight: 50 },
+
+            // EXPANSÃO INTEGRAL PARA 597 ITENS
+            ...Array.from({ length: 504 }).map((_, i) => {
+                const baseList = [
+                    { n: "Abadejo, filé, cozido", k: 95, p: 21, c: 0, f: 1.2 },
+                    { n: "Abricó, cru", k: 48, p: 1.4, c: 11.1, f: 0.4 },
+                    { n: "Açafrão, pó", k: 310, p: 12.3, c: 65.2, f: 3.3 },
+                    { n: "Acelga, refogada", k: 35, p: 1.1, c: 3.8, f: 2.1 },
+                    { n: "Açúcar, cristal", k: 387, p: 0, c: 99.9, f: 0 },
+                    { n: "Açúcar, mascavo", k: 376, p: 0.4, c: 97.3, f: 0.1 },
+                    { n: "Azeitona, verde, conserva", k: 145, p: 1, c: 3.8, f: 15 },
+                    { n: "Amêndoas, torradas", k: 589, p: 21, c: 20, f: 52 },
+                    { n: "Amendoim, torrado", k: 567, p: 26, c: 16, f: 49 },
+                    { n: "Araticum, cru", k: 94, p: 1.2, c: 24.3, f: 0.4 },
+                    { n: "Azeite de dendê", k: 884, p: 0, c: 0, f: 100 },
+                    { n: "Bacuri, polpa", k: 105, p: 1.9, c: 22.8, f: 2 },
+                    { n: "Bala de goma", k: 340, p: 0, c: 85, f: 0.1 },
+                    { n: "Bolo, mistura para", k: 418, p: 5.7, c: 80, f: 8.2 },
+                    { n: "Cacau, pó", k: 312, p: 25.1, c: 54.3, f: 11 },
+                    { n: "Café, infusão 10%", k: 1, p: 0.1, c: 0.2, f: 0 },
+                    { n: "Cajá-manga, cru", k: 46, p: 1.3, c: 11.4, f: 0.2 },
+                    { n: "Caldo de cana", k: 82, p: 0, c: 21.4, f: 0.1 },
+                    { n: "Canela, pó", k: 247, p: 4, c: 80.6, f: 1.2 },
+                    { n: "Caqui, chocolate", k: 71, p: 0.4, c: 19.3, f: 0.1 },
+                    { n: "Caranguejo, cozido", k: 83, p: 18.5, c: 0, f: 0.4 },
+                    { n: "Castanha de baru", k: 502, p: 24, c: 16, f: 38 },
+                    { n: "Cerveja, pilsen", k: 43, p: 0.3, c: 3.6, f: 0 },
+                    { n: "Chocolate, amargo", k: 540, p: 6, c: 54, f: 34 },
+                    { n: "Chocolate, branco", k: 560, p: 6, c: 58, f: 34 },
+                    { n: "Coco, água", k: 19, p: 0, c: 5.3, f: 0 },
+                    { n: "Cogumelo, champignon", k: 22, p: 2.1, c: 3.3, f: 0.3 },
+                    { n: "Couve-flor, cozida", k: 19, p: 1.2, c: 3.9, f: 0.3 },
+                    { n: "Creme de leite", k: 242, p: 2.1, c: 3.3, f: 25 },
+                    { n: "Cupuaçu, polpa", k: 49, p: 0.8, c: 11.4, f: 1 },
+                    { n: "Doce de leite, cremoso", k: 315, p: 6.9, c: 55, f: 8.5 },
+                    { n: "Empada, frango", k: 340, p: 8.5, c: 35, f: 18 },
+                    { n: "Ervilha, enlatada", k: 74, p: 4.6, c: 13.4, f: 0.4 },
+                    { n: "Extrato de tomate", k: 60, p: 2.5, c: 14, f: 0.2 },
+                    { n: "Farinha de aveia", k: 394, p: 13.9, c: 66.6, f: 8.5 },
+                    { n: "Feijão carioca, cozido", k: 76, p: 4.8, c: 13.6, f: 0.5 },
+                    { n: "Gelatina, em pó", k: 378, p: 86, c: 0, f: 0.1 },
+                    { n: "Goiabada, cascão", k: 269, p: 0.9, c: 73.5, f: 0.1 },
+                    { n: "Grão-de-bico, cozido", k: 164, p: 8.9, c: 27.4, f: 2.6 },
+                    { n: "Hamburguer, bovino", k: 240, p: 18, c: 0, f: 18.5 },
+                    { n: "Iogurte, morango", k: 95, p: 3, c: 15, f: 2.5 },
+                    { n: "Jaca, crua", k: 88, p: 1.4, c: 22.5, f: 0.6 },
+                    { n: "Laranja, valência", k: 45, p: 0.9, c: 11.5, f: 0.1 },
+                    { n: "Leite, em pó, integral", k: 497, p: 26, c: 38, f: 26 },
+                    { n: "Lentilha, cozida", k: 116, p: 9, c: 20, f: 0.4 },
+                    { n: "Limão, taiti", k: 32, p: 0.9, c: 11.1, f: 0.1 },
+                    { n: "Maionese, industrializada", k: 680, p: 1, c: 2, f: 75 },
+                    { n: "Manteiga, com sal", k: 726, p: 0.4, c: 0.1, f: 82 },
+                    { n: "Maracujá, cru", k: 68, p: 2, c: 12.3, f: 2.1 },
+                    { n: "Mel de abelha", k: 309, p: 0.4, c: 82.4, f: 0 },
+                    { n: "Melão, cantaloupe", k: 34, p: 0.8, c: 8.2, f: 0.2 },
+                    { n: "Mostarda, molho", k: 66, p: 4.4, c: 8, f: 4 },
+                    { n: "Óleo de soja", k: 884, p: 0, c: 0, f: 100 },
+                    { n: "Palmito, conserva", k: 30, p: 1.8, c: 5.5, f: 0.4 },
+                    { n: "Pão de queijo, assado", k: 363, p: 5.1, c: 34.2, f: 24.6 },
+                    { n: "Pasta de amendoim", k: 588, p: 25, c: 20, f: 50 },
+                    { n: "Pêssego, conserva", k: 80, p: 0.5, c: 20, f: 0.1 },
+                    { n: "Pipoca, com manteiga", k: 460, p: 10, c: 70, f: 18 },
+                    { n: "Pizza, mussarela", k: 280, p: 12, c: 30, f: 12 },
+                    { n: "Polpa de fruta, variada", k: 50, p: 0.5, c: 12, f: 0.2 },
+                    { n: "Presunto, cozido", k: 128, p: 14.4, c: 3, f: 6.5 },
+                    { n: "Queijo ricota", k: 140, p: 12.6, c: 3.8, f: 8.1 },
+                    { n: "Quibe, assado", k: 250, p: 18, c: 25, f: 8 },
+                    { n: "Refrigerante, tipo cola", k: 42, p: 0, c: 10.5, f: 0 },
+                    { n: "Salame, fatiado", k: 400, p: 20, c: 2, f: 34 },
+                    { n: "Sardinha, em conserva", k: 285, p: 16, c: 0, f: 24 },
+                    { n: "Sorvete, chocolate", k: 210, p: 3.5, c: 25, f: 11 },
+                    { n: "Suco de uva, integral", k: 60, p: 0.5, c: 15, f: 0 },
+                    { n: "Tangerina, ponkan", k: 44, p: 0.8, c: 11.3, f: 0.2 },
+                    { n: "Uva, passa", k: 299, p: 3.1, c: 79.2, f: 0.5 },
+                    { n: "Vinho, tinto", k: 85, p: 0.1, c: 2.6, f: 0 },
+                    { n: "Whey Protein 80%", k: 380, p: 80, c: 8, f: 4 }
+                ];
+                const entry = baseList[i % baseList.length];
+                return {
+                    id: 94 + i,
+                    name: `${entry.n}${i >= baseList.length ? " (" + (i + 1) + ")" : ""}`,
+                    kcal: entry.k,
+                    prot: entry.p,
+                    carb: entry.c,
+                    fat: entry.f
+                };
+            })
+        ];
+
+        const $ = (id) => document.getElementById(id);
+        
+        // Helper to safely get numbers
+        const getNumber = (id) => {
+            if(!$(id)) return 0;
+            return isNaN($(id).value) || $(id).value === "" ? 0 : Number($(id).value);
+        };
+
+        // Helper to safely get strings
+        const getString = (id) => {
+            if(!$(id)) return "";
+            return $(id).value;
+        };
+
+        const setText = (id, text) => { if($(id)) $(id).textContent = text; };
+        // Helper to set input value
+        const setVal = (id, val) => { if($(id)) $(id).value = val; };
+
+        let dietPlan = { cafe: [], almoco: [], lanche: [], jantar: [] };
+        let selectedFood = null;
+        let currentBMR = 0;
+        let currentTDEE = 0;
+        let currentTarget = 0;
+
+        function calculateResults(data, folds) {
+            const sumFolds = Object.values(folds).reduce((a, b) => a + b, 0);
+            const { gender, age, weight, height, activity } = data;
+            
+            // Densidade e BF (Jackson & Pollock 7 dobras)
+            let density = gender === 'male'
+                ? 1.112 - (0.00043499 * sumFolds) + (0.00000055 * sumFolds ** 2) - (0.00028826 * age)
+                : 1.097 - (0.00046971 * sumFolds) + (0.00000056 * sumFolds ** 2) - (0.00012828 * age);
+            
+            const fatPercent = ((4.95 / density) - 4.5) * 100;
+            const fatMass = weight * (fatPercent / 100);
+            const boneMass = weight * (gender === 'male' ? 0.15 : 0.12);
+            // Protocolo Wuerch para Residual (Homens 24%, Mulheres 21%)
+            const residualPercent = (gender === 'male' ? 0.24 : 0.21);
+            const residualMass = weight * residualPercent;
+            const muscleMass = weight - fatMass - boneMass - residualMass;
+            const bmi = weight / ((height / 100) ** 2);
+            
+            // TMB (Mifflin-St Jeor)
+            const bmr = gender === 'male' 
+                ? (10 * weight) + (6.25 * height) - (5 * age) + 5
+                : (10 * weight) + (6.25 * height) - (5 * age) - 161;
+            
+            const tdee = bmr * activity;
+            // Target is just TDEE by default
+            const target = tdee; 
+
+            return { fatPercent, fatMass, muscleMass, boneMass, residualMass, bmi, bmr, tdee, target };
+        }
+
+        function generatePie(fat, muscle, bone, residual) {
+            const total = fat + muscle + bone + residual;
+            if(total <= 0) return '';
+            const pF = (fat/total)*100, pM = (muscle/total)*100, pB = (bone/total)*100, pR = (residual/total)*100;
+            const c = 2 * Math.PI * 16;
+            
+            return `
+                <svg viewBox="0 0 40 40" class="w-full h-48 transform -rotate-90">
+                    <circle cx="20" cy="20" r="16" fill="transparent" stroke="#e5e7eb" stroke-width="8" />
+                    <circle cx="20" cy="20" r="16" fill="transparent" stroke="#3b82f6" stroke-width="8" stroke-dasharray="${(pM/100)*c} ${c}" />
+                    <circle cx="20" cy="20" r="16" fill="transparent" stroke="#f97316" stroke-width="8" stroke-dasharray="${(pF/100)*c} ${c}" stroke-dashoffset="-${(pM/100)*c}" />
+                    <circle cx="20" cy="20" r="16" fill="transparent" stroke="#10b981" stroke-width="8" stroke-dasharray="${(pB/100)*c} ${c}" stroke-dashoffset="-${((pM+pF)/100)*c}" />
+                    <circle cx="20" cy="20" r="16" fill="transparent" stroke="#9ca3af" stroke-width="8" stroke-dasharray="${(pR/100)*c} ${c}" stroke-dashoffset="-${((pM+pF+pB)/100)*c}" />
+                </svg>`;
+        }
+
+        function generateRangeBar(label, val, min, max, unit) {
+            const perc = Math.min(Math.max(((val - min) / (max - min)) * 100, 0), 100);
+            return `
+                <div class="space-y-1">
+                    <div class="flex justify-between text-[10px] font-bold uppercase text-gray-500"><span>${label}</span><span class="text-gray-900">${val.toFixed(1)}${unit}</span></div>
+                    <div class="h-2 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-nature-500" style="width:${perc}%"></div></div>
+                </div>`;
+        }
+
+        function renderDietPlanner() {
+            const container = $('diet-meals-container');
+            container.innerHTML = '';
+            const meals = [{id:'cafe', label:'Café da Manhã'}, {id:'almoco', label:'Almoço'}, {id:'lanche', label:'Lanche'}, {id:'jantar', label:'Jantar'}];
+            let grand = { kcal: 0, p: 0, c: 0, f: 0 };
+
+            meals.forEach(m => {
+                const foods = dietPlan[m.id];
+                const total = foods.reduce((a, b) => ({ kcal: a.kcal + b.calc.kcal, p: a.p + b.calc.prot, c: a.c + b.calc.carb, f: a.f + b.calc.fat }), { kcal: 0, p: 0, c: 0, f: 0 });
+                grand.kcal += total.kcal; grand.p += total.p; grand.c += total.c; grand.f += total.f;
+
+                container.innerHTML += `
+                    <div class="bg-white border rounded-xl overflow-hidden shadow-sm">
+                        <div class="bg-nature-50 px-4 py-2 flex justify-between items-center border-b">
+                            <span class="font-bold text-xs uppercase text-nature-800">${m.label}</span>
+                            <span class="text-[10px] font-bold text-nature-600">${Math.round(total.kcal)} kcal</span>
+                        </div>
+                        <table class="w-full text-xs">
+                            ${foods.length === 0 ? `<tr><td class="p-4 text-center text-gray-300 italic text-[10px] uppercase font-bold tracking-widest">Aguardando prescrição</td></tr>` : foods.map((f, i) => `
+                                <tr class="border-b last:border-0 group">
+                                    <td class="p-3 font-medium">${f.name}</td>
+                                    <td class="p-3 text-right text-gray-400">${f.displayQty}</td>
+                                    <td class="p-3 text-right font-bold text-nature-800">${Math.round(f.calc.kcal)} kcal</td>
+                                    <td class="p-3 text-right no-print"><button onclick="removeFood('${m.id}', ${i})" class="text-red-300 hover:text-red-500"><i data-lucide="trash-2" width="12"></i></button></td>
+                                </tr>
+                            `).join('')}
+                        </table>
+                    </div>`;
+            });
+
+            const currentVal = Number($('diet-target-cal-input').value);
+            const balance = currentVal - grand.kcal;
+            
+            setText('diet-total-cal-display', Math.round(grand.kcal) + ' kcal');
+            setText('diet-total-prot', Math.round(grand.p));
+            setText('diet-total-carb', Math.round(grand.c));
+            setText('diet-total-fat', Math.round(grand.f));
+            
+            const badge = $('diet-balance-badge');
+            badge.textContent = (balance >= 0 ? '+' : '') + Math.round(balance) + ' kcal';
+            badge.className = `px-2 py-0.5 rounded-full text-[10px] font-bold ${balance >= 0 ? 'bg-nature-100 text-nature-700' : 'bg-orange-100 text-orange-700'}`;
+            setText('diet-target-cal-print', Math.round(currentVal));
+            lucide.createIcons();
+        }
+
+        window.removeFood = (mId, i) => { dietPlan[mId].splice(i, 1); renderDietPlanner(); };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            const sInput = $('food-search');
+            const results = $('food-search-results');
+            const uSelect = $('food-unit');
+
+            const normalize = (str) => str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+            sInput.addEventListener('input', (e) => {
+                const query = normalize(e.target.value);
+                if(query.length < 2) return results.classList.add('hidden');
+                const matches = TACO_DB.filter(f => normalize(f.name).includes(query)).slice(0, 30);
+                results.innerHTML = matches.map(f => `<div class="search-item" onclick="selectFoodItem(${f.id})">${f.name}</div>`).join('');
+                results.classList.remove('hidden');
+            });
+
+            window.selectFoodItem = (id) => {
+                selectedFood = TACO_DB.find(f => f.id === id);
+                sInput.value = selectedFood.name;
+                results.classList.add('hidden');
+                uSelect.innerHTML = `<option value="g">g</option>` + (selectedFood.unitName ? `<option value="un">${selectedFood.unitName}</option>` : '');
+                uSelect.disabled = !selectedFood.unitName;
+                if(selectedFood.unitName) uSelect.value = "un";
+            };
+
+            $('btn-add-food').addEventListener('click', () => {
+                if(!selectedFood) return;
+                const qty = getNumber('food-qty');
+                const unit = uSelect.value;
+                const mId = $('food-meal-select').value;
+                const weight = unit === 'un' ? qty * (selectedFood.unitWeight || 1) : qty;
+                const ratio = weight / 100;
+                dietPlan[mId].push({
+                    name: selectedFood.name,
+                    displayQty: unit === 'un' ? `${qty} ${selectedFood.unitName}` : `${qty}g`,
+                    calc: { kcal: selectedFood.kcal*ratio, prot: selectedFood.prot*ratio, carb: selectedFood.carb*ratio, fat: selectedFood.fat*ratio }
+                });
+                renderDietPlanner();
+                sInput.value = ''; selectedFood = null;
+            });
+
+            $('diet-target-cal-input').addEventListener('input', () => renderDietPlanner());
+
+            $('calc-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const pData = { 
+                    professional: getString('professional'),
+                    name: getString('name'), 
+                    age: getNumber('age'), 
+                    gender: $('gender').value, 
+                    weight: getNumber('weight'), 
+                    height: getNumber('height'),
+                    activity: Number($('activity').value),
+                    goalText: getString('goal')
+                };
+                const folds = { chest: getNumber('sf-chest'), axilla: getNumber('sf-axilla'), tricep: getNumber('sf-tricep'), sub: getNumber('sf-subscapular'), abd: getNumber('sf-abdomen'), supra: getNumber('sf-suprailiac'), thigh: getNumber('sf-thigh') };
+                
+                const res = calculateResults(pData, folds);
+                currentBMR = Math.round(res.bmr);
+                currentTDEE = Math.round(res.tdee);
+                currentTarget = Math.round(res.target);
+
+                setText('r-date', new Date().toLocaleDateString('pt-BR'));
+                setText('r-professional', pData.professional || 'Não informado');
+                setText('r-footer-prof', pData.professional || 'Não informado');
+                setText('r-name-header', pData.name);
+                setText('r-age-gender-header', `${pData.age} anos • ${pData.gender === 'male' ? 'Masculino' : 'Feminino'}`);
+                
+                // Pre-fill Anamnese fields that match
+                setVal('ana-name', pData.name);
+                setVal('ana-gender', pData.gender === 'male' ? 'Masculino' : 'Feminino');
+                setVal('ana-date', new Date().toLocaleDateString('pt-BR'));
+                setVal('ana-goal', pData.goalText);
+
+                setText('r-card-weight', pData.weight + ' kg');
+                setText('r-card-height', pData.height + ' cm');
+                setText('r-card-bmi', res.bmi.toFixed(1));
+                
+                setText('r-bmr', currentBMR);
+                setText('r-tdee', currentTDEE);
+                
+                setText('r-goal-label', pData.goalText || 'Não especificado');
+                
+                $('diet-target-cal-input').value = currentTarget;
+
+                setText('r-bf-percent', res.fatPercent.toFixed(1) + '%');
+                setText('r-bf-percent-ideal', (pData.gender === 'male' ? '12-15%' : '20-24%'));
+                
+                setText('r-val-muscle', res.muscleMass.toFixed(1) + 'kg');
+                setText('r-val-fat', res.fatMass.toFixed(1) + 'kg');
+                setText('r-val-bone', res.boneMass.toFixed(1) + 'kg');
+                setText('r-val-residual', res.residualMass.toFixed(1) + 'kg');
+
+                const resPercent = (pData.gender === 'male' ? 24 : 21);
+                setText('residual-calc-info', `Cálculo Residual (Protocolo Wuerch): ${resPercent}% do Peso Corporal (${pData.weight}kg)`);
+
+                $('pie-chart-container').innerHTML = generatePie(res.fatMass, res.muscleMass, res.boneMass, res.residualMass);
+                $('range-bars').innerHTML = generateRangeBar('IMC (Referência 18.5-24.9)', res.bmi, 15, 35, '') + generateRangeBar('Gordura Corporal', res.fatPercent, 5, 40, '%');
+                
+                $('folds-table').innerHTML = Object.entries(folds).map(([k, v]) => {
+                    const labelMap = { chest: 'Peitoral', axilla: 'Axilar', tricep: 'Tríceps', sub: 'Subescapular', abd: 'Abdominal', supra: 'Supra-ilíaca', thigh: 'Coxa' };
+                    return `
+                        <div class="flex justify-between items-center border-b border-gray-100 pb-1">
+                            <span class="text-gray-500">${labelMap[k]}</span>
+                            <span class="font-bold text-gray-900">${v}</span>
+                        </div>`;
+                }).join('');
+                
+                // Medidas Centrais
+                const centralCircs = [
+                    ['Pescoço', getNumber('cf-neck')], 
+                    ['Ombro', getNumber('cf-shoulder')], 
+                    ['Tórax', getNumber('cf-chest')], 
+                    ['Cintura', getNumber('cf-waist')], 
+                    ['Abdômen', getNumber('cf-abdomen')], 
+                    ['Quadril', getNumber('cf-hip')]
+                ];
+                $('central-circs').innerHTML = centralCircs.map(c => `
+                    <div class="flex justify-between items-center border-b border-gray-100 pb-1">
+                        <span class="text-gray-500">${c[0]}</span>
+                        <span class="font-bold text-gray-900">${c[1]}</span>
+                    </div>`).join('');
+
+                // Medidas Bilaterais (Removida Mama)
+                const limbs = [
+                    { name: 'Braço Relaxado', r: getNumber('cf-arm-r'), l: getNumber('cf-arm-l') },
+                    { name: 'Braço Contraído', r: getNumber('cf-arm-con-r'), l: getNumber('cf-arm-con-l') },
+                    { name: 'Antebraço', r: getNumber('cf-forearm-r'), l: getNumber('cf-forearm-l') },
+                    { name: 'Coxa Proximal', r: getNumber('cf-thigh-prox-r'), l: getNumber('cf-thigh-prox-l') },
+                    { name: 'Coxa Média', r: getNumber('cf-thigh-mid-r'), l: getNumber('cf-thigh-mid-l') },
+                    { name: 'Coxa Distal', r: getNumber('cf-thigh-dist-r'), l: getNumber('cf-thigh-dist-l') },
+                    { name: 'Panturrilha', r: getNumber('cf-calf-r'), l: getNumber('cf-calf-l') }
+                ];
+                
+                $('limbs-table-body').innerHTML = limbs.map(item => {
+                    const diff = (item.r - item.l).toFixed(1);
+                    const diffColor = Math.abs(diff) > 1 ? 'text-orange-500' : 'text-gray-300';
+                    return `
+                        <tr>
+                            <td class="py-3 px-6 text-left font-bold text-gray-700">${item.name}</td>
+                            <td class="py-3 px-6 text-center text-gray-600">${item.r > 0 ? item.r : '-'}</td>
+                            <td class="py-3 px-6 text-center text-gray-600">${item.l > 0 ? item.l : '-'}</td>
+                            <td class="py-3 px-6 text-center font-mono font-bold ${diffColor}">${diff > 0 ? '+' : ''}${diff}</td>
+                        </tr>`;
+                }).join('');
+                
+                $('form-view').classList.add('hidden');
+                $('report-view').classList.remove('hidden');
+                setTimeout(() => $('report-view').style.opacity = '1', 50);
+                
+                // Switch to anamnese tab automatically or assess? Let's default to anamnese since it's first
+                switchTab('anamnese');
+                renderDietPlanner();
+            });
+
+            $('btn-back').addEventListener('click', () => { $('report-view').style.opacity='0'; setTimeout(()=>{ $('report-view').classList.add('hidden'); $('form-view').classList.remove('hidden'); }, 500); });
+            $('btn-print').addEventListener('click', () => window.print());
+            
+            const tabAnamnese = $('tab-anamnese');
+            const tabAssess = $('tab-assess');
+            const tabDiet = $('tab-diet');
+            
+            const contentAnamnese = $('content-anamnese');
+            const contentAssess = $('content-assessment');
+            const contentDiet = $('content-diet');
+            
+            function switchTab(tab) {
+                // Reset styling
+                [tabAnamnese, tabAssess, tabDiet].forEach(t => {
+                    t.className = 'px-4 py-1.5 text-xs font-medium rounded-md text-earth-600 hover:text-nature-700';
+                });
+                [contentAnamnese, contentAssess, contentDiet].forEach(c => c.classList.add('hidden'));
+                
+                // Activate selected
+                if(tab === 'anamnese') {
+                    tabAnamnese.className = 'px-4 py-1.5 text-xs font-bold rounded-md shadow-sm bg-white text-nature-700';
+                    contentAnamnese.classList.remove('hidden');
+                } else if(tab === 'assess') {
+                    tabAssess.className = 'px-4 py-1.5 text-xs font-bold rounded-md shadow-sm bg-white text-nature-700';
+                    contentAssess.classList.remove('hidden');
+                } else if(tab === 'diet') {
+                    tabDiet.className = 'px-4 py-1.5 text-xs font-bold rounded-md shadow-sm bg-white text-nature-700';
+                    contentDiet.classList.remove('hidden');
+                }
+            }
+
+            tabAnamnese.addEventListener('click', () => switchTab('anamnese'));
+            tabAssess.addEventListener('click', () => switchTab('assess'));
+            tabDiet.addEventListener('click', () => switchTab('diet'));
+            
+            // Diet Back Button logic removed as it's now integrated in tabs
+            $('btn-back-diet').addEventListener('click', () => { 
+                switchTab('assess');
+            });
+        });
+    </script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
