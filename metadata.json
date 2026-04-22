@@ -1,0 +1,5 @@
+{
+  "name": "BodyComp",
+  "description": "Clinical management platform for nutritionists featuring patient assessments, anamnesis, and diet planning.",
+  "requestFramePermissions": []
+}
