@@ -294,7 +294,17 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
       animate="show"
       className="space-y-8 md:space-y-12 pb-24 md:pb-12 print:space-y-6 print:pb-0"
     >
-      <motion.header variants={item} className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
+      {/* Print Header */}
+      <div className="hidden print:block text-center pb-4 mb-8" style={{ borderBottom: '2px solid #000' }}>
+        <h1 className="text-2xl font-extrabold uppercase tracking-widest mb-2">Avaliação Física Corporal</h1>
+        <h2 className="text-lg font-bold">Paciente: {activePatient?.name || '---'}</h2>
+        <div className="flex justify-center gap-8 mt-2 text-sm">
+          <p><strong>ID:</strong> #{activePatient?.id || '---'}</p>
+          <p><strong>Data da Avaliação:</strong> {new Date().toLocaleDateString('pt-BR')}</p>
+        </div>
+      </div>
+
+      <motion.header variants={item} className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 print:hidden">
         <div>
           <h1 className="text-2xl md:text-4xl font-extrabold tracking-tight text-on-surface mb-1 md:mb-2 font-headline">Avaliação Detalhada</h1>
           <p className="text-sm md:text-base text-on-surface-variant font-medium">Paciente: <span className="text-on-surface">{activePatient?.name || 'Não selecionado'}</span> • ID: #{activePatient?.id || '---'}</p>

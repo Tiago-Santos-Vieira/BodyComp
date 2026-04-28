@@ -34,25 +34,72 @@
     print-color-adjust: exact;
     background-color: white !important;
     color: black !important;
+    margin: 0;
   }
-  @page { margin: 1cm; }
-  .bg-surface-container-low, .bg-surface-container-lowest, .bg-primary, .bg-surface-container-high {
-    background-color: white !important;
-    color: black !important;
+  @page { margin: 1.5cm; }
+  
+  /* Ocultar elementos desnecessários */
+  nav, aside, footer, button, .print\:hidden {
+    display: none !important;
+  }
+
+  /* Resetar containers */
+  .bg-surface-container-low, .bg-surface-container-lowest, .bg-surface-container-high, .bg-white, .bg-primary, .bg-primary\/10, .bg-secondary-container, .bg-tertiary-container\/10, .bg-primary-container\/10, .bg-white\/10 {
+    background-color: transparent !important;
     box-shadow: none !important;
-    border: 1px solid #ddd !important;
+    border: none !important;
+    padding: 0 !important;
+    margin-bottom: 20px !important;
+    page-break-inside: avoid;
   }
+
+  /* Ajustar textos para preto absoluto */
+  h1, h2, h3, h4, p, label, span, div {
+    color: #000 !important;
+  }
+
+  /* Inputs formatados como linha */
   input, select, textarea {
     border: none !important;
-    border-bottom: 1px solid #ddd !important;
+    border-bottom: 1px solid #777 !important;
+    border-radius: 0 !important;
     background: transparent !important;
-    color: black !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    padding: 2px 0 !important;
+    appearance: none !important;
+    -webkit-appearance: none;
+    font-size: 11pt !important;
+    width: 100% !important;
   }
-  * {
-    color: black !important;
+
+  textarea {
+    resize: none !important;
+    overflow: visible !important;
   }
-  .print\:border-none {
+
+  /* Ocultar placeholders */
+  ::placeholder {
+    color: transparent !important;
+  }
+
+  /* Grid e Layouts para impressão */
+  .grid {
+    gap: 15px !important;
+  }
+  
+  /* Evitar quebra de seção */
+  section, .col-span-12 {
+    page-break-inside: avoid;
+    margin-bottom: 30px !important;
     border: none !important;
+  }
+
+  h2, h3 {
+    border-bottom: 1px solid #000 !important;
+    padding-bottom: 5px !important;
+    margin-bottom: 15px !important;
+    border-left: none !important;
   }
 }
 

@@ -90,7 +90,17 @@ export default function AnamnesisView({ activePatient, showToast }: Props) {
       animate="show"
       className="max-w-5xl mx-auto space-y-8 pb-12"
     >
-      <motion.div variants={item} className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 md:mb-8">
+      {/* Print Header */}
+      <div className="hidden print:block text-center pb-4 mb-8" style={{ borderBottom: '2px solid #000' }}>
+        <h1 className="text-2xl font-extrabold uppercase tracking-widest mb-2">Ficha de Anamnese Clínica</h1>
+        <h2 className="text-lg font-bold">Paciente: {activePatient?.name || anamnesisData.fullName || '---'}</h2>
+        <div className="flex justify-center gap-8 mt-2 text-sm">
+          <p><strong>ID:</strong> #{activePatient?.id || '---'}</p>
+          <p><strong>Data:</strong> {new Date().toLocaleDateString('pt-BR')}</p>
+        </div>
+      </div>
+
+      <motion.div variants={item} className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 md:mb-8 print:hidden">
         <div>
           <h2 className="text-2xl md:text-3xl font-extrabold text-on-surface font-headline tracking-tight">Anamnese Completa</h2>
           <p className="text-sm md:text-base text-on-surface-variant mt-1">Preencha os dados detalhados do paciente para uma avaliação precisa.</p>
