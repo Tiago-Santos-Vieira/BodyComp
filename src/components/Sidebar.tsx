@@ -35,7 +35,7 @@ export default function Sidebar({ currentView, onViewChange, onNewConsultation, 
       <aside className={`h-screen w-72 fixed left-0 top-0 bg-surface-container-low flex flex-col z-50 transition-transform duration-300 print:hidden ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
         <div className="px-8 py-12">
           <h1 className="text-2xl font-extrabold text-primary font-headline tracking-tight">BodyComp</h1>
-          <p className="text-xs text-on-surface-variant opacity-70 font-medium uppercase tracking-widest mt-1">Gestão Clínica</p>
+          <p className="text-xs text-on-surface-variant opacity-70 font-medium uppercase tracking-widest mt-1">Nutrição Inteligente</p>
         </div>
 
         {activePatient && (
