@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, Clock, TrendingUp, Eye, Plus, UserPlus } from 'lucide-react';
+import { Calendar, Clock, TrendingUp, Eye, Plus, UserPlus, HelpCircle } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Patient } from '../../types';
 import { ToastType } from '../../App';
@@ -107,13 +107,22 @@ export default function DashboardView({ onNewConsultation, onSelectPatient, show
           <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-on-surface mb-2 font-headline">Bom dia, {nutriName}</h1>
           <p className="text-on-surface-variant font-medium">Você tem <span className="text-primary font-bold">{stats.appointments} {stats.appointments === 1 ? 'atendimento' : 'atendimentos'}</span> agendado{stats.appointments === 1 ? '' : 's'} para hoje.</p>
         </div>
-        <button 
-          onClick={onViewAgenda}
-          className="w-full md:w-auto primary-gradient text-white px-8 py-4 rounded-full font-bold shadow-xl hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-3"
-        >
-          <Calendar size={20} />
-          Ver Agenda Completa
-        </button>
+        <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+          <a 
+            href="mailto:tiagosantosvieira05@gmail.com?subject=Suporte BodyComp - [Assunto]&body=Olá Tiago,%0D%0A%0D%0AGostaria de abrir um chamado de suporte para o sistema BodyComp.%0D%0A%0D%0ATipo de problema: [Bug / Sugestão / Dúvida]%0D%0ADescrição:%0D%0A[Descreva aqui o que está acontecendo]%0D%0A%0D%0AObrigado!"
+            className="w-full md:w-auto bg-surface-container-high text-on-surface px-8 py-4 rounded-full font-bold shadow-sm hover:bg-surface-container-highest active:scale-95 transition-all flex items-center justify-center gap-3 border border-on-surface-variant/10"
+          >
+            <HelpCircle size={20} className="text-primary" />
+            Suporte Técnico
+          </a>
+          <button 
+            onClick={onViewAgenda}
+            className="w-full md:w-auto primary-gradient text-white px-8 py-4 rounded-full font-bold shadow-xl hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-3"
+          >
+            <Calendar size={20} />
+            Ver Agenda Completa
+          </button>
+        </div>
       </motion.div>
 
       <motion.div variants={item} className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
