@@ -75,6 +75,8 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
     setBasicData(assessment.basic_data || { weight: 0, height: 0, age: 0, gender: 'M', waist: 0, hip: 0 });
     setSkinfolds(assessment.skinfolds || Array(7).fill(0));
     setPerimetry(assessment.perimetry || {});
+    setFrontalImage(assessment.photos?.frontal || null);
+    setProfileImage(assessment.photos?.profile || null);
   };
 
   const startNewAssessment = () => {
@@ -82,6 +84,8 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
     setBasicData({ weight: 0, height: 0, age: 0, gender: 'M', waist: 0, hip: 0 });
     setSkinfolds(Array(7).fill(0));
     setPerimetry({});
+    setFrontalImage(null);
+    setProfileImage(null);
   };
 
   const handleSaveAssessment = async () => {
@@ -96,21 +100,31 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
       basic_data: basicData,
       skinfolds: skinfolds,
       perimetry: perimetry,
+      photos: {
+        frontal: frontalImage,
+        profile: profileImage
+      },
       date: new Date().toISOString()
     };
 
     if (currentAssessmentId) {
-      await supabase.from('assessments').update(payload).eq('id', currentAssessmentId);
-      showToast?.('Avaliação atualizada!', 'success');
-      // Refresh list slightly
-      const { data } = await supabase.from('assessments').select('*').eq('patient_id', activePatient.id).order('date', { ascending: false });
-      if (data) setAssessmentsHistory(data);
+      const { error } = await supabase.from('assessments').update(payload).eq('id', currentAssessmentId);
+      if (!error) {
+        showToast?.('Avaliação atualizada!', 'success');
+        // Refresh list slightly
+        const { data } = await supabase.from('assessments').select('*').eq('patient_id', activePatient.id).order('date', { ascending: false });
+        if (data) setAssessmentsHistory(data);
+      } else {
+        showToast?.('Erro ao atualizar: ' + error.message, 'error');
+      }
     } else {
-      const { data } = await supabase.from('assessments').insert([payload]).select().single();
+      const { data, error } = await supabase.from('assessments').insert([payload]).select().single();
       if (data) {
         setCurrentAssessmentId(data.id);
         setAssessmentsHistory([data, ...assessmentsHistory]);
         showToast?.('Nova avaliação salva!', 'success');
+      } else if (error) {
+        showToast?.('Erro ao criar avaliação: ' + error.message, 'error');
       }
     }
     setIsSaving(false);
@@ -219,19 +233,57 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
   const frontalInputRef = useRef<HTMLInputElement>(null);
   const profileInputRef = useRef<HTMLInputElement>(null);
 
-  const handleFrontalUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const compressImage = (file: File): Promise<string> => {
+    return new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = (event) => {
+        const img = new Image();
+        img.src = event.target?.result as string;
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+          const MAX_WIDTH = 800;
+          const MAX_HEIGHT = 800;
+          let width = img.width;
+          let height = img.height;
+
+          if (width > height) {
+            if (width > MAX_WIDTH) {
+              height *= MAX_WIDTH / width;
+              width = MAX_WIDTH;
+            }
+          } else {
+            if (height > MAX_HEIGHT) {
+              width *= MAX_HEIGHT / height;
+              height = MAX_HEIGHT;
+            }
+          }
+
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          ctx?.drawImage(img, 0, 0, width, height);
+          resolve(canvas.toDataURL('image/jpeg', 0.6));
+        };
+      };
+    });
+  };
+
+  const handleFrontalUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      setFrontalImage(URL.createObjectURL(file));
-      showToast?.('Foto frontal salva!', 'success');
+      const base64 = await compressImage(file);
+      setFrontalImage(base64);
+      showToast?.('Foto frontal salva temporariamente!', 'success');
     }
   };
 
-  const handleProfileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleProfileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      setProfileImage(URL.createObjectURL(file));
-      showToast?.('Foto de perfil salva!', 'success');
+      const base64 = await compressImage(file);
+      setProfileImage(base64);
+      showToast?.('Foto de perfil salva temporariamente!', 'success');
     }
   };
 
@@ -240,7 +292,7 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
       variants={container}
       initial="hidden"
       animate="show"
-      className="space-y-8 md:space-y-12 pb-24 md:pb-12"
+      className="space-y-8 md:space-y-12 pb-24 md:pb-12 print:space-y-6 print:pb-0"
     >
       <motion.header variants={item} className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
         <div>
