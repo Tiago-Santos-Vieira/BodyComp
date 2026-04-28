@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
-import { Ruler, Camera, Activity, FileText, User, Save, History, Plus, Trash2 } from 'lucide-react';
+import { Ruler, Camera, Activity, FileText, User, Save, History, Plus, Trash2, Printer } from 'lucide-react';
 import { motion } from 'motion/react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip as RechartsTooltip, Legend } from 'recharts';
 import { Patient } from '../../types';
@@ -40,6 +40,7 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
   });
 
   const [skinfolds, setSkinfolds] = useState<number[]>(Array(7).fill(0));
+  const [perimetry, setPerimetry] = useState<Record<string, number>>({});
   const [assessmentsHistory, setAssessmentsHistory] = useState<any[]>([]);
   const [currentAssessmentId, setCurrentAssessmentId] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -73,12 +74,14 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
     setCurrentAssessmentId(assessment.id);
     setBasicData(assessment.basic_data || { weight: 0, height: 0, age: 0, gender: 'M', waist: 0, hip: 0 });
     setSkinfolds(assessment.skinfolds || Array(7).fill(0));
+    setPerimetry(assessment.perimetry || {});
   };
 
   const startNewAssessment = () => {
     setCurrentAssessmentId(null);
     setBasicData({ weight: 0, height: 0, age: 0, gender: 'M', waist: 0, hip: 0 });
     setSkinfolds(Array(7).fill(0));
+    setPerimetry({});
   };
 
   const handleSaveAssessment = async () => {
@@ -92,6 +95,7 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
       patient_id: activePatient.id,
       basic_data: basicData,
       skinfolds: skinfolds,
+      perimetry: perimetry,
       date: new Date().toISOString()
     };
 
@@ -275,6 +279,13 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
                 <Trash2 size={20} />
               </button>
             )}
+            <button 
+              onClick={() => window.print()}
+              className="w-12 md:w-14 h-12 md:h-[56px] border border-primary/20 text-primary rounded-full flex items-center justify-center hover:bg-primary/5 active:scale-95 transition-all print:hidden"
+              title="Imprimir Avaliação"
+            >
+              <Printer size={20} />
+            </button>
             <button 
               onClick={handleSaveAssessment}
               disabled={isSaving}
@@ -503,7 +514,7 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
                 {['Pescoço', 'Ombros', 'Tórax Relaxado', 'Tórax Inspirado'].map(label => (
                   <div key={label} className="group">
                     <label className="text-[10px] font-bold text-on-surface-variant uppercase">{label}</label>
-                    <input type="number" placeholder="--" className="w-full bg-transparent border-b border-on-surface-variant/10 focus:border-primary py-2 outline-none transition-all text-sm md:text-base print:border-b-0 print:border-black/20" />
+                    <input type="number" value={perimetry[label] || ''} onChange={(e) => setPerimetry({...perimetry, [label]: parseFloat(e.target.value) || 0})} placeholder="--" className="w-full bg-transparent border-b border-on-surface-variant/10 focus:border-primary py-2 outline-none transition-all text-sm md:text-base print:border-b-0 print:border-black/20" />
                   </div>
                 ))}
               </div>
@@ -517,7 +528,7 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
                 </div>
                 <div className="group">
                   <label className="text-[10px] font-bold text-on-surface-variant uppercase">Abdominal (Umbilical)</label>
-                  <input type="number" placeholder="--" className="w-full bg-transparent border-b border-on-surface-variant/10 focus:border-primary py-2 outline-none transition-all text-sm md:text-base print:border-b-0 print:border-black/20" />
+                  <input type="number" value={perimetry['Abdominal (Umbilical)'] || ''} onChange={(e) => setPerimetry({...perimetry, 'Abdominal (Umbilical)': parseFloat(e.target.value) || 0})} placeholder="--" className="w-full bg-transparent border-b border-on-surface-variant/10 focus:border-primary py-2 outline-none transition-all text-sm md:text-base print:border-b-0 print:border-black/20" />
                 </div>
                 <div className="group">
                   <label className="text-[10px] font-bold text-on-surface-variant uppercase">Quadril</label>
@@ -531,7 +542,7 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
                 {['Braço Relax. Esq.', 'Braço Relax. Dir.', 'Braço Cont. Esq.', 'Braço Cont. Dir.', 'Antebraço Esq.', 'Antebraço Dir.'].map(label => (
                   <div key={label} className="group">
                     <label className="text-[10px] font-bold text-on-surface-variant uppercase truncate block" title={label}>{label}</label>
-                    <input type="number" placeholder="cm" className="w-full bg-transparent border-b border-on-surface-variant/10 focus:border-primary py-2 outline-none text-sm transition-all print:border-b-0 print:border-black/20" />
+                    <input type="number" value={perimetry[label] || ''} onChange={(e) => setPerimetry({...perimetry, [label]: parseFloat(e.target.value) || 0})} placeholder="cm" className="w-full bg-transparent border-b border-on-surface-variant/10 focus:border-primary py-2 outline-none text-sm transition-all print:border-b-0 print:border-black/20" />
                   </div>
                 ))}
               </div>
@@ -542,7 +553,7 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
                 {['Coxa Prox. Esq.', 'Coxa Prox. Dir.', 'Coxa Méd. Esq.', 'Coxa Méd. Dir.', 'Coxa Dist. Esq.', 'Coxa Dist. Dir.', 'Pantur. Esq.', 'Pantur. Dir.'].map(label => (
                   <div key={label} className="group">
                     <label className="text-[10px] font-bold text-on-surface-variant uppercase truncate block" title={label}>{label}</label>
-                    <input type="number" placeholder="cm" className="w-full bg-transparent border-b border-on-surface-variant/10 focus:border-primary py-2 outline-none text-sm transition-all print:border-b-0 print:border-black/20" />
+                    <input type="number" value={perimetry[label] || ''} onChange={(e) => setPerimetry({...perimetry, [label]: parseFloat(e.target.value) || 0})} placeholder="cm" className="w-full bg-transparent border-b border-on-surface-variant/10 focus:border-primary py-2 outline-none text-sm transition-all print:border-b-0 print:border-black/20" />
                   </div>
                 ))}
               </div>
