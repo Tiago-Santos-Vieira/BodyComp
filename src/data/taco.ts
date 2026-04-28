@@ -1,5 +1,13 @@
 export const tacoData = [
   {
+    "id": "t-chia",
+    "name": "Semente de Chia",
+    "kcal": 536,
+    "prot": 17.2,
+    "carb": 44,
+    "gord": 32.8
+  },
+  {
     "id": "t1",
     "name": "Arroz, integral, cozido",
     "kcal": 123.5,
