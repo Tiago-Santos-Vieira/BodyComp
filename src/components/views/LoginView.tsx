@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { User, Lock, Eye, EyeOff, Activity } from 'lucide-react';
+import { User, Lock, Eye, EyeOff } from 'lucide-react';
 import { motion } from 'motion/react';
 import { ToastType } from '../../App';
 import { supabase } from '../../lib/supabase';
@@ -42,9 +42,23 @@ export default function LoginView({ onLogin, showToast }: Props) {
 
   return (
     <div className="w-full flex items-center justify-center relative overflow-hidden h-full">
-        {/* Background Gradients Blur (Aesthetic Premium Effect) */}
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] -z-10 mix-blend-multiply opacity-70 animate-pulse"></div>
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-secondary-container/30 rounded-full blur-[80px] -z-10 mix-blend-multiply opacity-60"></div>
+        {/* Animated Background Gradients Blur (Aesthetic Premium Effect) */}
+        <motion.div 
+            animate={{ 
+                scale: [1, 1.2, 1],
+                opacity: [0.5, 0.8, 0.5]
+            }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-primary/30 rounded-full blur-[120px] -z-10"
+        ></motion.div>
+        <motion.div 
+            animate={{ 
+                scale: [1, 1.5, 1],
+                opacity: [0.4, 0.7, 0.4]
+            }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+            className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-secondary/30 rounded-full blur-[100px] -z-10"
+        ></motion.div>
         
         <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -58,14 +72,17 @@ export default function LoginView({ onLogin, showToast }: Props) {
                 <div className="h-2 w-full primary-gradient"></div>
                 
                 <div className="p-8 md:p-10">
-                    <div className="flex justify-center mb-8">
-                        <div className="bg-primary/10 p-4 rounded-2xl">
-                            <Activity size={36} className="text-primary" />
-                        </div>
+                    <div className="flex flex-col items-center justify-center mb-6">
+                        <motion.img 
+                            src="/logo.png" 
+                            alt="BodyComp Logo" 
+                            className="w-56 mb-4 object-contain drop-shadow-2xl"
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ duration: 0.6, ease: "easeOut", type: "spring", bounce: 0.4 }}
+                        />
+                        <p className="text-center text-on-surface-variant text-sm font-medium">Faça login para acessar o painel</p>
                     </div>
-                    
-                    <h2 className="text-3xl font-extrabold text-center text-on-surface font-headline mb-2">BodyComp</h2>
-                    <p className="text-center text-on-surface-variant text-sm mb-10 font-medium">Faça login para acessar o painel</p>
 
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="space-y-1">
