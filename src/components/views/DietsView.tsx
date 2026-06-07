@@ -67,6 +67,27 @@ export default function DietsView({ activePatient, showToast }: Props) {
     }), { kcal: 0, prot: 0, carb: 0, gord: 0 });
   };
 
+  const formatMeasure = (quantity: number, measure: string) => {
+    if (!measure) return '';
+    const cleanedMeasure = measure.replace(/^1\s+/, '');
+    
+    if (quantity <= 1) {
+      return `${quantity} ${cleanedMeasure}`;
+    }
+    
+    let pluralized = cleanedMeasure;
+    if (cleanedMeasure === 'unidade') pluralized = 'unidades';
+    else if (cleanedMeasure === 'colher de sopa') pluralized = 'colheres de sopa';
+    else if (cleanedMeasure === 'colher de servir') pluralized = 'colheres de servir';
+    else if (cleanedMeasure === 'copo de 200ml') pluralized = 'copos de 200ml';
+    else if (cleanedMeasure === 'xícara') pluralized = 'xícaras';
+    else if (cleanedMeasure === 'escumadeira') pluralized = 'escumadeiras';
+    else if (cleanedMeasure === 'fatia') pluralized = 'fatias';
+    else if (cleanedMeasure === 'pedaço') pluralized = 'pedaços';
+    
+    return `${quantity} ${pluralized}`;
+  };
+
   const calculateDailyTotals = () => {
     let total = { kcal: 0, prot: 0, carb: 0, gord: 0 };
     meals.forEach(m => {
@@ -101,31 +122,10 @@ export default function DietsView({ activePatient, showToast }: Props) {
   const [selectedTaco, setSelectedTaco] = useState<any>(null);
   
   const [foodQuantity, setFoodQuantity] = useState<number>(1);
-  const [foodMeasure, setFoodMeasure] = useState('Colher de Sopa Cheia');
+  const [foodMeasure, setFoodMeasure] = useState('');
   const [foodWeight, setFoodWeight] = useState<number>(100);
-
-  const measureWeights: Record<string, number> = {
-    'Grama(s)': 1,
-    'Colher de Sopa Cheia': 15,
-    'Colher de Sopa Rasa': 10,
-    'Colher de Chá': 5,
-    'Colher de Sobremesa': 10,
-    'Concha Média': 100,
-    'Concha Cheia': 130,
-    'Escumadeira': 70,
-    'Fatia Pequena': 25,
-    'Fatia Média': 50,
-    'Fatia Grande': 80,
-    'Pedaço Médio': 100,
-    'Unidade Pequena': 50,
-    'Unidade Média': 100,
-    'Unidade Grande': 150,
-    'Copo Americano (200ml)': 200,
-    'Xícara de Chá': 150,
-    'Porção': 100
-  };
-
-  const measureOptions = Object.keys(measureWeights);
+  const [foodUnit, setFoodUnit] = useState<string>('g');
+  const [currentMeasures, setCurrentMeasures] = useState<any[]>([]);
 
   const allFoods = useMemo(() => {
     return [
@@ -139,6 +139,22 @@ export default function DietsView({ activePatient, showToast }: Props) {
     const lowerSearch = tacoSearch.toLowerCase();
     return allFoods.filter(t => t.name.toLowerCase().includes(lowerSearch)).slice(0, 40);
   }, [tacoSearch, allFoods]);
+
+  const handleSelectTaco = (food: any) => {
+    setSelectedTaco(food);
+    const measures = food.householdMeasures || [];
+    setCurrentMeasures(measures);
+    if (measures.length > 0) {
+       setFoodMeasure(measures[0].measure);
+       setFoodWeight(measures[0].amount);
+       setFoodQuantity(1);
+    } else {
+       setFoodMeasure('Grama(s)');
+       setFoodWeight(100);
+       setFoodQuantity(1);
+    }
+    setFoodUnit(food.unit || 'g');
+  };
 
   const openMealModal = (meal?: any) => {
     if (meal) {
@@ -180,7 +196,7 @@ export default function DietsView({ activePatient, showToast }: Props) {
       name: selectedTaco.name,
       measure: foodMeasure,
       quantity: foodQuantity,
-      weight: `${foodWeight}g`,
+      weight: `${foodWeight}${foodUnit}`,
       kcal: selectedTaco.kcal * ratio,
       prot: selectedTaco.prot * ratio,
       carb: selectedTaco.carb * ratio,
@@ -204,7 +220,13 @@ export default function DietsView({ activePatient, showToast }: Props) {
     setEditingFoodData({ mealId, food });
     setFoodMeasure(food.measure);
     setFoodQuantity(food.quantity);
-    setFoodWeight(parseFloat(food.weight.replace('g', '')));
+    const wStr = food.weight.replace(/g|ml/gi, '');
+    setFoodWeight(parseFloat(wStr));
+    setFoodUnit(food.weight.toLowerCase().includes('ml') ? 'ml' : 'g');
+    
+    const baseFood = allFoods.find(f => f.name === food.name);
+    setCurrentMeasures(baseFood?.householdMeasures || []);
+    
     setIsEditFoodModalOpen(true);
   };
 
@@ -212,7 +234,7 @@ export default function DietsView({ activePatient, showToast }: Props) {
     if (!editingFoodData) return;
     const { mealId, food } = editingFoodData;
     
-    const oldWeight = parseFloat(food.weight.replace('g', ''));
+    const oldWeight = parseFloat(food.weight.replace(/g|ml/gi, ''));
     if (oldWeight === 0) return;
 
     const ratio = foodWeight / oldWeight;
@@ -221,7 +243,7 @@ export default function DietsView({ activePatient, showToast }: Props) {
       ...food,
       measure: foodMeasure,
       quantity: foodQuantity,
-      weight: `${foodWeight}g`,
+      weight: `${foodWeight}${foodUnit}`,
       kcal: food.kcal * ratio,
       prot: food.prot * ratio,
       carb: food.carb * ratio,
@@ -427,7 +449,7 @@ export default function DietsView({ activePatient, showToast }: Props) {
                       <div className="col-span-1 md:col-span-3 flex flex-row md:flex-col justify-between md:justify-center md:items-center mt-2 md:mt-0">
                         <span className="md:hidden text-xs text-on-surface-variant font-medium print:hidden">Quantidade:</span>
                         <div className="text-right md:text-center flex flex-col">
-                          <span className="text-sm font-semibold text-primary print:text-black">{food.quantity} {food.measure}</span>
+                          <span className="text-sm font-semibold text-primary print:text-black">{formatMeasure(food.quantity, food.measure)}</span>
                           <span className="text-[11px] text-on-surface-variant print:text-black/60">({food.weight})</span>
                         </div>
                       </div>
@@ -572,13 +594,16 @@ export default function DietsView({ activePatient, showToast }: Props) {
                       onChange={e => {
                         const newMeasure = e.target.value;
                         setFoodMeasure(newMeasure);
-                        setFoodWeight(foodQuantity * (measureWeights[newMeasure] || 100));
+                        const measureObj = currentMeasures.find(m => m.measure === newMeasure);
+                        const amount = measureObj ? measureObj.amount : 100;
+                        setFoodWeight(foodQuantity * amount);
                       }} 
                       className="w-full bg-surface-container border-none rounded-xl px-4 py-3 text-on-surface font-bold focus:ring-2 focus:ring-primary outline-none appearance-none"
                     >
-                      {measureOptions.map(measure => (
-                        <option key={measure} value={measure}>{measure}</option>
+                      {currentMeasures.map(m => (
+                        <option key={m.measure} value={m.measure}>{m.measure.charAt(0).toUpperCase() + m.measure.slice(1)}</option>
                       ))}
+                      {currentMeasures.length === 0 && <option value={foodMeasure}>{foodMeasure.charAt(0).toUpperCase() + foodMeasure.slice(1)}</option>}
                     </select>
                   </div>
                   <div>
@@ -591,13 +616,15 @@ export default function DietsView({ activePatient, showToast }: Props) {
                       onChange={e => {
                         const newQuantity = Number(e.target.value) || 0;
                         setFoodQuantity(newQuantity);
-                        setFoodWeight(newQuantity * (measureWeights[foodMeasure] || 100));
+                        const measureObj = currentMeasures.find(m => m.measure === foodMeasure);
+                        const amount = measureObj ? measureObj.amount : 100;
+                        setFoodWeight(newQuantity * amount);
                       }} 
                       className="w-full bg-surface-container border-none rounded-xl px-4 py-3 text-on-surface font-bold focus:ring-2 focus:ring-primary outline-none" 
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-bold text-on-surface-variant mb-1">Qtd em Gramas</label>
+                    <label className="block text-sm font-bold text-on-surface-variant mb-1">Qtd em {foodUnit.toUpperCase()}</label>
                     <input 
                       type="number" 
                       min="0" 
@@ -605,8 +632,9 @@ export default function DietsView({ activePatient, showToast }: Props) {
                       onChange={e => {
                         const newWeight = Number(e.target.value) || 0;
                         setFoodWeight(newWeight);
-                        if (measureWeights[foodMeasure]) {
-                            setFoodQuantity(parseFloat((newWeight / measureWeights[foodMeasure]).toFixed(2)));
+                        const measureObj = currentMeasures.find(m => m.measure === foodMeasure);
+                        if (measureObj && measureObj.amount) {
+                            setFoodQuantity(parseFloat((newWeight / measureObj.amount).toFixed(2)));
                         }
                       }} 
                       className="w-full bg-surface-container border-none rounded-xl px-4 py-3 text-on-surface font-bold focus:ring-2 focus:ring-primary outline-none" 
@@ -663,15 +691,15 @@ export default function DietsView({ activePatient, showToast }: Props) {
                     ) : (
                       <div className="divide-y divide-on-surface-variant/10">
                         {filteredFoods.map(food => (
-                          <div key={food.id} onClick={() => setSelectedTaco(food)} className="p-4 md:px-6 hover:bg-surface-container-low cursor-pointer transition-colors flex justify-between items-center group">
+                          <div key={food.id} onClick={() => handleSelectTaco(food)} className="p-4 md:px-6 hover:bg-surface-container-low cursor-pointer transition-colors flex justify-between items-center group">
                             <div>
                               <p className="font-bold text-on-surface group-hover:text-primary transition-colors flex items-center gap-2">
-                                {food.name}
+                                {food.name} <span className="text-xs font-normal text-on-surface-variant">({food.unit || 'g'})</span>
                                 <span className={`text-[9px] px-1.5 py-0.5 rounded font-extrabold uppercase ${food.source === 'TACO' ? 'bg-primary-container text-primary' : 'bg-tertiary-container text-tertiary'}`}>
                                   {food.source}
                                 </span>
                               </p>
-                              <p className="text-xs text-on-surface-variant mt-1 font-medium">100g = {food.kcal}kcal | CHO: {food.carb}g | PTN: {food.prot}g | LIP: {food.gord}g</p>
+                              <p className="text-xs text-on-surface-variant mt-1 font-medium">100{food.unit || 'g'} = {food.kcal}kcal | CHO: {food.carb}g | PTN: {food.prot}g | LIP: {food.gord}g</p>
                             </div>
                             <div className="w-8 h-8 rounded-full bg-surface-container-high group-hover:bg-primary-container group-hover:text-primary flex items-center justify-center transition-colors">
                               <Plus size={18} />
@@ -688,7 +716,7 @@ export default function DietsView({ activePatient, showToast }: Props) {
                     <button onClick={() => setSelectedTaco(null)} className="text-sm text-primary font-bold hover:underline mb-4 flex items-center gap-1">← Voltar para a busca</button>
                     
                     <div className="bg-surface-container-low p-6 rounded-2xl border border-primary/20 mb-6">
-                      <h4 className="text-lg font-bold text-on-surface mb-2">{selectedTaco.name}</h4>
+                      <h4 className="text-lg font-bold text-on-surface mb-2">{selectedTaco.name} <span className="text-sm font-normal text-on-surface-variant">({selectedTaco.unit || 'g'})</span></h4>
                       <p className="text-sm text-on-surface-variant font-medium">Valores calculados dinamicamente para a porção escolhida.</p>
                       
                       <div className="grid grid-cols-4 gap-4 mt-4 p-4 bg-surface rounded-xl border border-on-surface-variant/10 text-center shadow-sm">
@@ -707,12 +735,14 @@ export default function DietsView({ activePatient, showToast }: Props) {
                           onChange={e => {
                             const newMeasure = e.target.value;
                             setFoodMeasure(newMeasure);
-                            setFoodWeight(foodQuantity * (measureWeights[newMeasure] || 100));
+                            const measureObj = currentMeasures.find(m => m.measure === newMeasure);
+                            const amount = measureObj ? measureObj.amount : 100;
+                            setFoodWeight(foodQuantity * amount);
                           }} 
                           className="w-full bg-surface-container border-none rounded-xl px-4 py-3 text-on-surface font-bold focus:ring-2 focus:ring-primary outline-none appearance-none"
                         >
-                          {measureOptions.map(measure => (
-                            <option key={measure} value={measure}>{measure}</option>
+                          {currentMeasures.map(m => (
+                            <option key={m.measure} value={m.measure}>{m.measure.charAt(0).toUpperCase() + m.measure.slice(1)}</option>
                           ))}
                         </select>
                       </div>
@@ -726,13 +756,15 @@ export default function DietsView({ activePatient, showToast }: Props) {
                           onChange={e => {
                             const newQuantity = Number(e.target.value) || 0;
                             setFoodQuantity(newQuantity);
-                            setFoodWeight(newQuantity * (measureWeights[foodMeasure] || 100));
+                            const measureObj = currentMeasures.find(m => m.measure === foodMeasure);
+                            const amount = measureObj ? measureObj.amount : 100;
+                            setFoodWeight(newQuantity * amount);
                           }} 
                           className="w-full bg-surface-container border-none rounded-xl px-4 py-3 text-on-surface font-bold focus:ring-2 focus:ring-primary outline-none" 
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-bold text-on-surface-variant mb-1">Qtd em Gramas (Referência)</label>
+                        <label className="block text-sm font-bold text-on-surface-variant mb-1">Qtd em {foodUnit.toUpperCase()} (Referência)</label>
                         <input 
                           type="number" 
                           min="0" 
@@ -740,8 +772,9 @@ export default function DietsView({ activePatient, showToast }: Props) {
                           onChange={e => {
                             const newWeight = Number(e.target.value) || 0;
                             setFoodWeight(newWeight);
-                            if (measureWeights[foodMeasure]) {
-                                setFoodQuantity(parseFloat((newWeight / measureWeights[foodMeasure]).toFixed(2)));
+                            const measureObj = currentMeasures.find(m => m.measure === foodMeasure);
+                            if (measureObj && measureObj.amount) {
+                                setFoodQuantity(parseFloat((newWeight / measureObj.amount).toFixed(2)));
                             }
                           }} 
                           className="w-full bg-surface-container border-none rounded-xl px-4 py-3 text-on-surface font-bold focus:ring-2 focus:ring-primary outline-none" 
