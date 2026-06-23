@@ -163,8 +163,8 @@ function isLiquid(name) {
   return liquidKeywords.some(kw => normalized.includes(kw));
 }
 
-// Configuração estrita de medidas caseiras sem o prefixo numérico fixo "1 " (Fase 2)
-function getHouseholdMeasures(isLiquidFood) {
+// Configuração estrita de medidas caseiras específicas e inteligentes (Fase 2)
+function getHouseholdMeasures(name, isLiquidFood) {
   if (isLiquidFood) {
     // Apenas medidas líquidas
     return [
@@ -173,18 +173,55 @@ function getHouseholdMeasures(isLiquidFood) {
       { measure: 'colher de sopa', amount: 15, unit: 'ml' },
       { measure: 'ml', amount: 1, unit: 'ml' }
     ];
-  } else {
-    // Apenas medidas sólidas
-    return [
-      { measure: 'colher de sopa', amount: 15, unit: 'g' },
-      { measure: 'escumadeira', amount: 30, unit: 'g' },
-      { measure: 'fatia', amount: 30, unit: 'g' },
-      { measure: 'unidade', amount: 100, unit: 'g' },
-      { measure: 'pedaço', amount: 50, unit: 'g' },
-      { measure: 'colher de servir', amount: 25, unit: 'g' },
-      { measure: 'g', amount: 1, unit: 'g' }
-    ];
   }
+
+  // Regex para categorias sólidas específicas
+  const n = name.toLowerCase();
+
+  if (/\bovo(s)?\b/.test(n)) {
+    return [{ measure: 'unidade', amount: 50, unit: 'g' }, { measure: 'g', amount: 1, unit: 'g' }];
+  }
+  if (/\bpão\b/.test(n)) {
+    return [{ measure: 'unidade', amount: 50, unit: 'g' }, { measure: 'fatia', amount: 25, unit: 'g' }, { measure: 'g', amount: 1, unit: 'g' }];
+  }
+  if (/\bbanana\b/.test(n)) {
+    return [{ measure: 'unidade média', amount: 70, unit: 'g' }, { measure: 'g', amount: 1, unit: 'g' }];
+  }
+  if (/\bmaçã\b/.test(n) || /\blaranja\b/.test(n)) {
+    return [{ measure: 'unidade média', amount: 130, unit: 'g' }, { measure: 'g', amount: 1, unit: 'g' }];
+  }
+  if (/\barroz\b/.test(n)) {
+    return [{ measure: 'colher de sopa', amount: 25, unit: 'g' }, { measure: 'escumadeira', amount: 80, unit: 'g' }, { measure: 'g', amount: 1, unit: 'g' }];
+  }
+  if (/\bfeijão\b/.test(n)) {
+    return [{ measure: 'concha', amount: 100, unit: 'g' }, { measure: 'colher de sopa', amount: 15, unit: 'g' }, { measure: 'g', amount: 1, unit: 'g' }];
+  }
+  if (/\bfrango\b/.test(n) || /\bcarne bovina\b/.test(n) || /\bbife\b/.test(n) || /\bboi\b/.test(n) || /\bvaca\b/.test(n) || /\bporco\b/.test(n) || /\bpeixe\b/.test(n)) {
+    return [{ measure: 'filé/bife médio', amount: 100, unit: 'g' }, { measure: 'pedaço', amount: 50, unit: 'g' }, { measure: 'g', amount: 1, unit: 'g' }];
+  }
+  if (/\bmamão\b/.test(n)) {
+    return [{ measure: 'fatia média', amount: 100, unit: 'g' }, { measure: 'meio mamão papaya', amount: 150, unit: 'g' }, { measure: 'g', amount: 1, unit: 'g' }];
+  }
+  if (/\bqueijo\b/.test(n) || /\bpresunto\b/.test(n) || /\bmortadela\b/.test(n) || /\bpeito de peru\b/.test(n) || /\bsalame\b/.test(n)) {
+    return [{ measure: 'fatia', amount: 15, unit: 'g' }, { measure: 'g', amount: 1, unit: 'g' }];
+  }
+  if (/\bbatata\b/.test(n)) {
+    return [{ measure: 'unidade média', amount: 150, unit: 'g' }, { measure: 'g', amount: 1, unit: 'g' }];
+  }
+  if (/\btomate\b/.test(n)) {
+    return [{ measure: 'unidade média', amount: 100, unit: 'g' }, { measure: 'fatia', amount: 15, unit: 'g' }, { measure: 'g', amount: 1, unit: 'g' }];
+  }
+
+  // Fallback genérico para outros sólidos
+  return [
+    { measure: 'colher de sopa', amount: 15, unit: 'g' },
+    { measure: 'escumadeira', amount: 30, unit: 'g' },
+    { measure: 'fatia', amount: 30, unit: 'g' },
+    { measure: 'unidade', amount: 100, unit: 'g' },
+    { measure: 'pedaço', amount: 50, unit: 'g' },
+    { measure: 'colher de servir', amount: 25, unit: 'g' },
+    { measure: 'g', amount: 1, unit: 'g' }
+  ];
 }
 
 // Função que extrai os dados JSON de dentro dos arquivos exportados em .ts
@@ -204,7 +241,7 @@ function processFood(item) {
   // FASE 2: Classificação e Medidas Caseiras Específicas
   const liquid = isLiquid(cleanedName);
   const unit = liquid ? 'ml' : 'g';
-  const householdMeasures = getHouseholdMeasures(liquid);
+  const householdMeasures = getHouseholdMeasures(cleanedName, liquid);
 
   return {
     ...item,

@@ -10,32 +10,12 @@ export const ibgeData = [
     "householdMeasures": [
       {
         "measure": "colher de sopa",
-        "amount": 15,
+        "amount": 25,
         "unit": "g"
       },
       {
         "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 80,
         "unit": "g"
       },
       {
@@ -56,32 +36,12 @@ export const ibgeData = [
     "householdMeasures": [
       {
         "measure": "colher de sopa",
-        "amount": 15,
+        "amount": 25,
         "unit": "g"
       },
       {
         "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 80,
         "unit": "g"
       },
       {
@@ -929,33 +889,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "concha",
         "amount": 100,
         "unit": "g"
       },
       {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "colher de sopa",
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -975,33 +915,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "concha",
         "amount": 100,
         "unit": "g"
       },
       {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "colher de sopa",
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -1251,33 +1171,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "concha",
         "amount": 100,
         "unit": "g"
       },
       {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "colher de sopa",
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -1343,33 +1243,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "concha",
         "amount": 100,
         "unit": "g"
       },
       {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "colher de sopa",
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -1389,33 +1269,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "concha",
         "amount": 100,
         "unit": "g"
       },
       {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "colher de sopa",
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -1482,32 +1342,12 @@ export const ibgeData = [
     "householdMeasures": [
       {
         "measure": "colher de sopa",
-        "amount": 15,
+        "amount": 25,
         "unit": "g"
       },
       {
         "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 80,
         "unit": "g"
       },
       {
@@ -1528,32 +1368,12 @@ export const ibgeData = [
     "householdMeasures": [
       {
         "measure": "colher de sopa",
-        "amount": 15,
+        "amount": 25,
         "unit": "g"
       },
       {
         "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 80,
         "unit": "g"
       },
       {
@@ -1573,33 +1393,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "concha",
         "amount": 100,
         "unit": "g"
       },
       {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "colher de sopa",
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -1665,33 +1465,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -1711,33 +1486,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -1757,33 +1507,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -1803,33 +1528,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -1849,33 +1549,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -1895,33 +1570,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -1941,33 +1591,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -1987,33 +1612,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -2064,33 +1664,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -2110,33 +1685,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -2156,33 +1706,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -2202,33 +1727,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -2248,33 +1748,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -2294,33 +1769,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -2340,33 +1790,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -2386,33 +1811,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -2432,33 +1832,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -2478,33 +1853,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -2524,33 +1874,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -2570,33 +1895,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -2616,33 +1916,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -2662,33 +1937,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -2708,33 +1958,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -2754,33 +1979,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -4594,33 +3794,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -4640,33 +3815,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -4686,33 +3836,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -4732,33 +3857,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -4778,33 +3878,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -4824,33 +3899,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -4870,33 +3920,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -4916,33 +3941,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -4962,33 +3962,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -5008,33 +3983,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -5054,33 +4004,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -5100,33 +4025,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -6373,33 +5273,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -6420,32 +5295,12 @@ export const ibgeData = [
     "householdMeasures": [
       {
         "measure": "colher de sopa",
-        "amount": 15,
+        "amount": 25,
         "unit": "g"
       },
       {
         "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 80,
         "unit": "g"
       },
       {
@@ -6558,32 +5413,12 @@ export const ibgeData = [
     "householdMeasures": [
       {
         "measure": "colher de sopa",
-        "amount": 15,
+        "amount": 25,
         "unit": "g"
       },
       {
         "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 80,
         "unit": "g"
       },
       {
@@ -6604,32 +5439,12 @@ export const ibgeData = [
     "householdMeasures": [
       {
         "measure": "colher de sopa",
-        "amount": 15,
+        "amount": 25,
         "unit": "g"
       },
       {
         "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 80,
         "unit": "g"
       },
       {
@@ -7064,32 +5879,12 @@ export const ibgeData = [
     "householdMeasures": [
       {
         "measure": "colher de sopa",
-        "amount": 15,
+        "amount": 25,
         "unit": "g"
       },
       {
         "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 80,
         "unit": "g"
       },
       {
@@ -9103,33 +7898,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -9149,33 +7919,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -10069,33 +8819,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -14854,33 +13584,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -15176,33 +13886,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "concha",
         "amount": 100,
         "unit": "g"
       },
       {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "colher de sopa",
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -15222,33 +13912,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "concha",
         "amount": 100,
         "unit": "g"
       },
       {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "colher de sopa",
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -18197,33 +16867,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "unidade média",
         "amount": 100,
         "unit": "g"
       },
       {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "fatia",
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -19853,33 +18503,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "unidade média",
         "amount": 100,
         "unit": "g"
       },
       {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "fatia",
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -20192,33 +18822,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 70,
         "unit": "g"
       },
       {
@@ -20362,33 +18967,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 130,
         "unit": "g"
       },
       {
@@ -21144,33 +19724,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "fatia média",
         "amount": 100,
         "unit": "g"
       },
       {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "meio mamão papaya",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -22708,32 +21268,12 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
         "unit": "g"
       },
       {
-        "measure": "colher de servir",
+        "measure": "fatia",
         "amount": 25,
         "unit": "g"
       },
@@ -26987,33 +25527,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -27125,33 +25640,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -27908,33 +26398,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -27954,33 +26419,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -28047,32 +26487,12 @@ export const ibgeData = [
     "householdMeasures": [
       {
         "measure": "colher de sopa",
-        "amount": 15,
+        "amount": 25,
         "unit": "g"
       },
       {
         "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 80,
         "unit": "g"
       },
       {
@@ -30700,33 +29120,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "unidade média",
         "amount": 100,
         "unit": "g"
       },
       {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "fatia",
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -30746,33 +29146,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "unidade média",
         "amount": 100,
         "unit": "g"
       },
       {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "fatia",
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -30961,33 +29341,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -31115,33 +29470,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "unidade média",
         "amount": 100,
         "unit": "g"
       },
       {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "fatia",
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -33676,33 +32011,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -33722,33 +32037,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -33768,33 +32063,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -33814,33 +32089,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -33860,33 +32115,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -33906,33 +32141,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -34366,33 +32581,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -34412,33 +32607,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -34458,33 +32633,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -34504,33 +32659,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -35793,33 +33928,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -35839,33 +33954,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -35885,33 +33980,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -36529,33 +34604,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -36575,33 +34630,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -36621,33 +34656,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -37250,33 +35265,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -37434,33 +35429,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -38891,33 +36866,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -44105,33 +42060,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -46482,33 +44417,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -46528,33 +44443,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -46574,33 +44469,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -46620,33 +44495,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -46666,33 +44521,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -46712,33 +44547,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -46758,33 +44573,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -46804,33 +44599,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -46850,33 +44625,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -46927,33 +44682,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -46973,33 +44708,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -47019,33 +44734,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -47065,33 +44760,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -47111,33 +44786,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -48246,33 +45901,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -48292,33 +45927,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -48338,33 +45953,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -48430,33 +46025,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -48476,33 +46051,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -48522,33 +46077,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -48568,33 +46103,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -48614,33 +46129,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -48660,33 +46155,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -48706,33 +46181,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -48752,33 +46207,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -48798,33 +46233,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -48844,33 +46259,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -48890,33 +46285,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -48936,33 +46311,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -48982,33 +46337,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -49028,33 +46363,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -49074,33 +46389,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -49120,33 +46415,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -50853,33 +48128,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -50899,33 +48154,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -51549,33 +48784,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -51595,33 +48810,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -51641,33 +48836,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -51687,33 +48862,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -51733,33 +48888,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -51779,33 +48914,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -51825,33 +48940,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -51871,33 +48966,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -51917,33 +48992,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -51963,33 +49018,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -52009,33 +49044,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -52055,33 +49070,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -52101,33 +49096,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -52147,33 +49122,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -52193,33 +49148,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -53098,33 +50033,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "concha",
         "amount": 100,
         "unit": "g"
       },
       {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "colher de sopa",
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -53236,33 +50151,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -53328,33 +50218,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -53957,33 +50827,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -54371,33 +51221,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -54417,33 +51247,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -54463,33 +51273,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -54509,33 +51299,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -54555,33 +51325,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -54601,33 +51351,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -54647,33 +51377,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -54693,33 +51403,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -54739,33 +51429,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -54785,33 +51455,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -54831,33 +51481,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -54877,33 +51507,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -54923,33 +51533,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -54969,33 +51559,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -55015,33 +51585,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -55061,33 +51611,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -55107,33 +51637,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -55153,33 +51663,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -55199,33 +51689,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -55245,33 +51715,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -55291,33 +51741,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -55337,33 +51767,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -55383,33 +51793,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -55429,33 +51819,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -55475,33 +51845,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -55521,33 +51871,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -55567,33 +51897,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -55613,33 +51923,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -55690,33 +51980,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -55736,33 +52006,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -55782,33 +52032,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -55828,33 +52058,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -56840,33 +53050,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -56886,33 +53076,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -56932,33 +53102,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -56978,33 +53128,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -57024,33 +53154,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -57070,33 +53180,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -57116,33 +53206,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -57162,33 +53232,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -57208,33 +53258,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -57254,33 +53284,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -57300,33 +53310,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -57346,33 +53336,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -57392,33 +53362,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -57438,33 +53388,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -57484,33 +53414,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -57530,33 +53440,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -57576,33 +53466,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -57622,33 +53492,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -57668,33 +53518,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -57714,33 +53544,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -57760,33 +53570,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -57837,33 +53627,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -57883,33 +53653,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -57929,33 +53679,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -57975,33 +53705,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -58021,33 +53731,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -58067,33 +53757,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -58113,33 +53783,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -58159,33 +53809,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -58205,33 +53835,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -58251,33 +53861,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -58297,33 +53887,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -58343,33 +53913,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -58389,33 +53939,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -58435,33 +53965,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -58481,33 +53991,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -58527,33 +54017,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -58759,33 +54229,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -58805,33 +54255,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -58851,33 +54281,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -58897,33 +54307,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -58943,33 +54333,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -58989,33 +54359,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -59035,33 +54385,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -59081,33 +54411,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -59127,33 +54437,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -59173,33 +54463,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -59219,33 +54489,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -59265,33 +54515,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -59311,33 +54541,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -59357,33 +54567,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -59403,33 +54593,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -59449,33 +54619,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -59495,33 +54645,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -59541,33 +54671,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -59587,33 +54697,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -59633,33 +54723,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -59679,33 +54749,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -59725,33 +54775,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -59771,33 +54801,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -59817,33 +54827,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -59863,33 +54853,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -59909,33 +54879,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -59955,33 +54905,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -60001,33 +54931,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -60047,33 +54957,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -60093,33 +54983,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -60139,33 +55009,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -60185,33 +55035,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -60231,33 +55061,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -60507,33 +55317,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -60553,33 +55338,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -60599,33 +55359,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -60645,33 +55380,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -60691,33 +55401,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -60737,33 +55422,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -60783,33 +55443,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -61151,33 +55786,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -61197,33 +55812,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -61243,33 +55838,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -61289,33 +55864,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -61335,33 +55890,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -61381,33 +55916,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -61427,33 +55942,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -61473,33 +55968,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -61519,33 +55994,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -61565,33 +56020,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -61611,33 +56046,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -61703,33 +56118,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -61749,33 +56144,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -61795,33 +56170,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -61841,33 +56196,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -61887,33 +56217,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -61933,33 +56238,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -61979,33 +56259,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -62025,33 +56280,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -62071,33 +56301,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -62148,33 +56353,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -62194,33 +56374,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -62240,33 +56395,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -62286,33 +56416,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -62332,33 +56437,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -62378,33 +56458,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -62424,33 +56479,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -62470,33 +56500,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -62516,33 +56521,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -62562,33 +56542,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -63160,33 +57115,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -63206,33 +57136,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -63252,33 +57157,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -63298,33 +57178,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -63344,33 +57204,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -63390,33 +57230,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -63436,33 +57256,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -63482,33 +57282,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -63528,33 +57308,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -64389,33 +58149,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -64435,33 +58170,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -64481,33 +58191,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -64527,33 +58212,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -64665,33 +58325,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -64711,33 +58346,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -64757,33 +58367,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -64803,33 +58388,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -64895,33 +58455,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -64941,33 +58476,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -64987,33 +58497,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -65110,33 +58595,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -65156,33 +58616,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -65202,33 +58637,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -65294,33 +58704,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -65340,33 +58725,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -65556,33 +58916,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -66233,33 +59568,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -66402,33 +59712,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -66448,33 +59733,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -66494,33 +59754,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -66540,33 +59775,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -66586,33 +59796,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -66632,33 +59817,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -66724,33 +59884,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -67048,33 +60183,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -67094,33 +60204,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -67140,32 +60225,12 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
         "unit": "g"
       },
       {
-        "measure": "colher de servir",
+        "measure": "fatia",
         "amount": 25,
         "unit": "g"
       },
@@ -67186,32 +60251,12 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
         "unit": "g"
       },
       {
-        "measure": "colher de servir",
+        "measure": "fatia",
         "amount": 25,
         "unit": "g"
       },
@@ -67232,32 +60277,12 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
         "unit": "g"
       },
       {
-        "measure": "colher de servir",
+        "measure": "fatia",
         "amount": 25,
         "unit": "g"
       },
@@ -67370,32 +60395,12 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
         "unit": "g"
       },
       {
-        "measure": "colher de servir",
+        "measure": "fatia",
         "amount": 25,
         "unit": "g"
       },
@@ -67554,32 +60559,12 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
         "unit": "g"
       },
       {
-        "measure": "colher de servir",
+        "measure": "fatia",
         "amount": 25,
         "unit": "g"
       },
@@ -67600,32 +60585,12 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
         "unit": "g"
       },
       {
-        "measure": "colher de servir",
+        "measure": "fatia",
         "amount": 25,
         "unit": "g"
       },
@@ -67646,32 +60611,12 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
         "unit": "g"
       },
       {
-        "measure": "colher de servir",
+        "measure": "fatia",
         "amount": 25,
         "unit": "g"
       },
@@ -67692,32 +60637,12 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
         "unit": "g"
       },
       {
-        "measure": "colher de servir",
+        "measure": "fatia",
         "amount": 25,
         "unit": "g"
       },
@@ -67738,32 +60663,12 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
         "unit": "g"
       },
       {
-        "measure": "colher de servir",
+        "measure": "fatia",
         "amount": 25,
         "unit": "g"
       },
@@ -67784,32 +60689,12 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
         "unit": "g"
       },
       {
-        "measure": "colher de servir",
+        "measure": "fatia",
         "amount": 25,
         "unit": "g"
       },
@@ -69165,33 +62050,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -69212,32 +62072,12 @@ export const ibgeData = [
     "householdMeasures": [
       {
         "measure": "colher de sopa",
-        "amount": 15,
+        "amount": 25,
         "unit": "g"
       },
       {
         "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 80,
         "unit": "g"
       },
       {
@@ -69441,33 +62281,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -69579,33 +62394,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 130,
         "unit": "g"
       },
       {
@@ -70162,32 +62952,12 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
         "unit": "g"
       },
       {
-        "measure": "colher de servir",
+        "measure": "fatia",
         "amount": 25,
         "unit": "g"
       },
@@ -70208,32 +62978,12 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
         "unit": "g"
       },
       {
-        "measure": "colher de servir",
+        "measure": "fatia",
         "amount": 25,
         "unit": "g"
       },
@@ -70254,32 +63004,12 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
         "unit": "g"
       },
       {
-        "measure": "colher de servir",
+        "measure": "fatia",
         "amount": 25,
         "unit": "g"
       },
@@ -70300,32 +63030,12 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
         "unit": "g"
       },
       {
-        "measure": "colher de servir",
+        "measure": "fatia",
         "amount": 25,
         "unit": "g"
       },
@@ -70438,33 +63148,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -70484,33 +63169,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -70622,33 +63282,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 130,
         "unit": "g"
       },
       {
@@ -71098,32 +63733,12 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
         "unit": "g"
       },
       {
-        "measure": "colher de servir",
+        "measure": "fatia",
         "amount": 25,
         "unit": "g"
       },
@@ -71144,32 +63759,12 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
         "unit": "g"
       },
       {
-        "measure": "colher de servir",
+        "measure": "fatia",
         "amount": 25,
         "unit": "g"
       },
@@ -71513,33 +64108,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 70,
         "unit": "g"
       },
       {
@@ -72727,33 +65297,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -72773,33 +65323,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -72819,33 +65349,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -72865,33 +65375,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -72911,33 +65401,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -72957,33 +65427,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -73003,33 +65453,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -73049,33 +65479,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -73141,33 +65551,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -73187,33 +65577,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -73233,33 +65603,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -73279,33 +65629,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -73325,33 +65655,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -73371,33 +65681,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -74310,33 +66600,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -74356,33 +66626,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -74402,33 +66652,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -74448,33 +66678,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -74494,33 +66704,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -74770,33 +66960,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -74816,33 +66981,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -74954,33 +67094,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -75414,33 +67529,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -75460,33 +67555,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -75506,33 +67581,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -76150,33 +68205,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -76227,33 +68257,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -76442,33 +68447,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 130,
         "unit": "g"
       },
       {
@@ -79416,33 +71396,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -79554,33 +71509,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -79600,33 +71530,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -80106,33 +72011,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -80198,33 +72078,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -80704,33 +72564,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -80750,33 +72585,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -80796,33 +72606,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -80842,33 +72627,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -80888,33 +72648,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -80934,33 +72669,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -82062,33 +73772,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 130,
         "unit": "g"
       },
       {
@@ -82752,33 +74437,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -83198,33 +74858,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -83244,33 +74879,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -84151,32 +75761,12 @@ export const ibgeData = [
     "householdMeasures": [
       {
         "measure": "colher de sopa",
-        "amount": 15,
+        "amount": 25,
         "unit": "g"
       },
       {
         "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 80,
         "unit": "g"
       },
       {
@@ -84365,33 +75955,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -84411,33 +75981,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 70,
         "unit": "g"
       },
       {
@@ -84457,33 +76002,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "concha",
         "amount": 100,
         "unit": "g"
       },
       {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "colher de sopa",
+        "amount": 15,
         "unit": "g"
       },
       {
@@ -84504,32 +76029,12 @@ export const ibgeData = [
     "householdMeasures": [
       {
         "measure": "colher de sopa",
-        "amount": 15,
+        "amount": 25,
         "unit": "g"
       },
       {
         "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 80,
         "unit": "g"
       },
       {
@@ -85041,32 +76546,12 @@ export const ibgeData = [
     "householdMeasures": [
       {
         "measure": "colher de sopa",
-        "amount": 15,
+        "amount": 25,
         "unit": "g"
       },
       {
         "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 80,
         "unit": "g"
       },
       {
@@ -85841,33 +77326,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -86287,32 +77752,12 @@ export const ibgeData = [
     "householdMeasures": [
       {
         "measure": "colher de sopa",
-        "amount": 15,
+        "amount": 25,
         "unit": "g"
       },
       {
         "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 80,
         "unit": "g"
       },
       {
@@ -86332,32 +77777,12 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
         "unit": "g"
       },
       {
-        "measure": "colher de servir",
+        "measure": "fatia",
         "amount": 25,
         "unit": "g"
       },
@@ -86378,32 +77803,12 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
         "unit": "g"
       },
       {
-        "measure": "colher de servir",
+        "measure": "fatia",
         "amount": 25,
         "unit": "g"
       },
@@ -86424,33 +77829,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -86470,33 +77850,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -86516,33 +77871,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "measure": "unidade média",
+        "amount": 150,
         "unit": "g"
       },
       {
@@ -86562,33 +77892,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -86608,33 +77918,13 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
+        "measure": "filé/bife médio",
         "amount": 100,
         "unit": "g"
       },
       {
         "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
@@ -86701,32 +77991,12 @@ export const ibgeData = [
     "householdMeasures": [
       {
         "measure": "colher de sopa",
-        "amount": 15,
+        "amount": 25,
         "unit": "g"
       },
       {
         "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 80,
         "unit": "g"
       },
       {
@@ -86824,32 +78094,12 @@ export const ibgeData = [
     "householdMeasures": [
       {
         "measure": "colher de sopa",
-        "amount": 15,
+        "amount": 25,
         "unit": "g"
       },
       {
         "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
+        "amount": 80,
         "unit": "g"
       },
       {
@@ -86869,33 +78119,8 @@ export const ibgeData = [
     "unit": "g",
     "householdMeasures": [
       {
-        "measure": "colher de sopa",
-        "amount": 15,
-        "unit": "g"
-      },
-      {
-        "measure": "escumadeira",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "measure": "fatia",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
         "measure": "unidade",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "measure": "pedaço",
         "amount": 50,
-        "unit": "g"
-      },
-      {
-        "measure": "colher de servir",
-        "amount": 25,
         "unit": "g"
       },
       {
