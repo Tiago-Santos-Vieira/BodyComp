@@ -107,6 +107,8 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
       date: new Date().toISOString()
     };
 
+    let success = false;
+
     if (currentAssessmentId) {
       const { error } = await supabase.from('assessments').update(payload).eq('id', currentAssessmentId);
       if (!error) {
@@ -114,6 +116,7 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
         // Refresh list slightly
         const { data } = await supabase.from('assessments').select('*').eq('patient_id', activePatient.id).order('date', { ascending: false });
         if (data) setAssessmentsHistory(data);
+        success = true;
       } else {
         showToast?.('Erro ao atualizar: ' + error.message, 'error');
       }
@@ -123,10 +126,17 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
         setCurrentAssessmentId(data.id);
         setAssessmentsHistory([data, ...assessmentsHistory]);
         showToast?.('Nova avaliação salva!', 'success');
+        success = true;
       } else if (error) {
         showToast?.('Erro ao criar avaliação: ' + error.message, 'error');
       }
     }
+
+    if (success) {
+      // Atualiza a data da última consulta no paciente
+      await supabase.from('patients').update({ last_consultation: payload.date }).eq('id', activePatient.id);
+    }
+
     setIsSaving(false);
   };
 

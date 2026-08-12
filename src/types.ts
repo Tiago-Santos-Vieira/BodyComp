@@ -1,4 +1,4 @@
-export type ViewType = 'dashboard' | 'assessments' | 'anamnesis' | 'diets' | 'patients' | 'profile' | 'agenda';
+export type ViewType = 'dashboard' | 'assessments' | 'evolution' | 'anamnesis' | 'diets' | 'patients' | 'profile' | 'agenda';
 
 export interface Patient {
   id: string;

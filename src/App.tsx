@@ -6,6 +6,7 @@ import TopBar from './components/TopBar';
 import DashboardView from './components/views/DashboardView';
 import AnamnesisView from './components/views/AnamnesisView';
 import AssessmentsView from './components/views/AssessmentsView';
+import EvolutionView from './components/views/EvolutionView';
 import DietsView from './components/views/DietsView';
 import PatientsView from './components/views/PatientsView';
 import ProfileView from './components/views/ProfileView';
@@ -83,6 +84,8 @@ export default function App() {
         return <AnamnesisView activePatient={activePatient} showToast={showToast} />;
       case 'assessments':
         return <AssessmentsView activePatient={activePatient} showToast={showToast} />;
+      case 'evolution':
+        return <EvolutionView activePatient={activePatient} showToast={showToast} />;
       case 'diets':
         return <DietsView activePatient={activePatient} showToast={showToast} />;
       case 'patients':

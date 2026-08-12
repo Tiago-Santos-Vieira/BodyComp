@@ -50,11 +50,11 @@ export default function DashboardView({ onNewConsultation, onSelectPatient, show
       }
     }
     
-    // Fetch last 3 patients
+    // Fetch last 3 patients (Atendimentos Recentes)
     const { data: patientsData, error } = await supabase
       .from('patients')
       .select('*')
-      .order('created_at', { ascending: false })
+      .order('last_consultation', { ascending: false, nullsFirst: false })
       .limit(3);
 
     // Fetch total patients

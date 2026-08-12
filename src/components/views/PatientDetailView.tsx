@@ -1,4 +1,4 @@
-import { ArrowLeft, Edit2, Calendar, FileText, Settings, User, X, Camera, Save } from 'lucide-react';
+import { ArrowLeft, Edit2, Calendar, FileText, Settings, User, X, Camera, Save, TrendingUp } from 'lucide-react';
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Patient, ViewType } from '../../types';
@@ -126,13 +126,21 @@ export default function PatientDetailView({ activePatient, setCurrentView, showT
         </div>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <motion.div variants={item} className="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-on-surface-variant/5 hover:-translate-y-1 transition-transform cursor-pointer group" onClick={() => setCurrentView('assessments')}>
           <div className="w-12 h-12 bg-secondary-container text-on-secondary-container rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
             <Settings size={24} />
           </div>
           <h3 className="text-lg font-bold font-headline mb-2">Avaliações Físicas</h3>
-          <p className="text-sm text-on-surface-variant">Veja o histórico de medidas e percentual de gordura.</p>
+          <p className="text-sm text-on-surface-variant">Registre novas medidas e peso.</p>
+        </motion.div>
+        
+        <motion.div variants={item} className="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-on-surface-variant/5 hover:-translate-y-1 transition-transform cursor-pointer group" onClick={() => setCurrentView('evolution')}>
+          <div className="w-12 h-12 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <TrendingUp size={24} />
+          </div>
+          <h3 className="text-lg font-bold font-headline mb-2">Evolução Física</h3>
+          <p className="text-sm text-on-surface-variant">Veja o progresso e o histórico em gráficos.</p>
         </motion.div>
         
         <motion.div variants={item} className="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-on-surface-variant/5 hover:-translate-y-1 transition-transform cursor-pointer group" onClick={() => setCurrentView('diets')}>

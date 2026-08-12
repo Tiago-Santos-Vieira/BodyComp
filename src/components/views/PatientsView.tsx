@@ -31,9 +31,18 @@ export default function PatientsView({ onSelectPatient, onNewPatient, showToast 
   const [searchTerm, setSearchTerm] = useState('');
   const [overviewStats, setOverviewStats] = useState({ totalPatients: 0, appointmentsThisMonth: 0 });
 
+  // Pagination states
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState<number | 'all'>(5);
+
   useEffect(() => {
     fetchPatients();
   }, []);
+
+  // Reset to page 1 when search or items per page changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, itemsPerPage]);
 
   const fetchPatients = async () => {
     setIsLoading(true);
@@ -42,7 +51,6 @@ export default function PatientsView({ onSelectPatient, onNewPatient, showToast 
       .select('*')
       .order('created_at', { ascending: false });
       
-    // Fetch Overview Stats
     const startOfMonth = new Date();
     startOfMonth.setDate(1);
     const dateStr = startOfMonth.toISOString().split('T')[0];
@@ -99,7 +107,6 @@ export default function PatientsView({ onSelectPatient, onNewPatient, showToast 
   };
 
   const handleSavePatient = (updatedPatient: Patient) => {
-    // Check if we just created a new patient or updated an existing one
     const exists = patients.find(p => p.id === updatedPatient.id);
     if (exists) {
        setPatients(patients.map(p => p.id === updatedPatient.id ? { ...p, ...updatedPatient } : p));
@@ -108,6 +115,38 @@ export default function PatientsView({ onSelectPatient, onNewPatient, showToast 
     }
     showToast?.('Paciente salvo com sucesso!', 'success');
   };
+
+  // Pagination Logic
+  const filteredPatients = patients.filter(patient => 
+    patient.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  
+  const totalItems = filteredPatients.length;
+  const totalPages = itemsPerPage === 'all' ? 1 : Math.ceil(totalItems / itemsPerPage);
+  
+  const startIndex = itemsPerPage === 'all' ? 0 : (currentPage - 1) * itemsPerPage;
+  const endIndex = itemsPerPage === 'all' ? totalItems : startIndex + itemsPerPage;
+  
+  const displayedPatients = filteredPatients.slice(startIndex, endIndex);
+
+  const generatePagination = () => {
+    if (totalPages <= 1) return [];
+    const pages = [];
+    if (totalPages <= 7) {
+      for (let i = 1; i <= totalPages; i++) pages.push(i);
+    } else {
+      if (currentPage <= 4) {
+        pages.push(1, 2, 3, 4, 5, '...', totalPages);
+      } else if (currentPage >= totalPages - 3) {
+        pages.push(1, '...', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages);
+      } else {
+        pages.push(1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages);
+      }
+    }
+    return pages;
+  };
+
+  const pageButtons = generatePagination();
 
   return (
     <motion.div 
@@ -143,25 +182,36 @@ export default function PatientsView({ onSelectPatient, onNewPatient, showToast 
       </motion.section>
 
       <motion.section variants={item} className="bg-surface-container-low rounded-xl p-4 md:p-8 shadow-sm">
+        <div className="flex justify-between items-end mb-6 border-b border-on-surface-variant/10 pb-4">
+          <p className="text-sm font-bold text-on-surface-variant uppercase tracking-wider">
+            Total Encontrado: <span className="text-primary">{totalItems}</span>
+          </p>
+          <div className="flex items-center gap-2">
+            <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Exibir:</label>
+            <select 
+              value={itemsPerPage} 
+              onChange={e => setItemsPerPage(e.target.value === 'all' ? 'all' : Number(e.target.value))}
+              className="bg-surface-container-lowest border border-on-surface-variant/20 rounded-lg px-2 py-1 text-sm font-bold text-on-surface outline-none focus:ring-2 focus:ring-primary cursor-pointer transition-all"
+            >
+              <option value={5}>5</option>
+              <option value={10}>10</option>
+              <option value={20}>20</option>
+              <option value={50}>50</option>
+              <option value="all">Todos</option>
+            </select>
+          </div>
+        </div>
+
         <div className="space-y-4 md:space-y-6">
           {isLoading ? (
             <div className="flex justify-center items-center py-12">
               <div className="w-8 h-8 md:w-12 md:h-12 border-4 border-primary/30 border-t-primary rounded-full animate-spin"></div>
             </div>
-          ) : (() => {
-              const displayedPatients = patients.filter(patient => 
-                patient.name.toLowerCase().includes(searchTerm.toLowerCase())
-              );
-              
-              if (displayedPatients.length === 0) {
-                return (
-                  <div className="text-center py-12">
-                    <p className="text-on-surface-variant font-medium">Nenhum paciente encontrado.</p>
-                  </div>
-                );
-              }
-
-              return displayedPatients.map((patient, idx) => {
+          ) : displayedPatients.length === 0 ? (
+            <div className="text-center py-12">
+              <p className="text-on-surface-variant font-medium">Nenhum paciente encontrado na página ou com a busca atual.</p>
+            </div>
+          ) : displayedPatients.map((patient, idx) => {
             const Icon = patient.icon || Dumbbell;
             return (
               <div key={patient.id || idx} className="group bg-surface-container-lowest p-4 md:p-6 rounded-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-0 transition-all hover:translate-x-1 shadow-sm cursor-pointer" onClick={() => onSelectPatient(patient as Patient)}>
@@ -219,26 +269,54 @@ export default function PatientsView({ onSelectPatient, onNewPatient, showToast 
                 </div>
               </div>
             );
-          });
-        })()}
+          })}
         </div>
 
-        <div className="mt-8 md:mt-12 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs md:text-sm text-on-surface-variant">Mostrando resultados para <span className="font-bold text-on-surface">{patients.length}</span> pacientes totais.</p>
-          <div className="flex items-center gap-1 md:gap-2">
-            <button className="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors">
-              <ArrowLeft size={18} />
-            </button>
-            <button className="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center bg-primary text-white font-bold shadow-md">1</button>
-            <button className="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors font-bold">2</button>
-            <button className="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors font-bold">3</button>
-            <span className="px-1 md:px-2">...</span>
-            <button className="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors font-bold">12</button>
-            <button className="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors">
-              <ArrowRight size={18} />
-            </button>
+        {/* Dynamic Pagination Footer */}
+        {!isLoading && totalPages > 1 && (
+          <div className="mt-8 md:mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-on-surface-variant/10 pt-6">
+            <p className="text-xs md:text-sm text-on-surface-variant font-medium">
+              Mostrando de <span className="font-bold text-on-surface">{startIndex + 1}</span> até <span className="font-bold text-on-surface">{Math.min(endIndex, totalItems)}</span> de {totalItems} pacientes.
+            </p>
+            <div className="flex items-center gap-1 md:gap-2">
+              <button 
+                onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+                disabled={currentPage === 1}
+                className="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors disabled:opacity-30 disabled:hover:bg-transparent"
+              >
+                <ArrowLeft size={18} />
+              </button>
+              
+              {pageButtons.map((btn, index) => {
+                if (btn === '...') {
+                  return <span key={`ellipsis-${index}`} className="px-1 md:px-2 text-on-surface-variant">...</span>;
+                }
+                const pageNum = btn as number;
+                return (
+                  <button 
+                    key={pageNum}
+                    onClick={() => setCurrentPage(pageNum)}
+                    className={`w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center font-bold transition-all ${
+                      currentPage === pageNum 
+                        ? 'bg-primary text-white shadow-md scale-110' 
+                        : 'text-on-surface-variant hover:bg-surface-container-high'
+                    }`}
+                  >
+                    {pageNum}
+                  </button>
+                );
+              })}
+              
+              <button 
+                onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+                disabled={currentPage === totalPages}
+                className="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors disabled:opacity-30 disabled:hover:bg-transparent"
+              >
+                <ArrowRight size={18} />
+              </button>
+            </div>
           </div>
-        </div>
+        )}
       </motion.section>
 
       <motion.section variants={item} className="grid grid-cols-12 gap-4 md:gap-8">
