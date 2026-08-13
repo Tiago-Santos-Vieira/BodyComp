@@ -105,18 +105,25 @@ export default function SettingsView({ showToast }: SettingsProps) {
                   Salva apenas no armazenamento local do seu navegador.
                 </div>
                 
-                <div className="flex gap-2">
+                <div className="flex items-center gap-2">
                   {isSaved && (
-                    <button onClick={handleClearKey} className="px-4 py-2 text-sm font-bold text-error hover:bg-error/10 rounded-lg transition-colors">
-                      Remover Chave
+                    <button
+                      onClick={handleClearKey}
+                      className="px-4 py-2.5 text-sm font-bold text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-lg transition-colors border border-red-200 dark:border-red-500/20"
+                    >
+                      Remover
                     </button>
                   )}
-                  <button 
+                  <button
                     onClick={handleSaveKey}
-                    className="flex items-center gap-2 px-6 py-2.5 bg-tertiary text-white rounded-lg font-bold hover:bg-tertiary/90 transition-all shadow-md active:scale-95"
+                    className={`flex items-center gap-2 px-6 py-2.5 rounded-lg font-bold transition-all shadow-md active:scale-95 ${
+                      isSaved
+                        ? 'bg-green-500 hover:bg-green-600 text-white'
+                        : 'bg-primary hover:bg-primary/90 text-white'
+                    }`}
                   >
                     {isSaved ? <CheckCircle size={18} /> : <Save size={18} />}
-                    {isSaved ? 'Chave Salva' : 'Salvar Chave'}
+                    {isSaved ? 'Chave Salva ✓' : 'Salvar Chave'}
                   </button>
                 </div>
               </div>
