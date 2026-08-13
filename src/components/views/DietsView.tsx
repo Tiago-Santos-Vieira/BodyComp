@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { FileText, MessageSquare, User, PieChart, Save, Copy, Plus, MoreHorizontal, Trash2, Printer, Search, X, Check, Edit2 } from 'lucide-react';
+import { FileText, MessageSquare, User, PieChart, Save, Copy, Plus, MoreHorizontal, Trash2, Printer, Search, X, Check, Edit2, Sparkles, BrainCircuit } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Patient } from '../../types';
 import { ToastType } from '../../App';
@@ -7,6 +7,7 @@ import { tacoData } from '../../data/taco';
 import { ibgeData } from '../../data/ibge';
 import { useEffect } from 'react';
 import { supabase } from '../../lib/supabase';
+import { generateDietPlan } from '../../lib/ai';
 
 const container = {
   hidden: { opacity: 0 },
@@ -31,6 +32,112 @@ export default function DietsView({ activePatient, showToast }: Props) {
   const [dietId, setDietId] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
+  const [isAutoSaving, setIsAutoSaving] = useState(false);
+  const [lastSaved, setLastSaved] = useState<Date | null>(null);
+  const skipNextSave = React.useRef(true);
+
+  const [isAiLoading, setIsAiLoading] = useState(false);
+  const [isSmartCheckOpen, setIsSmartCheckOpen] = useState(false);
+  const [smartCheckData, setSmartCheckData] = useState({ objective: '', weight: '', height: '' });
+  const [patientAnamnesis, setPatientAnamnesis] = useState<any>(null);
+
+  const startAIDietGeneration = async () => {
+    if (!activePatient) return;
+    setIsAiLoading(true);
+    
+    const apiKey = localStorage.getItem('GEMINI_API_KEY');
+    if (!apiKey) {
+      showToast?.('Por favor, configure sua API Key na aba BodyComp IA Pro.', 'error');
+      setIsAiLoading(false);
+      return;
+    }
+
+    const { data: anamnesis } = await supabase.from('anamnesis').select('*').eq('patient_id', activePatient.id).single();
+    const { data: assessments } = await supabase.from('assessments').select('*').eq('patient_id', activePatient.id).order('created_at', { ascending: false }).limit(1);
+    
+    setPatientAnamnesis(anamnesis);
+    const latestAssessment = assessments?.[0] || null;
+    
+    const objective = activePatient.objective;
+    const weight = latestAssessment?.weight;
+    const height = latestAssessment?.height;
+
+    if (!objective || !weight || !height) {
+      setSmartCheckData({ 
+        objective: objective || '', 
+        weight: weight?.replace('kg','') || '', 
+        height: height?.replace('cm','') || '' 
+      });
+      setIsSmartCheckOpen(true);
+      setIsAiLoading(false);
+      return;
+    }
+
+    await callAI(objective, weight.replace('kg',''), height.replace('cm',''), anamnesis);
+  };
+
+  const callAI = async (objective: string, weight: string, height: string, anamnesis: any) => {
+    if (!activePatient) return;
+    setIsAiLoading(true);
+    setIsSmartCheckOpen(false);
+    const apiKey = localStorage.getItem('GEMINI_API_KEY');
+    if (!apiKey) return;
+    
+    try {
+      // Calcular idade real a partir da birthDate da anamnese
+      let patientAge: number | string = 'Não informado';
+      if (anamnesis?.birthDate) {
+        const birth = new Date(anamnesis.birthDate);
+        const today = new Date();
+        patientAge = today.getFullYear() - birth.getFullYear() -
+          (today < new Date(today.getFullYear(), birth.getMonth(), birth.getDate()) ? 1 : 0);
+      }
+
+      const result = await generateDietPlan({
+        name: activePatient.name,
+        age: patientAge,
+        gender: anamnesis?.gender || 'Não informado',
+        objective,
+        weight: parseFloat(weight),
+        height: parseFloat(height),
+        bodyFat: null,
+        anamnesis
+      }, apiKey);
+
+      if (result && result.meals) {
+        const newMeals = result.meals.map((m: any, i: number) => ({
+          ...m,
+          id: 'm' + Date.now() + i,
+          items: m.items.map((it: any, j: number) => ({
+            ...it,
+            id: 'i' + Date.now() + i + j
+          }))
+        }));
+        setMeals(newMeals);
+        showToast?.('Dieta inteligente gerada com sucesso!', 'success');
+        setTimeout(() => handleSaveDiet(true), 1000);
+      }
+    } catch (error: any) {
+      showToast?.('Erro da IA: ' + (error.message || 'Verifique a chave da API.'), 'error');
+    }
+    setIsAiLoading(false);
+  };
+
+  useEffect(() => {
+    if (skipNextSave.current) {
+      skipNextSave.current = false;
+      return;
+    }
+    
+    if (!activePatient || meals.length === 0) return;
+
+    const timeoutId = setTimeout(() => {
+      handleSaveDiet(true);
+    }, 2500);
+
+    return () => clearTimeout(timeoutId);
+  }, [meals]);
+
   useEffect(() => {
     if (activePatient) {
       loadDiet();
@@ -51,10 +158,13 @@ export default function DietsView({ activePatient, showToast }: Props) {
     if (data) {
       setDietId(data.id);
       setMeals(data.meals || []);
+      setLastSaved(new Date(data.updated_at));
     } else {
       setDietId(null);
       setMeals([]);
+      setLastSaved(null);
     }
+    skipNextSave.current = true;
     setIsLoading(false);
   };
 
@@ -255,14 +365,19 @@ export default function DietsView({ activePatient, showToast }: Props) {
     showToast?.('Quantidade atualizada', 'success');
   };
 
-  const handleSaveDiet = async () => {
+  const handleSaveDiet = async (silent = false) => {
     if (!activePatient) {
-      showToast?.('Selecione um paciente primeiro!', 'error');
+      if (!silent) showToast?.('Selecione um paciente primeiro!', 'error');
       return;
     }
 
+    if (silent) setIsAutoSaving(true);
+
     const { data: { user } } = await supabase.auth.getUser();
-    if (!user) return;
+    if (!user) {
+      if (silent) setIsAutoSaving(false);
+      return;
+    }
 
     let payload = {
       nutri_id: user.id,
@@ -273,16 +388,27 @@ export default function DietsView({ activePatient, showToast }: Props) {
 
     if (dietId) {
       const { error } = await supabase.from('diets').update(payload).eq('id', dietId);
-      if (error) showToast?.('Erro ao atualizar dieta.', 'error');
-      else showToast?.('Dieta atualizada e publicada com sucesso!', 'success');
+      if (!silent) {
+        if (error) showToast?.('Erro ao atualizar dieta.', 'error');
+        else showToast?.('Dieta atualizada e publicada com sucesso!', 'success');
+      }
+      if (!error) setLastSaved(new Date());
     } else {
       const { data, error } = await supabase.from('diets').insert([payload]).select().single();
-      if (error) showToast?.('Erro ao criar dieta.', 'error');
-      else {
+      if (!silent) {
+        if (error) showToast?.('Erro ao criar dieta.', 'error');
+        else {
+          setDietId(data.id);
+          showToast?.('Nova Dieta salva e publicada!', 'success');
+        }
+      }
+      if (data) {
         setDietId(data.id);
-        showToast?.('Nova Dieta salva e publicada!', 'success');
+        setLastSaved(new Date());
       }
     }
+    
+    if (silent) setIsAutoSaving(false);
   };
 
   return (
@@ -306,6 +432,12 @@ export default function DietsView({ activePatient, showToast }: Props) {
             </p>
           </div>
           <div className="flex gap-2 w-full xl:w-auto print:hidden">
+            <button 
+              onClick={startAIDietGeneration}
+              className="flex-1 xl:flex-none flex items-center justify-center gap-2 px-4 py-2 bg-primary-container text-primary rounded-lg font-bold text-sm hover:bg-primary/20 transition-colors shadow-sm"
+            >
+              <Sparkles size={16} /> IA Dieta
+            </button>
             <button 
               onClick={() => {
                 showToast?.('Geração de impressão otimizada em andamento', 'info');
@@ -501,32 +633,46 @@ export default function DietsView({ activePatient, showToast }: Props) {
         })}
         {meals.length === 0 && (
           <div className="text-center py-12 bg-surface-container-low rounded-2xl border border-dashed border-on-surface-variant/30 print:hidden">
-            <PieChart size={48} className="mx-auto text-on-surface-variant/30 mb-4" />
+            <BrainCircuit size={48} className="mx-auto text-primary mb-4" />
             <h3 className="text-lg font-bold text-on-surface mb-2">Construa o Perfil Alimentar</h3>
-            <p className="text-on-surface-variant max-w-md mx-auto mb-6">Comece adicionando a primeira refeição do dia para montar a estrutura base deste paciente.</p>
-            <button onClick={() => openMealModal()} className="px-6 py-3 bg-primary text-white rounded-full font-bold shadow-md hover:bg-primary/90 transition-colors inline-flex items-center gap-2">
-              <Plus size={18} /> Cadastrar Primeira Refeição
-            </button>
+            <p className="text-on-surface-variant max-w-md mx-auto mb-6">Comece adicionando refeições manualmente ou deixe a Inteligência Artificial montar uma base hiper-personalizada para você.</p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <button onClick={() => openMealModal()} className="px-6 py-3 bg-surface-container-high text-on-surface rounded-full font-bold shadow-sm hover:bg-on-surface-variant/10 transition-colors inline-flex items-center gap-2">
+                <Plus size={18} /> Manual
+              </button>
+              <button onClick={startAIDietGeneration} className="px-6 py-3 primary-gradient text-white rounded-full font-bold shadow-lg hover:scale-105 active:scale-95 transition-transform inline-flex items-center gap-2">
+                <Sparkles size={18} /> Gerar Dieta Inteligente
+              </button>
+            </div>
           </div>
         )}
       </motion.section>
       )}
 
-      <motion.div variants={item} className="mt-12 md:mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 pb-12 print:hidden">
-        <button 
-          onClick={handleSaveDiet}
-          className="w-full sm:w-auto px-8 md:px-12 py-4 md:py-5 primary-gradient text-white rounded-full font-bold text-base md:text-lg shadow-xl hover:scale-105 active:scale-95 transition-transform flex items-center justify-center gap-2 md:gap-3"
-        >
-          <Save size={20} className="md:w-6 md:h-6" />
-          Finalizar e Publicar
-        </button>
-        <button 
-          onClick={() => showToast?.('Plano duplicado com sucesso!', 'success')}
-          className="w-full sm:w-auto px-6 md:px-10 py-4 md:py-5 bg-surface-container-high text-on-surface rounded-full font-bold text-base md:text-lg hover:bg-on-surface-variant/10 transition-colors flex items-center justify-center gap-2 md:gap-3"
-        >
-          <Copy size={18} className="md:w-5 md:h-5" />
-          Duplicar Plano
-        </button>
+      <motion.div variants={item} className="mt-12 md:mt-16 flex flex-col items-center justify-center gap-4 pb-12 print:hidden">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
+          <button 
+            onClick={() => handleSaveDiet(false)}
+            className="w-full sm:w-auto px-8 md:px-12 py-4 md:py-5 primary-gradient text-white rounded-full font-bold text-base md:text-lg shadow-xl hover:scale-105 active:scale-95 transition-transform flex items-center justify-center gap-2 md:gap-3"
+          >
+            <Save size={20} className="md:w-6 md:h-6" />
+            Finalizar e Publicar
+          </button>
+          <button 
+            onClick={() => showToast?.('Plano duplicado com sucesso!', 'success')}
+            className="w-full sm:w-auto px-6 md:px-10 py-4 md:py-5 bg-surface-container-high text-on-surface rounded-full font-bold text-base md:text-lg hover:bg-on-surface-variant/10 transition-colors flex items-center justify-center gap-2 md:gap-3"
+          >
+            <Copy size={18} className="md:w-5 md:h-5" />
+            Duplicar Plano
+          </button>
+        </div>
+        <div className="text-xs font-semibold text-on-surface-variant mt-2 flex items-center gap-2 h-6">
+          {isAutoSaving ? (
+            <><span className="w-3 h-3 border-2 border-primary border-t-transparent rounded-full animate-spin"></span> Salvando automaticamente...</>
+          ) : lastSaved ? (
+            <><Check size={14} className="text-primary" /> Rascunho salvo às {lastSaved.toLocaleTimeString('pt-BR', {hour: '2-digit', minute:'2-digit'})}</>
+          ) : null}
+        </div>
       </motion.div>
 
       {/* Modal: Nova Refeição / Editar Refeição */}
@@ -789,6 +935,63 @@ export default function DietsView({ activePatient, showToast }: Props) {
                   </div>
                 </div>
               )}
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {isAiLoading && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center px-4 bg-scrim/50 backdrop-blur-sm shadow-2xl print:hidden">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="bg-surface p-8 rounded-3xl shadow-2xl text-center max-w-sm flex flex-col items-center gap-4"
+            >
+              <div className="w-16 h-16 border-4 border-primary/30 border-t-primary rounded-full animate-spin"></div>
+              <h3 className="text-xl font-bold font-headline text-on-surface flex items-center gap-2"><Sparkles className="text-primary" /> Mentes brilhantes...</h3>
+              <p className="text-sm text-on-surface-variant">A Inteligência Artificial está analisando o prontuário e calculando os macronutrientes da dieta ideal.</p>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {isSmartCheckOpen && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center px-4 bg-scrim/50 backdrop-blur-sm shadow-2xl print:hidden">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="bg-surface w-full max-w-md rounded-3xl shadow-2xl overflow-hidden border border-on-surface-variant/10"
+            >
+              <div className="flex justify-between items-center p-6 border-b border-on-surface-variant/10 bg-primary-container/20">
+                <h3 className="text-xl font-bold font-headline text-primary flex items-center gap-2"><BrainCircuit size={20} /> Smart Check</h3>
+                <button onClick={() => setIsSmartCheckOpen(false)} className="p-2 text-primary hover:bg-primary/10 rounded-full transition-colors">
+                  <X size={20} />
+                </button>
+              </div>
+              <div className="p-6 space-y-4">
+                <p className="text-sm text-on-surface-variant mb-4">A IA precisa de alguns dados vitais para criar um cálculo científico preciso. Por favor, preencha as informações que estão faltando no prontuário:</p>
+                <div>
+                  <label className="block text-sm font-bold text-on-surface-variant mb-1">Objetivo (ex: Hipertrofia, Emagrecimento)</label>
+                  <input type="text" value={smartCheckData.objective} onChange={e => setSmartCheckData({...smartCheckData, objective: e.target.value})} className="w-full bg-surface-container border-none rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary outline-none" />
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-bold text-on-surface-variant mb-1">Peso (kg)</label>
+                    <input type="number" value={smartCheckData.weight} onChange={e => setSmartCheckData({...smartCheckData, weight: e.target.value})} className="w-full bg-surface-container border-none rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary outline-none" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-bold text-on-surface-variant mb-1">Altura (cm)</label>
+                    <input type="number" value={smartCheckData.height} onChange={e => setSmartCheckData({...smartCheckData, height: e.target.value})} className="w-full bg-surface-container border-none rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary outline-none" />
+                  </div>
+                </div>
+              </div>
+              <div className="p-6 bg-surface-container-lowest border-t border-on-surface-variant/10 flex justify-end gap-3">
+                <button onClick={() => setIsSmartCheckOpen(false)} className="px-6 py-2.5 font-bold text-on-surface-variant hover:bg-surface-container rounded-full transition-colors">Cancelar</button>
+                <button onClick={() => callAI(smartCheckData.objective, smartCheckData.weight, smartCheckData.height, patientAnamnesis)} className="px-6 py-2.5 font-bold bg-primary text-white rounded-full hover:bg-primary/90 transition-colors shadow-md inline-flex items-center gap-2"><Sparkles size={16} /> Continuar para IA</button>
+              </div>
             </motion.div>
           </div>
         )}

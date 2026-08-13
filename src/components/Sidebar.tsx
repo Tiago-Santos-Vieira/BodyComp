@@ -1,4 +1,4 @@
-import { LayoutDashboard, Activity, ClipboardList, Utensils, Users, User, Plus, X, CalendarDays } from 'lucide-react';
+import { LayoutDashboard, Activity, ClipboardList, Utensils, Users, User, Plus, X, CalendarDays, Settings } from 'lucide-react';
 import { ViewType, Patient } from '../types';
 
 interface SidebarProps {
@@ -78,8 +78,20 @@ export default function Sidebar({ currentView, onViewChange, onNewConsultation, 
           })}
           
           <button
-            onClick={() => { onViewChange('profile'); onClose(); }}
+            onClick={() => { onViewChange('settings'); onClose(); }}
             className={`flex items-center gap-4 py-4 px-8 transition-all mt-auto ${
+              currentView === 'settings'
+                ? 'text-primary font-bold bg-surface-container-lowest border-r-4 border-primary'
+                : 'text-on-surface-variant hover:bg-surface-container-lowest/50 hover:text-primary'
+            }`}
+          >
+            <Settings size={20} />
+            <span className="font-headline">BodyComp IA Pro</span>
+          </button>
+          
+          <button
+            onClick={() => { onViewChange('profile'); onClose(); }}
+            className={`flex items-center gap-4 py-4 px-8 transition-all ${
               currentView === 'profile'
                 ? 'text-primary font-bold bg-surface-container-lowest border-r-4 border-primary'
                 : 'text-on-surface-variant hover:bg-surface-container-lowest/50 hover:text-primary'

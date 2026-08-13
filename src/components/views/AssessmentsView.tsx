@@ -5,6 +5,7 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip as RechartsTooltip, L
 import { Patient } from '../../types';
 import { ToastType } from '../../App';
 import { supabase } from '../../lib/supabase';
+import { savePhotoLocally, getPhotoLocally, deletePhotoLocally } from '../../lib/storage';
 
 const container = {
   hidden: { opacity: 0 },
@@ -70,13 +71,21 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
     setIsLoading(false);
   };
 
-  const loadAssessmentData = (assessment: any) => {
+  const loadAssessmentData = async (assessment: any) => {
     setCurrentAssessmentId(assessment.id);
     setBasicData(assessment.basic_data || { weight: 0, height: 0, age: 0, gender: 'M', waist: 0, hip: 0 });
     setSkinfolds(assessment.skinfolds || Array(7).fill(0));
     setPerimetry(assessment.perimetry || {});
-    setFrontalImage(assessment.photos?.frontal || null);
-    setProfileImage(assessment.photos?.profile || null);
+    
+    setFrontalImage(null);
+    setProfileImage(null);
+    
+    if (assessment.id) {
+      const fImg = await getPhotoLocally(assessment.id + '_frontal');
+      const pImg = await getPhotoLocally(assessment.id + '_profile');
+      if (fImg) setFrontalImage(fImg);
+      if (pImg) setProfileImage(pImg);
+    }
   };
 
   const startNewAssessment = () => {
@@ -100,20 +109,16 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
       basic_data: basicData,
       skinfolds: skinfolds,
       perimetry: perimetry,
-      photos: {
-        frontal: frontalImage,
-        profile: profileImage
-      },
       date: new Date().toISOString()
     };
 
     let success = false;
+    let finalAssessmentId = currentAssessmentId;
 
     if (currentAssessmentId) {
       const { error } = await supabase.from('assessments').update(payload).eq('id', currentAssessmentId);
       if (!error) {
         showToast?.('Avaliação atualizada!', 'success');
-        // Refresh list slightly
         const { data } = await supabase.from('assessments').select('*').eq('patient_id', activePatient.id).order('date', { ascending: false });
         if (data) setAssessmentsHistory(data);
         success = true;
@@ -123,6 +128,7 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
     } else {
       const { data, error } = await supabase.from('assessments').insert([payload]).select().single();
       if (data) {
+        finalAssessmentId = data.id;
         setCurrentAssessmentId(data.id);
         setAssessmentsHistory([data, ...assessmentsHistory]);
         showToast?.('Nova avaliação salva!', 'success');
@@ -133,8 +139,15 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
     }
 
     if (success) {
-      // Atualiza a data da última consulta no paciente
       await supabase.from('patients').update({ last_consultation: payload.date }).eq('id', activePatient.id);
+      
+      if (finalAssessmentId) {
+        if (frontalImage) await savePhotoLocally(finalAssessmentId + '_frontal', frontalImage);
+        else await deletePhotoLocally(finalAssessmentId + '_frontal');
+        
+        if (profileImage) await savePhotoLocally(finalAssessmentId + '_profile', profileImage);
+        else await deletePhotoLocally(finalAssessmentId + '_profile');
+      }
     }
 
     setIsSaving(false);
@@ -146,6 +159,10 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
     if (window.confirm('Tem certeza que deseja excluir esta avaliação do histórico? Esta ação é irreversível.')) {
       setIsSaving(true);
       await supabase.from('assessments').delete().eq('id', currentAssessmentId);
+      
+      await deletePhotoLocally(currentAssessmentId + '_frontal');
+      await deletePhotoLocally(currentAssessmentId + '_profile');
+      
       showToast?.('Avaliação excluída com sucesso!', 'success');
       
       const { data } = await supabase.from('assessments').select('*').eq('patient_id', activePatient.id).order('date', { ascending: false });
