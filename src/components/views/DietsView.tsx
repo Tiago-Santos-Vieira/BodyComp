@@ -5,9 +5,13 @@ import { Patient } from '../../types';
 import { ToastType } from '../../App';
 import { tacoData } from '../../data/taco';
 import { ibgeData } from '../../data/ibge';
+import { extrasData } from '../../data/extras';
+import { foodOverrides, hiddenFoodIds, foodAliases } from '../../data/foodFixes';
+import { prepareFoodForSearch, searchFoods } from '../../lib/foodSearch';
 import { useEffect } from 'react';
 import { supabase } from '../../lib/supabase';
 import { generateDietPlan } from '../../lib/ai';
+import { parseLocalDate } from '../../lib/date';
 
 const container = {
   hidden: { opacity: 0 },
@@ -87,7 +91,7 @@ export default function DietsView({ activePatient, showToast }: Props) {
       // Calcular idade real a partir da birthDate da anamnese
       let patientAge: number | string = 'Não informado';
       if (anamnesis?.birthDate) {
-        const birth = new Date(anamnesis.birthDate);
+        const birth = parseLocalDate(anamnesis.birthDate);
         const today = new Date();
         patientAge = today.getFullYear() - birth.getFullYear() -
           (today < new Date(today.getFullYear(), birth.getMonth(), birth.getDate()) ? 1 : 0);
@@ -240,15 +244,14 @@ export default function DietsView({ activePatient, showToast }: Props) {
   const allFoods = useMemo(() => {
     return [
       ...tacoData.map(t => ({ ...t, source: 'TACO' })),
-      ...ibgeData.map(i => ({ ...i, source: 'IBGE' }))
-    ];
+      ...ibgeData.map(i => ({ ...i, source: 'IBGE' })),
+      ...extrasData
+    ]
+      .filter(food => !hiddenFoodIds.has(food.id))
+      .map(food => prepareFoodForSearch({ ...food, ...foodOverrides[food.id], aliases: foodAliases[food.id] }));
   }, []);
 
-  const filteredFoods = useMemo(() => {
-    if (!tacoSearch) return allFoods.slice(0, 40);
-    const lowerSearch = tacoSearch.toLowerCase();
-    return allFoods.filter(t => t.name.toLowerCase().includes(lowerSearch)).slice(0, 40);
-  }, [tacoSearch, allFoods]);
+  const filteredFoods = useMemo(() => searchFoods(allFoods, tacoSearch), [tacoSearch, allFoods]);
 
   const handleSelectTaco = (food: any) => {
     setSelectedTaco(food);
@@ -809,8 +812,8 @@ export default function DietsView({ activePatient, showToast }: Props) {
             >
               <div className="flex justify-between items-center p-6 border-b border-on-surface-variant/10 bg-surface-container-lowest flex-shrink-0">
                 <div>
-                  <h3 className="text-xl font-bold font-headline text-on-surface flex items-center gap-2">Tabela TACO <span className="text-[10px] bg-primary-container text-primary px-2 py-1 rounded-md uppercase font-black">IBGE</span></h3>
-                  <p className="text-xs text-on-surface-variant mt-1">Busque alimentos nacionais para compor o plano</p>
+                  <h3 className="text-xl font-bold font-headline text-on-surface">Banco de Alimentos</h3>
+                  <p className="text-xs text-on-surface-variant mt-1">TACO, IBGE e suplementos. Busque sem acento e em qualquer ordem (ex: frango grelhado)</p>
                 </div>
                 <button onClick={() => { setIsFoodModalOpen(false); setSelectedTaco(null); }} className="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors">
                   <X size={20} />
@@ -841,7 +844,10 @@ export default function DietsView({ activePatient, showToast }: Props) {
                             <div>
                               <p className="font-bold text-on-surface group-hover:text-primary transition-colors flex items-center gap-2">
                                 {food.name} <span className="text-xs font-normal text-on-surface-variant">({food.unit || 'g'})</span>
-                                <span className={`text-[9px] px-1.5 py-0.5 rounded font-extrabold uppercase ${food.source === 'TACO' ? 'bg-primary-container text-primary' : 'bg-tertiary-container text-tertiary'}`}>
+                                <span
+                                  title={food.source === 'SUPL' || food.source === 'RÓTULO' ? 'Média de rótulos de marcas comuns: confira o rótulo do produto do paciente' : undefined}
+                                  className={`text-[9px] px-1.5 py-0.5 rounded font-extrabold uppercase ${food.source === 'TACO' ? 'bg-primary-container text-primary' : food.source === 'IBGE' ? 'bg-tertiary-container text-tertiary' : 'bg-secondary-container text-on-secondary-container'}`}
+                                >
                                   {food.source}
                                 </span>
                               </p>

@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 import { Patient } from '../../types';
 import { ToastType } from '../../App';
 import { supabase } from '../../lib/supabase';
+import { toLocalDateStr, greeting } from '../../lib/date';
 
 const container = {
   hidden: { opacity: 0 },
@@ -63,7 +64,7 @@ export default function DashboardView({ onNewConsultation, onSelectPatient, show
       .select('*', { count: 'exact', head: true });
 
     // Fetch appointments today
-    const todayStr = new Date().toISOString().split('T')[0];
+    const todayStr = toLocalDateStr();
     const { data: todayAppointments, error: apptError } = await supabase
       .from('appointments')
       .select('id')
@@ -104,7 +105,7 @@ export default function DashboardView({ onNewConsultation, onSelectPatient, show
     >
       <motion.div variants={item} className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-8 md:mb-12">
         <div>
-          <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-on-surface mb-2 font-headline">Bom dia, {nutriName}</h1>
+          <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-on-surface mb-2 font-headline">{greeting()}, {nutriName}</h1>
           <p className="text-on-surface-variant font-medium">Você tem <span className="text-primary font-bold">{stats.appointments} {stats.appointments === 1 ? 'atendimento' : 'atendimentos'}</span> agendado{stats.appointments === 1 ? '' : 's'} para hoje.</p>
         </div>
         <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">

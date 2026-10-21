@@ -5,6 +5,7 @@ import { Patient } from '../../types';
 import { ToastType } from '../../App';
 import PatientModal from '../PatientModal';
 import { supabase } from '../../lib/supabase';
+import { toLocalDateStr } from '../../lib/date';
 
 const container = {
   hidden: { opacity: 0 },
@@ -53,7 +54,7 @@ export default function PatientsView({ onSelectPatient, onNewPatient, showToast 
       
     const startOfMonth = new Date();
     startOfMonth.setDate(1);
-    const dateStr = startOfMonth.toISOString().split('T')[0];
+    const dateStr = toLocalDateStr(startOfMonth);
     
     const { count: totalPatients } = await supabase.from('patients').select('*', { count: 'exact', head: true });
     

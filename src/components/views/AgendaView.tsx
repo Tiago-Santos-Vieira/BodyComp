@@ -5,6 +5,7 @@ import { Appointment } from '../../types';
 import { ToastType } from '../../App';
 
 import { supabase } from '../../lib/supabase';
+import { toLocalDateStr } from '../../lib/date';
 
 const container = {
   hidden: { opacity: 0 },
@@ -112,7 +113,7 @@ export default function AgendaView({ showToast }: Props) {
     setSelectedDate(new Date(currentDate.getFullYear(), currentDate.getMonth(), day));
   };
 
-  const selectedDateStr = selectedDate.toISOString().split('T')[0];
+  const selectedDateStr = toLocalDateStr(selectedDate);
   const selectedDayAppointments = appointments
     .filter(app => app.date === selectedDateStr)
     .sort((a, b) => a.time.localeCompare(b.time));
@@ -184,7 +185,7 @@ export default function AgendaView({ showToast }: Props) {
 
   const renderCalendarDays = () => {
     const days = [];
-    const todayStr = new Date().toISOString().split('T')[0];
+    const todayStr = toLocalDateStr();
 
     // Espaços vazios no início do mês
     for (let i = 0; i < firstDayOfMonth; i++) {
@@ -194,7 +195,7 @@ export default function AgendaView({ showToast }: Props) {
     // Dias do mês
     for (let i = 1; i <= daysInMonth; i++) {
       const date = new Date(currentDate.getFullYear(), currentDate.getMonth(), i);
-      const dateStr = date.toISOString().split('T')[0];
+      const dateStr = toLocalDateStr(date);
       const isToday = dateStr === todayStr;
       const isSelected = dateStr === selectedDateStr;
       const hasEvents = appointments.some(app => app.date === dateStr);
