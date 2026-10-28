@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
-import { Ruler, Camera, Activity, FileText, User, Save, History, Plus, Trash2, Printer } from 'lucide-react';
+import { Ruler, Camera, Activity, FileText, User, Save, History, Plus, Trash2, Printer, HelpCircle } from 'lucide-react';
 import { motion } from 'motion/react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip as RechartsTooltip, Legend } from 'recharts';
 import { Patient } from '../../types';
@@ -256,6 +256,7 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
   }, [basicData, skinfolds]);
 
   const [frontalImage, setFrontalImage] = useState<string | null>(null);
+  const [showLocalInfo, setShowLocalInfo] = useState(false);
   const [profileImage, setProfileImage] = useState<string | null>(null);
   const frontalInputRef = useRef<HTMLInputElement>(null);
   const profileInputRef = useRef<HTMLInputElement>(null);
@@ -549,11 +550,27 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
 
         <motion.div variants={item} className="col-span-12 lg:col-span-5 flex flex-col gap-6 md:gap-8">
           <div className="bg-surface-container-low p-6 md:p-8 rounded-xl flex-1 shadow-sm">
-            <div className="flex items-center gap-3 md:gap-4 mb-6">
+            <div className="flex items-center gap-3 md:gap-4 mb-2">
               <div className="bg-tertiary-container/10 p-2 md:p-3 rounded-full text-on-tertiary-container">
                 <Camera size={20} className="md:w-6 md:h-6" />
               </div>
               <h2 className="text-xl md:text-2xl font-bold font-headline">Registros Visuais</h2>
+            </div>
+            {/* As fotos ficam só no IndexedDB deste navegador (lib/storage.ts), não no Supabase */}
+            <div className="mb-6 print:hidden">
+              <button
+                type="button"
+                onClick={() => setShowLocalInfo(v => !v)}
+                aria-expanded={showLocalInfo}
+                className="inline-flex items-center gap-1.5 text-xs font-medium text-on-surface-variant hover:text-primary transition-colors"
+              >
+                Registros salvos localmente <HelpCircle size={14} />
+              </button>
+              {showLocalInfo && (
+                <div className="mt-2 p-3 rounded-lg bg-surface-container-lowest border border-on-surface-variant/15 text-xs leading-relaxed text-on-surface-variant">
+                  <strong className="text-on-surface">Cuidado: estas fotos não ficam salvas nos servidores do BodyComp.</strong> Elas ficam guardadas apenas neste aparelho e neste navegador, o que protege a privacidade do paciente. Se você limpar os dados do navegador, desinstalar o aplicativo ou trocar de aparelho, as fotos serão perdidas, e elas também não aparecem em outro computador ou celular. Se precisar de uma cópia, salve as imagens em um local seguro.
+                </div>
+              )}
             </div>
             <div className="grid grid-cols-2 gap-4 h-full pb-4 md:pb-8">
               <input type="file" ref={frontalInputRef} onChange={handleFrontalUpload} className="hidden" accept="image/*" />
