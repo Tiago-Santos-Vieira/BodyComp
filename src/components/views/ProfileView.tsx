@@ -108,16 +108,18 @@ export default function ProfileView({ showToast }: Props) {
   };
 
   const handleResetPassword = async () => {
-    const newPassword = window.prompt('Digite a nova senha (mínimo 6 caracteres):');
-    if (newPassword && newPassword.length >= 6) {
-      const { error } = await supabase.auth.updateUser({ password: newPassword });
-      if (error) {
-        showToast?.('Erro ao atualizar senha', 'error');
-      } else {
-        showToast?.('Senha atualizada com sucesso!', 'success');
-      }
-    } else if (newPassword) {
-      showToast?.('A senha deve ter pelo menos 6 caracteres', 'error');
+    const newPassword = window.prompt('Digite a nova senha (mínimo 8 caracteres, com letras e números):');
+    if (!newPassword) return;
+    // O Supabase exige 8 caracteres; letras e números são exigidos só aqui, para não travar as senhas criadas pela compra
+    if (newPassword.length < 8 || !/[a-zA-Z]/.test(newPassword) || !/\d/.test(newPassword)) {
+      showToast?.('A senha precisa ter pelo menos 8 caracteres, com letras e números', 'error');
+      return;
+    }
+    const { error } = await supabase.auth.updateUser({ password: newPassword });
+    if (error) {
+      showToast?.('Erro ao atualizar senha', 'error');
+    } else {
+      showToast?.('Senha atualizada com sucesso!', 'success');
     }
   };
 
