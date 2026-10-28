@@ -1,5 +1,6 @@
 import { LayoutDashboard, Activity, ClipboardList, Utensils, Users, User, Plus, X, CalendarDays, Settings } from 'lucide-react';
 import { ViewType, Patient } from '../types';
+import { AI_ENABLED } from '../lib/ai';
 
 interface SidebarProps {
   currentView: ViewType;
@@ -77,21 +78,23 @@ export default function Sidebar({ currentView, onViewChange, onNewConsultation, 
             );
           })}
           
-          <button
-            onClick={() => { onViewChange('settings'); onClose(); }}
-            className={`flex items-center gap-4 py-4 px-8 transition-all mt-auto ${
-              currentView === 'settings'
-                ? 'text-primary font-bold bg-surface-container-lowest border-r-4 border-primary'
-                : 'text-on-surface-variant hover:bg-surface-container-lowest/50 hover:text-primary'
-            }`}
-          >
-            <Settings size={20} />
-            <span className="font-headline">BodyComp IA Pro</span>
-          </button>
-          
+          {AI_ENABLED && (
+            <button
+              onClick={() => { onViewChange('settings'); onClose(); }}
+              className={`flex items-center gap-4 py-4 px-8 transition-all mt-auto ${
+                currentView === 'settings'
+                  ? 'text-primary font-bold bg-surface-container-lowest border-r-4 border-primary'
+                  : 'text-on-surface-variant hover:bg-surface-container-lowest/50 hover:text-primary'
+              }`}
+            >
+              <Settings size={20} />
+              <span className="font-headline">BodyComp IA Pro</span>
+            </button>
+          )}
+
           <button
             onClick={() => { onViewChange('profile'); onClose(); }}
-            className={`flex items-center gap-4 py-4 px-8 transition-all ${
+            className={`flex items-center gap-4 py-4 px-8 transition-all${AI_ENABLED ? '' : ' mt-auto'} ${
               currentView === 'profile'
                 ? 'text-primary font-bold bg-surface-container-lowest border-r-4 border-primary'
                 : 'text-on-surface-variant hover:bg-surface-container-lowest/50 hover:text-primary'

@@ -1,3 +1,8 @@
+// Dieta com IA desligada por enquanto (2026-10): dependia de cada nutricionista criar a própria
+// chave do Gemini e os macros vinham da IA, não da Tabela TACO. Com false somem o menu
+// "BodyComp IA Pro", a tela da chave e os botões de IA da tela de dietas. Para voltar, troque para true.
+export const AI_ENABLED = false;
+
 export interface AIContextData {
   name: string;
   age: number | string;

@@ -14,6 +14,7 @@ import PatientDetailView from './components/views/PatientDetailView';
 import AgendaView from './components/views/AgendaView';
 import LoginView from './components/views/LoginView';
 import SettingsView from './components/views/SettingsView';
+import { AI_ENABLED } from './lib/ai';
 import PatientModal from './components/PatientModal';
 import { ViewType, Patient } from './types';
 import { supabase } from './lib/supabase';
@@ -96,7 +97,8 @@ export default function App() {
       case 'agenda':
         return <AgendaView showToast={showToast} />;
       case 'settings':
-        return <SettingsView showToast={showToast} />;
+        if (AI_ENABLED) return <SettingsView showToast={showToast} />;
+        return <DashboardView onNewConsultation={() => setIsNewPatientModalOpen(true)} onSelectPatient={handleSelectPatient} showToast={showToast} />;
       case 'patient_detail':
         return <PatientDetailView activePatient={activePatient} setCurrentView={setCurrentView} showToast={showToast} />;
       default:

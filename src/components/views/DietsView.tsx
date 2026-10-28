@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { FileText, MessageSquare, User, PieChart, Save, Copy, Plus, MoreHorizontal, Trash2, Printer, Search, X, Check, Edit2, Sparkles, BrainCircuit } from 'lucide-react';
+import { FileText, MessageSquare, User, PieChart, Save, Copy, Plus, MoreHorizontal, Trash2, Printer, Search, X, Check, Edit2, Sparkles, BrainCircuit, Utensils } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Patient } from '../../types';
 import { ToastType } from '../../App';
@@ -10,7 +10,7 @@ import { foodOverrides, hiddenFoodIds, foodAliases } from '../../data/foodFixes'
 import { prepareFoodForSearch, searchFoods } from '../../lib/foodSearch';
 import { useEffect } from 'react';
 import { supabase } from '../../lib/supabase';
-import { generateDietPlan } from '../../lib/ai';
+import { generateDietPlan, AI_ENABLED } from '../../lib/ai';
 import { parseLocalDate } from '../../lib/date';
 
 const container = {
@@ -435,12 +435,14 @@ export default function DietsView({ activePatient, showToast }: Props) {
             </p>
           </div>
           <div className="flex gap-2 w-full xl:w-auto print:hidden">
-            <button 
-              onClick={startAIDietGeneration}
-              className="flex-1 xl:flex-none flex items-center justify-center gap-2 px-4 py-2 bg-primary-container text-primary rounded-lg font-bold text-sm hover:bg-primary/20 transition-colors shadow-sm"
-            >
-              <Sparkles size={16} /> IA Dieta
-            </button>
+            {AI_ENABLED && (
+              <button
+                onClick={startAIDietGeneration}
+                className="flex-1 xl:flex-none flex items-center justify-center gap-2 px-4 py-2 bg-primary-container text-primary rounded-lg font-bold text-sm hover:bg-primary/20 transition-colors shadow-sm"
+              >
+                <Sparkles size={16} /> IA Dieta
+              </button>
+            )}
             <button 
               onClick={() => {
                 showToast?.('Geração de impressão otimizada em andamento', 'info');
@@ -636,16 +638,28 @@ export default function DietsView({ activePatient, showToast }: Props) {
         })}
         {meals.length === 0 && (
           <div className="text-center py-12 bg-surface-container-low rounded-2xl border border-dashed border-on-surface-variant/30 print:hidden">
-            <BrainCircuit size={48} className="mx-auto text-primary mb-4" />
+            {AI_ENABLED ? <BrainCircuit size={48} className="mx-auto text-primary mb-4" /> : <Utensils size={48} className="mx-auto text-primary mb-4" />}
             <h3 className="text-lg font-bold text-on-surface mb-2">Construa o Perfil Alimentar</h3>
-            <p className="text-on-surface-variant max-w-md mx-auto mb-6">Comece adicionando refeições manualmente ou deixe a Inteligência Artificial montar uma base hiper-personalizada para você.</p>
+            <p className="text-on-surface-variant max-w-md mx-auto mb-6">
+              {AI_ENABLED
+                ? 'Comece adicionando refeições manualmente ou deixe a Inteligência Artificial montar uma base hiper-personalizada para você.'
+                : 'Comece adicionando as refeições do paciente. Os alimentos vêm da Tabela TACO, com kcal e macros calculados na hora.'}
+            </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button onClick={() => openMealModal()} className="px-6 py-3 bg-surface-container-high text-on-surface rounded-full font-bold shadow-sm hover:bg-on-surface-variant/10 transition-colors inline-flex items-center gap-2">
-                <Plus size={18} /> Manual
-              </button>
-              <button onClick={startAIDietGeneration} className="px-6 py-3 primary-gradient text-white rounded-full font-bold shadow-lg hover:scale-105 active:scale-95 transition-transform inline-flex items-center gap-2">
-                <Sparkles size={18} /> Gerar Dieta Inteligente
-              </button>
+              {AI_ENABLED ? (
+                <button onClick={() => openMealModal()} className="px-6 py-3 bg-surface-container-high text-on-surface rounded-full font-bold shadow-sm hover:bg-on-surface-variant/10 transition-colors inline-flex items-center gap-2">
+                  <Plus size={18} /> Manual
+                </button>
+              ) : (
+                <button onClick={() => openMealModal()} className="px-6 py-3 primary-gradient text-white rounded-full font-bold shadow-lg hover:scale-105 active:scale-95 transition-transform inline-flex items-center gap-2">
+                  <Plus size={18} /> Adicionar refeição
+                </button>
+              )}
+              {AI_ENABLED && (
+                <button onClick={startAIDietGeneration} className="px-6 py-3 primary-gradient text-white rounded-full font-bold shadow-lg hover:scale-105 active:scale-95 transition-transform inline-flex items-center gap-2">
+                  <Sparkles size={18} /> Gerar Dieta Inteligente
+                </button>
+              )}
             </div>
           </div>
         )}
