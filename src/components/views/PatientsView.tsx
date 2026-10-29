@@ -6,6 +6,7 @@ import { ToastType } from '../../App';
 import PatientModal from '../PatientModal';
 import { supabase } from '../../lib/supabase';
 import { toLocalDateStr } from '../../lib/date';
+import { deleteAllFilesOfPatient } from '../../lib/patientFiles';
 
 const container = {
   hidden: { opacity: 0 },
@@ -92,7 +93,9 @@ export default function PatientsView({ onSelectPatient, onNewPatient, showToast 
 
   const handleDeletePatient = async (patient: any, e: React.MouseEvent) => {
     e.stopPropagation();
-    if (window.confirm(`Tem certeza que deseja excluir o paciente ${patient.name}?`)) {
+    if (window.confirm(`Tem certeza que deseja excluir o paciente ${patient.name}? Os arquivos dele também serão apagados.`)) {
+      // os registros dos arquivos caem junto com o paciente; os arquivos em si precisam ser apagados do armazenamento antes
+      try { await deleteAllFilesOfPatient(patient.id); } catch { /* segue com a exclusão do paciente */ }
       const { error } = await supabase.from('patients').delete().eq('id', patient.id);
       if (error) {
         showToast?.('Erro ao excluir paciente.', 'error');

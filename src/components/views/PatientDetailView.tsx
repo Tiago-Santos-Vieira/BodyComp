@@ -3,6 +3,7 @@ import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Patient, ViewType } from '../../types';
 import { ToastType } from '../../App';
+import PatientFiles from '../PatientFiles';
 
 const container = {
   hidden: { opacity: 0 },
@@ -159,7 +160,11 @@ export default function PatientDetailView({ activePatient, setCurrentView, showT
           <p className="text-sm text-on-surface-variant">Verifique e agende retornos (Última: {activePatient.lastConsultation}).</p>
         </motion.div>
       </div>
-      
+
+      <motion.div variants={item}>
+        <PatientFiles patientId={activePatient.id} showToast={showToast} />
+      </motion.div>
+
       <AnimatePresence>
         {isEditModalOpen && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
