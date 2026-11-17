@@ -1,10 +1,11 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
-import { Ruler, Camera, Activity, FileText, User, Save, History, Plus, Trash2, Printer, HelpCircle } from 'lucide-react';
+import { Ruler, Camera, Activity, FileText, User, Save, History, Plus, Trash2, Printer, HelpCircle, X } from 'lucide-react';
 import { motion } from 'motion/react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip as RechartsTooltip, Legend } from 'recharts';
 import { Patient } from '../../types';
 import { ToastType } from '../../App';
 import { supabase } from '../../lib/supabase';
+import AssessmentReport from '../report/AssessmentReport';
 import { savePhotoLocally, getPhotoLocally, deletePhotoLocally } from '../../lib/storage';
 
 const container = {
@@ -23,6 +24,80 @@ const item = {
 interface Props {
   activePatient: Patient | null;
   showToast?: (message: string, type?: ToastType) => void;
+}
+
+export type BasicData = { weight: number; height: number; age: number; gender: 'M' | 'F'; waist: number; hip: number };
+
+// Jackson-Pollock 7 dobras + métricas derivadas; usado na tela e no relatório impresso
+export function computeResults(basicData: BasicData, skinfolds: number[]) {
+  const { weight, height, age, gender, waist, hip } = basicData;
+  // IMC
+  const heightInMeters = height / 100;
+  const imc = heightInMeters > 0 ? weight / (heightInMeters * heightInMeters) : 0;
+  let imcClass = '';
+  if (imc > 0) {
+    if (imc < 18.5) imcClass = 'Abaixo do peso';
+    else if (imc < 24.9) imcClass = 'Peso normal';
+    else if (imc < 29.9) imcClass = 'Sobrepeso';
+    else imcClass = 'Obesidade';
+  }
+
+  // Jackson-Pollock 7 Dobras
+  const sumSkinfolds = skinfolds.reduce((a, b) => a + b, 0);
+  let bodyFat = 0;
+  
+  if (sumSkinfolds > 0 && age > 0) {
+    let bodyDensity = 0;
+    if (gender === 'M') {
+      bodyDensity = 1.112 - (0.00043499 * sumSkinfolds) + (0.00000055 * Math.pow(sumSkinfolds, 2)) - (0.00028826 * age);
+    } else {
+      bodyDensity = 1.097 - (0.00046971 * sumSkinfolds) + (0.00000056 * Math.pow(sumSkinfolds, 2)) - (0.00012828 * age);
+    }
+    
+    if (bodyDensity > 0) {
+      bodyFat = (4.95 / bodyDensity - 4.5) * 100;
+      // Clamp between 0 and 100
+      bodyFat = Math.max(0, Math.min(100, bodyFat));
+    }
+  }
+
+  const fatMass = (weight * bodyFat) / 100;
+  const leanMass = weight - fatMass;
+
+  // Advanced Metrics
+  const tmb = gender === 'M' 
+    ? 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age)
+    : 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
+
+  const idealWeight = gender === 'M'
+    ? 22.5 * (heightInMeters * heightInMeters)
+    : 21.0 * (heightInMeters * heightInMeters);
+
+  const water = leanMass * 0.73;
+
+  const whr = hip > 0 ? waist / hip : 0;
+  let whrRisk = 'Ideal';
+  if (whr > 0) {
+    if (gender === 'M') {
+      whrRisk = whr >= 0.90 ? 'Risco Alto' : 'Risco Baixo';
+    } else {
+      whrRisk = whr >= 0.85 ? 'Risco Alto' : 'Risco Baixo';
+    }
+  }
+
+  return {
+    imc: imc.toFixed(1),
+    imcClass,
+    bodyFat: bodyFat.toFixed(1),
+    fatMass: fatMass.toFixed(1),
+    leanMass: leanMass.toFixed(1),
+    sumSkinfolds: sumSkinfolds.toFixed(1),
+    tmb: Math.round(tmb),
+    idealWeight: idealWeight.toFixed(1),
+    water: water.toFixed(1),
+    whr: whr.toFixed(2),
+    whrRisk
+  };
 }
 
 export default function AssessmentsView({ activePatient, showToast }: Props) {
@@ -183,77 +258,18 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
     setSkinfolds(newSkinfolds);
   };
 
-  const results = useMemo(() => {
-    const { weight, height, age, gender, waist, hip } = basicData;
-    
-    // IMC
-    const heightInMeters = height / 100;
-    const imc = heightInMeters > 0 ? weight / (heightInMeters * heightInMeters) : 0;
-    let imcClass = '';
-    if (imc > 0) {
-      if (imc < 18.5) imcClass = 'Abaixo do peso';
-      else if (imc < 24.9) imcClass = 'Peso normal';
-      else if (imc < 29.9) imcClass = 'Sobrepeso';
-      else imcClass = 'Obesidade';
-    }
+  const results = useMemo(() => computeResults(basicData, skinfolds), [basicData, skinfolds]);
 
-    // Jackson-Pollock 7 Dobras
-    const sumSkinfolds = skinfolds.reduce((a, b) => a + b, 0);
-    let bodyFat = 0;
-    
-    if (sumSkinfolds > 0 && age > 0) {
-      let bodyDensity = 0;
-      if (gender === 'M') {
-        bodyDensity = 1.112 - (0.00043499 * sumSkinfolds) + (0.00000055 * Math.pow(sumSkinfolds, 2)) - (0.00028826 * age);
-      } else {
-        bodyDensity = 1.097 - (0.00046971 * sumSkinfolds) + (0.00000056 * Math.pow(sumSkinfolds, 2)) - (0.00012828 * age);
-      }
-      
-      if (bodyDensity > 0) {
-        bodyFat = (4.95 / bodyDensity - 4.5) * 100;
-        // Clamp between 0 and 100
-        bodyFat = Math.max(0, Math.min(100, bodyFat));
-      }
-    }
+  // avaliação anterior a que está aberta (o histórico vem do mais novo para o mais antigo)
+  const previous = useMemo(() => {
+    const idx = currentAssessmentId ? assessmentsHistory.findIndex(a => a.id === currentAssessmentId) : -1;
+    const prev = currentAssessmentId ? assessmentsHistory[idx + 1] : assessmentsHistory[0];
+    if (!prev?.basic_data) return null;
+    const sf = prev.skinfolds || Array(7).fill(0);
+    return { date: prev.date as string, basicData: prev.basic_data, results: computeResults(prev.basic_data, sf) };
+  }, [assessmentsHistory, currentAssessmentId]);
 
-    const fatMass = (weight * bodyFat) / 100;
-    const leanMass = weight - fatMass;
-
-    // Advanced Metrics
-    const tmb = gender === 'M' 
-      ? 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age)
-      : 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
-
-    const idealWeight = gender === 'M'
-      ? 22.5 * (heightInMeters * heightInMeters)
-      : 21.0 * (heightInMeters * heightInMeters);
-
-    const water = leanMass * 0.73;
-
-    const whr = hip > 0 ? waist / hip : 0;
-    let whrRisk = 'Ideal';
-    if (whr > 0) {
-      if (gender === 'M') {
-        whrRisk = whr >= 0.90 ? 'Risco Alto' : 'Risco Baixo';
-      } else {
-        whrRisk = whr >= 0.85 ? 'Risco Alto' : 'Risco Baixo';
-      }
-    }
-
-    return {
-      imc: imc.toFixed(1),
-      imcClass,
-      bodyFat: bodyFat.toFixed(1),
-      fatMass: fatMass.toFixed(1),
-      leanMass: leanMass.toFixed(1),
-      sumSkinfolds: sumSkinfolds.toFixed(1),
-      tmb: Math.round(tmb),
-      idealWeight: idealWeight.toFixed(1),
-      water: water.toFixed(1),
-      whr: whr.toFixed(2),
-      whrRisk
-    };
-  }, [basicData, skinfolds]);
+  const currentDate = assessmentsHistory.find(a => a.id === currentAssessmentId)?.date || new Date().toISOString();
 
   const [frontalImage, setFrontalImage] = useState<string | null>(null);
   const [showLocalInfo, setShowLocalInfo] = useState(false);
@@ -306,6 +322,17 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
     }
   };
 
+  // remove a foto do registro visual; se a avaliação já está salva, apaga também do aparelho
+  const handleRemovePhoto = async (kind: 'frontal' | 'profile', e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (!window.confirm('Excluir esta foto do registro visual?')) return;
+    if (kind === 'frontal') setFrontalImage(null); else setProfileImage(null);
+    const input = kind === 'frontal' ? frontalInputRef.current : profileInputRef.current;
+    if (input) input.value = '';
+    if (currentAssessmentId) await deletePhotoLocally(`${currentAssessmentId}_${kind}`);
+    showToast?.('Foto excluída.', 'success');
+  };
+
   const handleProfileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -322,16 +349,6 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
       animate="show"
       className="space-y-8 md:space-y-12 pb-24 md:pb-12 print:space-y-6 print:pb-0"
     >
-      {/* Print Header */}
-      <div className="hidden print:block text-center pb-4 mb-8" style={{ borderBottom: '2px solid #000' }}>
-        <h1 className="text-2xl font-extrabold uppercase tracking-widest mb-2">Avaliação Física Corporal</h1>
-        <h2 className="text-lg font-bold">Paciente: {activePatient?.name || '---'}</h2>
-        <div className="flex justify-center gap-8 mt-2 text-sm">
-          <p><strong>ID:</strong> #{activePatient?.id || '---'}</p>
-          <p><strong>Data da Avaliação:</strong> {new Date().toLocaleDateString('pt-BR')}</p>
-        </div>
-      </div>
-
       <motion.header variants={item} className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 print:hidden">
         <div>
           <h1 className="text-2xl md:text-4xl font-extrabold tracking-tight text-on-surface mb-1 md:mb-2 font-headline">Avaliação Detalhada</h1>
@@ -394,7 +411,7 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
         </div>
       ) : (
       <>
-      <div className="grid grid-cols-12 gap-6 md:gap-8">
+      <div className="grid grid-cols-12 gap-6 md:gap-8 print:hidden">
         {/* Dados Básicos */}
         <motion.div variants={item} className="col-span-12 bg-surface-container-low p-6 md:p-10 rounded-xl shadow-sm">
           <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
@@ -581,7 +598,18 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
                 className="aspect-[3/4] bg-surface-container-lowest rounded-lg flex flex-col items-center justify-center border-2 border-dashed border-on-surface-variant/20 group hover:border-primary transition-colors cursor-pointer overflow-hidden relative"
               >
                 {frontalImage ? (
-                  <img src={frontalImage} alt="Vista Frontal" className="w-full h-full object-cover" />
+                  <>
+                    <img src={frontalImage} alt="Vista Frontal" className="w-full h-full object-cover" />
+                    <button
+                      type="button"
+                      onClick={(e) => handleRemovePhoto('frontal', e)}
+                      title="Excluir foto frontal"
+                      aria-label="Excluir foto frontal"
+                      className="absolute top-2 right-2 w-9 h-9 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-error transition-colors print:hidden"
+                    >
+                      <X size={18} />
+                    </button>
+                  </>
                 ) : (
                   <>
                     <Camera className="text-on-surface-variant/30 mb-2 group-hover:text-primary transition-colors" size={24} />
@@ -594,7 +622,18 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
                 className="aspect-[3/4] bg-surface-container-lowest rounded-lg flex flex-col items-center justify-center border-2 border-dashed border-on-surface-variant/20 group hover:border-primary transition-colors cursor-pointer overflow-hidden relative"
               >
                 {profileImage ? (
-                  <img src={profileImage} alt="Vista Perfil" className="w-full h-full object-cover" />
+                  <>
+                    <img src={profileImage} alt="Vista Perfil" className="w-full h-full object-cover" />
+                    <button
+                      type="button"
+                      onClick={(e) => handleRemovePhoto('profile', e)}
+                      title="Excluir foto de perfil"
+                      aria-label="Excluir foto de perfil"
+                      className="absolute top-2 right-2 w-9 h-9 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-error transition-colors print:hidden"
+                    >
+                      <X size={18} />
+                    </button>
+                  </>
                 ) : (
                   <>
                     <Camera className="text-on-surface-variant/30 mb-2 group-hover:text-primary transition-colors" size={24} />
@@ -667,6 +706,19 @@ export default function AssessmentsView({ activePatient, showToast }: Props) {
           </div>
         </motion.div>
       </div>
+
+      <AssessmentReport
+        patientName={activePatient?.name || 'Paciente'}
+        date={currentDate}
+        basicData={basicData}
+        results={results}
+        skinfoldLabels={skinfoldLabels}
+        skinfolds={skinfolds}
+        perimetry={perimetry}
+        previous={previous}
+        frontalImage={frontalImage}
+        profileImage={profileImage}
+      />
 
       <div className="fixed bottom-4 right-4 md:bottom-10 md:right-10 flex gap-4 md:gap-6 z-40 print:hidden">
         <div className="bg-surface-container-lowest/90 backdrop-blur shadow-2xl p-4 md:p-6 rounded-lg flex items-center gap-4 md:gap-6 border border-on-surface-variant/10">

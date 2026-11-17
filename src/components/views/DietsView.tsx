@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
-import { FileText, MessageSquare, User, PieChart, Save, Copy, Plus, MoreHorizontal, Trash2, Printer, Search, X, Check, Edit2, Sparkles, BrainCircuit, Utensils } from 'lucide-react';
+import DietReport from '../report/DietReport';
+import { FileText, MessageSquare, User, PieChart, Save, Copy, Plus, MoreHorizontal, Trash2, Printer, Search, X, Check, Edit2, Sparkles, BrainCircuit, Utensils, ClipboardList } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Patient } from '../../types';
 import { ToastType } from '../../App';
@@ -33,6 +34,7 @@ interface Props {
 
 export default function DietsView({ activePatient, showToast }: Props) {
   const [meals, setMeals] = useState<any[]>([]);
+  const [guidelines, setGuidelines] = useState('');
   const [dietId, setDietId] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -133,20 +135,21 @@ export default function DietsView({ activePatient, showToast }: Props) {
       return;
     }
     
-    if (!activePatient || meals.length === 0) return;
+    if (!activePatient || (meals.length === 0 && !guidelines.trim())) return;
 
     const timeoutId = setTimeout(() => {
       handleSaveDiet(true);
     }, 2500);
 
     return () => clearTimeout(timeoutId);
-  }, [meals]);
+  }, [meals, guidelines]);
 
   useEffect(() => {
     if (activePatient) {
       loadDiet();
     } else {
       setMeals([]);
+      setGuidelines('');
       setDietId(null);
     }
   }, [activePatient]);
@@ -162,10 +165,12 @@ export default function DietsView({ activePatient, showToast }: Props) {
     if (data) {
       setDietId(data.id);
       setMeals(data.meals || []);
+      setGuidelines(data.guidelines || '');
       setLastSaved(new Date(data.updated_at));
     } else {
       setDietId(null);
       setMeals([]);
+      setGuidelines('');
       setLastSaved(null);
     }
     skipNextSave.current = true;
@@ -386,6 +391,7 @@ export default function DietsView({ activePatient, showToast }: Props) {
       nutri_id: user.id,
       patient_id: activePatient.id,
       meals: meals,
+      guidelines: guidelines,
       updated_at: new Date().toISOString()
     };
 
@@ -415,11 +421,12 @@ export default function DietsView({ activePatient, showToast }: Props) {
   };
 
   return (
+    <>
     <motion.div 
       variants={container}
       initial="hidden"
       animate="show"
-      className="space-y-8 md:space-y-12 print-container"
+      className="space-y-8 md:space-y-12 print-container print:hidden"
     >
       <motion.section variants={item} className="mb-8 md:mb-12">
         <div className="flex flex-col xl:flex-row justify-between items-start gap-6 bg-surface-container-low p-6 rounded-2xl border border-on-surface-variant/10 print:border-none print:p-0">
@@ -665,6 +672,21 @@ export default function DietsView({ activePatient, showToast }: Props) {
         )}
       </motion.section>
       )}
+
+      <motion.section variants={item} className="bg-surface-container-lowest rounded-2xl border border-on-surface-variant/10 p-6 shadow-sm">
+        <div className="flex items-center gap-3 mb-1">
+          <ClipboardList size={20} className="text-primary" />
+          <h2 className="text-xl font-bold font-headline text-on-surface">Orientações ao paciente</h2>
+        </div>
+        <p className="text-sm text-on-surface-variant mb-4">Aparecem no plano impresso, logo depois das refeições.</p>
+        <textarea
+          value={guidelines}
+          onChange={(e) => setGuidelines(e.target.value)}
+          rows={6}
+          placeholder={'Ex.: Beber 2,5 L de água por dia.\nEvitar frituras e refrigerante.\nPode trocar o arroz por batata-doce na mesma quantidade.'}
+          className="w-full bg-surface-container-low border border-on-surface-variant/15 rounded-xl p-4 text-sm md:text-base text-on-surface leading-relaxed resize-y outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all"
+        />
+      </motion.section>
 
       <motion.div variants={item} className="mt-12 md:mt-16 flex flex-col items-center justify-center gap-4 pb-12 print:hidden">
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
@@ -1017,5 +1039,16 @@ export default function DietsView({ activePatient, showToast }: Props) {
         )}
       </AnimatePresence>
     </motion.div>
+    <DietReport
+      patientName={activePatient?.name || 'Paciente'}
+      objective={activePatient?.objective}
+      date={lastSaved}
+      meals={meals}
+      guidelines={guidelines}
+      dailyTotals={dailyTotals}
+      mealTotals={calculateMealTotals}
+      formatMeasure={formatMeasure}
+    />
+    </>
   );
 }
