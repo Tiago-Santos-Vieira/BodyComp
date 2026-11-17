@@ -119,6 +119,9 @@ const DIET_CSS = `
 .report .rp-time { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 9.5pt; padding: 2px 8px; border-radius: 6px; background: #006c4d !important; color: #ffffff !important; }
 .report .rp-meal-name { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 12pt; color: #191c1d !important; }
 .report .rp-meal-kcal { margin-left: auto; font-size: 8.5pt; font-weight: 600; color: #5b6862 !important; }
+.report .rp-meal .rp-table { table-layout: fixed; }
+.report .rp-meal .rp-table th:nth-child(1) { width: 38%; }
+.report .rp-meal .rp-table th:nth-child(2) { width: 30%; }
 .report .rp-meal .rp-table th { padding: 7px 12px 5px; border-bottom: 1px solid #d6e2dc; }
 .report .rp-meal .rp-table td { padding: 6px 12px; }
 .report .rp-meal .rp-table tr:last-child td { border-bottom: none; }
